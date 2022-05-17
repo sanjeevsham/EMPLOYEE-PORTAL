@@ -1,0 +1,71 @@
+<div class="center" id="login">
+  <h1>Register</h1>
+  <form [formGroup]="signupform">
+    <div class="text_field">
+      <input
+        type="text"
+        placeholder="username"
+        formControlName="username"
+        class="form-control"
+      />
+      <span
+        class="text-danger"
+        *ngIf="
+          signupform.controls['username'].touched &&
+          signupform.hasError('required', 'username')
+        "
+        >* Name is required!!</span
+      >
+    </div>
+    <div class="text_field">
+      <input
+        type="email"
+        placeholder="email"
+        formControlName="email"
+        class="form-control"
+      />
+      <span
+        class="text-danger"
+        *ngIf="
+          signupform.controls['email'].touched &&
+          signupform.hasError('required', 'email')
+        "
+        >* email is required!!</span
+      >
+    </div>
+    <div class="text_field">
+      <input
+        type="password"
+        placeholder="Password"
+        formControlName="password"
+        class="form-control"
+      />
+      <span
+        class="text-danger"
+        *ngIf="
+          signupform.controls['password'].touched &&
+          signupform.hasError('required', 'password')
+        "
+        >* password is required!!</span
+      >
+    </div>
+    <div class="text_field">
+      <input
+        type="password"
+        placeholder="confirm password"
+        formControlName="confirmpassword"
+        class="form-control"
+      />
+      <span
+        class="text-danger"
+        *ngIf="
+          signupform.controls['confirmpassword'].touched &&
+          signupform.hasError('required', 'confirmpassword')
+        "
+        >* password is required!!</span
+      >
+    </div>
+    <!-- <div class="pass">Forgot Password?</div> -->
+    <input type="submit" value="Login" />
+  </form>
+</div>

@@ -1,0 +1,42 @@
+<div class="center" id="login">
+  <h1>User</h1>
+  <form [formGroup]="formgroup">
+    <div class="text_field">
+      <input
+        type="text"
+        placeholder="Username"
+        formControlName="username"
+        class="form-control"
+      />
+      <span
+        class="text-danger"
+        *ngIf="
+          formgroup.controls['username'].touched &&
+          formgroup.hasError('required', 'username')
+        "
+        >* Name is required!!</span
+      >
+    </div>
+    <div class="text_field">
+      <input
+        type="password"
+        placeholder="Password"
+        formControlName="password"
+        class="form-control"
+      />
+      <span
+        class="text-danger"
+        *ngIf="
+          formgroup.controls['password'].touched &&
+          formgroup.hasError('required', 'password')
+        "
+        >* password is required!!</span
+      >
+    </div>
+    <!-- <div class="pass">Forgot Password?</div> -->
+    <input type="submit" value="Login" />
+    <div for="signup" class="signup_link">
+      Not a member? <a routerLink="/sign-up" class="text-primary">Signup</a>
+    </div>
+  </form>
+</div>

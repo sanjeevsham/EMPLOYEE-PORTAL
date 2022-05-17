@@ -1,0 +1,111 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+.center {
+  position: absolute;
+  top: 48%;
+  left: 30%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 350px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(25px);
+  overflow: hidden;
+  border: 2px solid silver;
+}
+.center::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -40%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  pointer-events: none;
+  transform: skew(-30deg);
+}
+.center h1 {
+  font-family: monospace;
+  background-image: linear-gradient(
+    -225deg,
+    #4423eb 0%,
+    #44107a 29%,
+    #ff1361 67%,
+    #dd2d2d 100%
+  );
+  background-size: 200% auto;
+  margin: 10px;
+  color: #fff;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 2s linear infinite;
+  font-size: 30px;
+  margin-bottom: 20px;
+  padding: 15px;
+  border-bottom: 2px solid rgb(185, 172, 172);
+  text-align: center;
+}
+
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
+}
+.center form {
+  padding: 0 40px;
+  box-sizing: border-box;
+  border-radius: 2px solid rgb(185, 172, 172);
+}
+@media screen and (max-width: 900px) {
+  .center {
+    position: absolute;
+  }
+}
+form .text_field {
+  position: relative;
+  border-bottom: 2px solid #adadad;
+  margin: 30px 0;
+}
+.text_field input {
+  width: 100%;
+  padding: 0 5px;
+  height: 40px;
+  font-size: 16px;
+  border: none;
+  background: none;
+  outline: invert;
+  color: black;
+  font-weight: 400;
+  font-family: "Courier New", Courier, monospace;
+}
+.pass {
+  margin: -5px 0 20px 5px;
+  color: white;
+  cursor: pointer;
+}
+.pass:hover {
+  text-decoration: underline;
+}
+input[type="submit"] {
+  width: 100%;
+  height: 50px;
+  border: 50px;
+  border-radius: 25px;
+  font-size: 18px;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+  outline: none;
+  background: transparent;
+}
+input[type="submit"]:hover {
+  background-color: rgb(56, 47, 47);
+}
+input[type="submit"] {
+  border: 2px solid silver;
+  transition: 0.5s;
+}

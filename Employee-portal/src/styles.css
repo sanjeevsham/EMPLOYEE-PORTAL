@@ -1,0 +1,10 @@
+/* You can add global styles to this file, and also import other style files */
+@import "../node_modules/bootstrap/dist/css/bootstrap-grid.css";
+/* body {
+  background-image: url("https://images.unsplash.com/photo-1620570623737-efc0ec4ab486?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fHRlY2hub2xvZ3klMjBiYWNrZ3JvdW5kfGVufDB8fDB8fA%3D%3D&w=1000&q=80");
+  background-size: cover;
+} */
+body {
+  background-image: url("./assets/project 8.jpg");
+  background-size: cover;
+}
