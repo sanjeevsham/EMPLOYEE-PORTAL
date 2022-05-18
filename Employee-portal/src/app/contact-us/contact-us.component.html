@@ -4,21 +4,7 @@
     <div class="row100">
       <div class="col">
         <div class="inputBox">
-          <!-- <input type="text" name="" required="required" /> -->
-          <input
-            type="text"
-            placeholder=""
-            formControlName="username"
-            class="form-control"
-          />
-          <span
-            class="text-danger"
-            *ngIf="
-              signupform.controls['username'].touched &&
-              signupform.hasError('required', 'username')
-            "
-            >* Name is required!!</span
-          >
+          <input type="text" name="" required="required" />
           <span class="text">First Name </span>
           <span class="line"></span>
         </div>
