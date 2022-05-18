@@ -22,16 +22,16 @@
         type="password"
         placeholder="Password"
         formControlName="password"
-        class="form-control"
       />
       <span
         class="text-danger"
         *ngIf="
-          formgroup.controls['password'].touched &&
-          formgroup.hasError('required', 'password')
+          formgroup.controls.password.errors &&
+          formgroup.controls.password.touched
         "
-        >* password is required!!</span
       >
+        <br />Atleast 6 character Password is Required
+      </span>
     </div>
     <!-- <div class="pass">Forgot Password?</div> -->
     <input type="submit" value="Login" />

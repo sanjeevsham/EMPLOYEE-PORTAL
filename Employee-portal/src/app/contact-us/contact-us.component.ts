@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup,FormBuilder,Validators, NgForm} from '@angular/forms';
 
 @Component({
   selector: 'app-contact-us',
@@ -6,10 +7,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./contact-us.component.css']
 })
 export class ContactUsComponent implements OnInit {
-
-  constructor() { }
+  signupform!:FormGroup;
+  
+  constructor(private formbuilder:FormBuilder) { }
 
   ngOnInit(): void {
-  }
+    this.signupform=this.formbuilder.group (
+      {
+       username:['',Validators.required],
+       email: ['',[Validators.required,Validators.pattern("[a-zA-Z0-9]*@gmail.com")]],
+       password: ['',[Validators.required,Validators.pattern("[a-zA-z@_]{6,}")]],
+       confirmpassword: ['',[Validators.required,Validators.pattern("[a-zA-z@_]{6,}")]],
 
+      }
+    )
+   
+   }
 }

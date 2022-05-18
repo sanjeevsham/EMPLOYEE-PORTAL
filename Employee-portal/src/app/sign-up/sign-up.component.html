@@ -1,6 +1,6 @@
 <div class="center" id="login">
   <h1>Register</h1>
-  <form [formGroup]="signupform">
+  <form [formGroup]="signupform" (ngSubmit)="signupdata(this.signupform.value)">
     <div class="text_field">
       <input
         type="text"
@@ -18,54 +18,49 @@
       >
     </div>
     <div class="text_field">
-      <input
-        type="email"
-        placeholder="email"
-        formControlName="email"
-        class="form-control"
-      />
+      <input type="email" placeholder="Email Address" formControlName="email" />
       <span
         class="text-danger"
         *ngIf="
-          signupform.controls['email'].touched &&
-          signupform.hasError('required', 'email')
+          signupform.controls.email.errors && signupform.controls.email.touched
         "
-        >* email is required!!</span
       >
+        <br />Invalid Email Address
+      </span>
     </div>
     <div class="text_field">
       <input
         type="password"
         placeholder="Password"
         formControlName="password"
-        class="form-control"
       />
       <span
         class="text-danger"
         *ngIf="
-          signupform.controls['password'].touched &&
-          signupform.hasError('required', 'password')
+          signupform.controls.password.errors &&
+          signupform.controls.password.touched
         "
-        >* password is required!!</span
       >
+        <br />Atleast 6 character Password is Required
+      </span>
     </div>
     <div class="text_field">
       <input
         type="password"
-        placeholder="confirm password"
+        placeholder="confirmpassword"
         formControlName="confirmpassword"
-        class="form-control"
       />
       <span
         class="text-danger"
         *ngIf="
-          signupform.controls['confirmpassword'].touched &&
-          signupform.hasError('required', 'confirmpassword')
+          signupform.controls.confirmpassword.errors &&
+          signupform.controls.confirmpassword.touched
         "
-        >* password is required!!</span
       >
+        <br />Atleast 6 character Password is Required
+      </span>
     </div>
     <!-- <div class="pass">Forgot Password?</div> -->
-    <input type="submit" value="Login" />
+    <input type="submit" value="Signup" />
   </form>
 </div>

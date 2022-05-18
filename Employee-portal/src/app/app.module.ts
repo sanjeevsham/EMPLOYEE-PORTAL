@@ -13,6 +13,7 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
 import { StartUpComponent } from './start-up/start-up.component';
 import { FotgotPassComponent } from './fotgot-pass/fotgot-pass.component';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+import{ HttpClientModule} from '@angular/common/http'
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +31,8 @@ import { FormsModule,ReactiveFormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule,FormsModule
+    ReactiveFormsModule,FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

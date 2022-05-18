@@ -14,7 +14,8 @@ export class AdminLoginComponent implements OnInit {
     this.formgroup=this.formbuilder.group (
       {
         username:['',Validators.required],
-       password: ['',[Validators.required,Validators.pattern("[a-zA-z@_]{6,}")]]
+        password: ['',[Validators.required,Validators.pattern("[a-zA-z@_]{6,}")]],
+       
 
       }
     )
