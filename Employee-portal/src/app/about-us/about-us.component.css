@@ -14,10 +14,8 @@
 .about-section {
   background: url("../../assets/project 11.jpg") no-repeat left;
   background-size: 50%;
-  /* background-color: aliceblue; */
   overflow: hidden;
   padding: 50px 0;
-  /* border-radius: 20px; */
 }
 .inner-container {
   width: 50%;

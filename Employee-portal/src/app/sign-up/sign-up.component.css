@@ -1,22 +1,56 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
-.center {
+section {
+  position: relative;
+  width: 100%;
+  height: 85vh;
+  display: flex;
+}
+section .imgBx {
+  position: relative;
+  width: 40%;
+  height: 100%;
+}
+section .imgBx:before {
+  content: "";
   position: absolute;
-  top: 55%;
+  top: 40px;
   left: 30%;
-  transform: translate(-50%, -50%);
-  width: 400px;
-  height: 500px;
+  width: 100%;
+  height: 90%;
+  background: linear-gradient(225deg, #e7155b, #01090e);
+  z-index: 1;
+  mix-blend-mode: screen;
+  border-radius: 30px;
+}
+section .imgBx img {
+  position: absolute;
+  top: 40px;
+  left: 30%;
+  width: 100%;
+  height: 90%;
+  object-fit: cover;
+  border-radius: 30px;
+}
+section .content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
+  height: 80%;
+  border-radius: 20px;
   background: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(25px);
-  border-radius: 20px;
   overflow: hidden;
   border: 2px solid silver;
+  margin-top: 65px;
+  margin-left: 15%;
 }
-.center::before {
+section .content::before {
   content: "";
   position: absolute;
   top: 0;
@@ -27,7 +61,10 @@
   pointer-events: none;
   transform: skew(-30deg);
 }
-.center h1 {
+section .content .formbox {
+  width: 65%;
+}
+section .content .formbox h2 {
   font-family: monospace;
   background-image: linear-gradient(
     -225deg,
@@ -37,7 +74,7 @@
     #dd2d2d 100%
   );
   background-size: 200% auto;
-  margin: 10px;
+  margin-top: -30px;
   color: #fff;
   background-clip: text;
   -webkit-background-clip: text;
@@ -55,43 +92,59 @@
     background-position: 200% center;
   }
 }
-.center form {
-  padding: 0 40px;
-  box-sizing: border-box;
+section .content .formbox .inputbox {
+  margin-bottom: 20px;
 }
-form .text_field {
-  position: relative;
-  border-bottom: 2px solid #adadad;
-  margin: 30px 0;
-}
-.text_field input {
+section .content .formbox .inputbox input {
   width: 100%;
-  padding: 0 5px;
-  height: 40px;
+  padding: 10px 25px;
+  outline: none;
+  font-weight: 700;
+  border: 2px solid silver;
   font-size: 16px;
-  border: none;
-  background: none;
-  outline: invert;
+  letter-spacing: 1px;
   color: black;
-  font-weight: 400;
+  background: transparent;
+  border-radius: 30px;
   font-family: "Courier New", Courier, monospace;
 }
-input[type="submit"] {
-  width: 100%;
-  height: 50px;
-  border: 50px;
-  border-radius: 25px;
-  font-size: 18px;
-  color: white;
-  font-weight: 700;
-  cursor: pointer;
-  outline: none;
+section .content .formbox .inputbox input:hover {
+  border-color: rgb(119, 204, 233);
+  box-shadow: 0 0 20px rgb(119, 204, 233);
+}
+
+section .content .formbox .inputbox input[type="submit"] {
   background: transparent;
-}
-input[type="submit"] {
   border: 2px solid silver;
-  transition: 0.5s;
+  width: 50%;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
 }
-input[type="submit"]:hover {
+section .content .formbox .inputbox input[type="submit"]:hover {
   background-color: rgb(56, 47, 47);
+}
+@media (max-width: 768px) {
+  section .imgBx {
+    position: absolute;
+    top: 0;
+    left: -30%;
+    width: 100%;
+    height: 100%;
+  }
+  section .content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: 80%;
+    z-index: 1;
+    margin-left: 10%;
+  }
+  section .content.formbox {
+    width: 100%;
+    padding: 40px;
+    background: rgb(255 255 255 / 0.9);
+    margin: 50px;
+  }
 }

@@ -1,27 +1,47 @@
 <nav class="navbar">
   <ul>
     <li>
-      <a class="nav-link" routerLink="startup" routerLinkActive="active"
+      <a
+        class="nav-link"
+        routerLink="startup"
+        routerLinkActive="active-link"
+        [routerLinkActiveOptions]="{ exact: true }"
         >Home</a
       >
     </li>
     <li>
-      <a class="nav-link" routerLink="aboutus" routerLinkActive="active"
+      <a
+        class="nav-link"
+        routerLink="aboutus"
+        routerLinkActive="active-link"
+        [routerLinkActiveOptions]="{ exact: true }"
         >About Us</a
       >
     </li>
     <li>
-      <a class="nav-link" routerLink="contactus" routerLinkActive="active"
+      <a
+        class="nav-link"
+        routerLink="contactus"
+        routerLinkActive="active-link"
+        [routerLinkActiveOptions]="{ exact: true }"
         >Contact Us</a
       >
     </li>
-    <li>
-      <a class="nav-link" routerLink="userlogin" routerLinkActive="active"
+    <!-- <li>
+      <a
+        class="nav-link"
+        routerLink="userlogin"
+        routerLinkActive="active-link"
+        [routerLinkActiveOptions]="{ exact: true }"
         >User Login</a
       >
-    </li>
+    </li> -->
     <li>
-      <a class="nav-link" routerLink="adminlogin" routerLinkActive="active"
+      <a
+        class="nav-link"
+        routerLink="adminlogin"
+        routerLinkActive="active-link"
+        [routerLinkActiveOptions]="{ exact: true }"
         >Admin Login</a
       >
     </li>

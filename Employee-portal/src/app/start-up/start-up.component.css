@@ -93,8 +93,8 @@
 .box {
   display: flex;
   flex-direction: column;
-  width: 350px;
-  height: 450px;
+  width: 360px;
+  height: 470px;
   border: 1px solid lightgray;
   margin: 10px;
   align-items: center;
@@ -109,8 +109,11 @@
   background-size: 100% 200%;
   transition: all 0.8s;
 }
+p {
+  font-size: 15px;
+}
 .box:hover {
-  background-position: left bottom;
+  background-position: right bottom;
   color: white;
   border: none;
   box-shadow: 0 0 20px rgb(109, 182, 206);
@@ -138,4 +141,38 @@
   to {
     background-position: 200% center;
   }
+}
+.gallery1 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  box-sizing: border-box;
+}
+.gallery1 img {
+  width: 380px;
+  height: 260px;
+  margin: 10px;
+  border-radius: 20px;
+  margin-right: 50%;
+}
+.para {
+  text-align: left;
+  margin-top: -17%;
+  margin-left: 43%;
+  font-weight: 700;
+  color: lightgray;
+  font-family: cursive;
+}
+.para:hover {
+  color: rgb(85, 27, 27);
+}
+.heading1 {
+  text-align: center;
+  margin: 20px;
+  font-family: cursive;
+}
+.heading1:hover {
+  background: linear-gradient(to left, rgb(152, 228, 117), rgb(219, 27, 75));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }

@@ -6,7 +6,33 @@ var password = '1cd6b51776516316358ce28da3097318';
 
 var cloudant = Cloudant({ url: url, username: username, password: password });
 
-module.exports.insert = function (paramsvalue) {
+// module.exports.insert = function (paramsvalue) {
+//   console.log(paramsvalue);
+//   return cloudant.use('employee-portal').insert(paramsvalue);
+// };
+insert = function (paramsvalue, dbname) {
   console.log(paramsvalue);
-  return cloudant.use('employee-portal').insert(paramsvalue);
+  return cloudant.use(dbname).insert(paramsvalue);
+};
+
+get = function (dbname) {
+  return cloudant.use(dbname).list();
+};
+getAll = function (id, dbname) {
+  return cloudant.use(dbname).get(id);
+};
+deleted = function (id, id1, dbname) {
+  return cloudant.use(dbname).destroy(id, id1);
+};
+update = function (doc, dbname) {
+  console.log(doc);
+  return cloudant.use(dbname).insert(doc);
+};
+
+module.exports = {
+  insert,
+  get,
+  getAll,
+  deleted,
+  update,
 };

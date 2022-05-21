@@ -1,39 +1,50 @@
-<div class="center" id="login">
-  <h1>Admin</h1>
-  <form [formGroup]="formgroup">
-    <div class="text_field">
-      <input
-        type="text"
-        placeholder="Username"
-        formControlName="username"
-        class="form-control"
-      />
-      <span
-        class="text-danger"
-        *ngIf="
-          formgroup.controls['username'].touched &&
-          formgroup.hasError('required', 'username')
-        "
-        >* Name is required!!</span
-      >
+<section>
+  <div class="imgBx"><img src="../../assets/project 14.jpg" /></div>
+  <div class="content">
+    <div class="formbox">
+      <h2>Admin</h2>
+      <form [formGroup]="formgroup">
+        <div class="inputbox">
+          <input
+            type="text"
+            placeholder="Username"
+            formControlName="username"
+            class="form-control"
+          />
+          <span
+            class="text-danger"
+            *ngIf="
+              formgroup.controls['username'].touched &&
+              formgroup.hasError('required', 'username')
+            "
+            >* Name is required!!</span
+          >
+        </div>
+        <div class="inputbox">
+          <input
+            type="password"
+            placeholder="Password"
+            formControlName="password"
+          />
+          <span
+            class="text-danger"
+            *ngIf="
+              formgroup.controls.password.errors &&
+              formgroup.controls.password.touched
+            "
+          >
+            <br />Atleast 6 character Password is Required
+          </span>
+        </div>
+        <div class="inputbox">
+          <input
+            type="submit"
+            value="Login"
+            routerLink="/dashboard"
+            routerLinkActive="active"
+          />
+        </div>
+      </form>
     </div>
-    <div class="text_field">
-      <input
-        type="password"
-        placeholder="Password"
-        formControlName="password"
-      />
-      <span
-        class="text-danger"
-        *ngIf="
-          formgroup.controls.password.errors &&
-          formgroup.controls.password.touched
-        "
-      >
-        <br />Atleast 6 character Password is Required
-      </span>
-    </div>
-    <!-- <div class="pass">Forgot Password?</div> -->
-    <input type="submit" value="Login" />
-  </form>
-</div>
+  </div>
+</section>

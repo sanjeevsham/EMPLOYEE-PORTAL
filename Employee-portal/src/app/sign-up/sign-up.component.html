@@ -1,66 +1,82 @@
-<div class="center" id="login">
-  <h1>Register</h1>
-  <form [formGroup]="signupform" (ngSubmit)="signupdata(this.signupform.value)">
-    <div class="text_field">
-      <input
-        type="text"
-        placeholder="username"
-        formControlName="username"
-        class="form-control"
-      />
-      <span
-        class="text-danger"
-        *ngIf="
-          signupform.controls['username'].touched &&
-          signupform.hasError('required', 'username')
-        "
-        >* Name is required!!</span
+<section>
+  <div class="imgBx"><img src="../../assets/project 14.jpg" /></div>
+  <div class="content">
+    <div class="formbox">
+      <h2>Register</h2>
+      <form
+        [formGroup]="signupform"
+        (ngSubmit)="signupdata(this.signupform.value)"
       >
+        <div class="inputbox">
+          <input
+            type="text"
+            placeholder="Username"
+            formControlName="username"
+            class="form-control"
+          />
+          <span
+            class="text-danger"
+            *ngIf="
+              signupform.controls['username'].touched &&
+              signupform.hasError('required', 'username')
+            "
+            >* Name is required!!</span
+          >
+        </div>
+        <div class="inputbox">
+          <input
+            type="email"
+            placeholder="Email Address"
+            formControlName="email"
+          />
+          <span
+            class="text-danger"
+            *ngIf="
+              signupform.controls.email.errors &&
+              signupform.controls.email.touched
+            "
+          >
+            <br />Invalid Email Address
+          </span>
+        </div>
+        <div class="inputbox">
+          <input
+            type="password"
+            placeholder="Password"
+            formControlName="password"
+          />
+          <span
+            class="text-danger"
+            *ngIf="
+              signupform.controls.password.errors &&
+              signupform.controls.password.touched
+            "
+          >
+            <br />Atleast 6 character Password is Required
+          </span>
+        </div>
+        <div class="inputbox">
+          <input
+            type="password"
+            placeholder="confirmpassword"
+            formControlName="confirmpassword"
+            name="confirmpassword"
+          />
+          <span
+            class="text-danger"
+            *ngIf="
+              signupform.controls.confirmpassword.errors &&
+              signupform.controls.confirmpassword.touched
+            "
+          >
+            <br />Atleast 6 character Password is Required
+          </span>
+        </div>
+        <div class="inputbox">
+          <input type="submit" value="Signup" />
+        </div>
+      </form>
     </div>
-    <div class="text_field">
-      <input type="email" placeholder="Email Address" formControlName="email" />
-      <span
-        class="text-danger"
-        *ngIf="
-          signupform.controls.email.errors && signupform.controls.email.touched
-        "
-      >
-        <br />Invalid Email Address
-      </span>
-    </div>
-    <div class="text_field">
-      <input
-        type="password"
-        placeholder="Password"
-        formControlName="password"
-      />
-      <span
-        class="text-danger"
-        *ngIf="
-          signupform.controls.password.errors &&
-          signupform.controls.password.touched
-        "
-      >
-        <br />Atleast 6 character Password is Required
-      </span>
-    </div>
-    <div class="text_field">
-      <input
-        type="password"
-        placeholder="confirmpassword"
-        formControlName="confirmpassword"
-      />
-      <span
-        class="text-danger"
-        *ngIf="
-          signupform.controls.confirmpassword.errors &&
-          signupform.controls.confirmpassword.touched
-        "
-      >
-        <br />Atleast 6 character Password is Required
-      </span>
-    </div>
-    <!-- <div class="pass">Forgot Password?</div> -->
-    <input type="submit" value="Signup" />
-  </form>
-</div>
+  </div>
+</section>
+<!-- <button ()></button> -->
