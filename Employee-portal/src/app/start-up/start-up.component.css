@@ -173,6 +173,75 @@ p {
 }
 .heading1:hover {
   background: linear-gradient(to left, rgb(152, 228, 117), rgb(219, 27, 75));
-  -webkit-background-clip: text;
+  /* -webkit-background-clip: text; */
   -webkit-text-fill-color: transparent;
+}
+#slider {
+  overflow: hidden;
+}
+
+@keyframes slider {
+  0% {
+    left: 0;
+  }
+  30% {
+    left: 0;
+  }
+  33% {
+    left: -100%;
+  }
+  63% {
+    left: -100%;
+  }
+  66% {
+    left: -200%;
+  }
+  95% {
+    left: -200%;
+  }
+  100% {
+    left: 0;
+  }
+}
+#slider figure {
+  width: 300%;
+  position: relative;
+  animation: 9s slider infinite;
+}
+#slider figure img {
+  width: 33.333333333%;
+  height: 100%;
+  float: left;
+}
+@media (max-width: 1000px) {
+  .para {
+    text-align: left;
+    margin-top: 1%;
+    margin-left: 10%;
+    font-weight: 700;
+    color: lightgray;
+    font-family: cursive;
+  }
+}
+@media (max-width: 780px) {
+  .gallery1 img {
+    width: 380px;
+    height: 260px;
+    margin: 10px;
+    border-radius: 20px;
+    margin-right: 0%;
+  }
+}
+@media (max-width: 950px) {
+  .btn {
+    padding: 10px 10px;
+    background-color: transparent;
+    border: 2px solid aqua;
+    color: white;
+    outline: none;
+    transition: 0.6s ease;
+    border-radius: 20px;
+    width: 20%;
+    margin-left: 45%;
+  }
 }

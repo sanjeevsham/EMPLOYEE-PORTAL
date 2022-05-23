@@ -8,6 +8,7 @@
       data-bs-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent"
       aria-expanded="false"
+      row
       aria-label="Toggle navigation"
     >
       <span class="navbar-toggler-icon"></span>
@@ -38,28 +39,40 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let val of store">
-        <th>{{ val.id }}</th>
-        <th>{{ val.username }}</th>
-        <th>{{ val.email }}</th>
-        <th>{{ val.dob }}</th>
-        <th>{{ val.mobileno }}</th>
-        <th>{{ val.bloodgroup }}</th>
+      <tr *ngFor="let row of store">
+        <th>{{ row.id }}</th>
+        <th>{{ row.username }}</th>
+        <th>{{ row.email }}</th>
+        <th>{{ row.dob }}</th>
+        <th>{{ row.mobileno }}</th>
+        <th>{{ row.bloodgroup }}</th>
+        <!-- <th>{{ row._id }}</th>
+        <th>{{ row._rev }}</th> -->
         <td>
           <button
             type="button"
             class="btn btn-outline-primary me-2"
             data-bs-toggle="modal"
-            data-bs-target="#editEmployee"
-            (click)="onEdit(this.addform.value)"
+            data-bs-target="#onEdit"
+            (click)="onEdit(row)"
           >
             Edit
           </button>
-          <button type="button" class="btn btn-outline-danger">Delete</button>
+          <button
+            type="button"
+            class="btn btn-outline-danger"
+            data-bs-target="#delete"
+            (click)="delete(row)"
+          >
+            Delete
+          </button>
         </td>
       </tr>
     </tbody>
   </table>
+  <div>
+    <button type="button" (click)="getuser()">get</button>
+  </div>
 
   <!-- Add Employee -->
   <div
@@ -157,6 +170,15 @@
               >
                 Add Employee
               </button>
+              <!-- <button
+                type="button"
+                class="btn btn-primary"
+                data-bs-toggle="modal"
+                data-bs-target="#addform"
+                (click)="update(this.addform.value)"
+              >
+                Edit employee
+              </button> -->
             </div>
           </form>
         </div>
@@ -166,7 +188,7 @@
 
   <div
     class="modal fade"
-    id="editEmployee"
+    id="onEdit"
     tabindex="-1"
     aria-labelledby="exampleModalLabel"
     aria-hidden="true"
@@ -187,19 +209,19 @@
         <div class="modal-body">
           <form [formGroup]="addform">
             <div class="mb-3">
-              <label for="name" class="form-label">Name </label>
+              <label for="id" class="form-label">ID </label>
               <input
-                type="text"
+                type="number"
                 class="form-control"
-                formControlName="name"
-                id="name"
+                formControlName="id"
+                id="id"
                 aria-describedby="emailHelp"
               />
             </div>
             <div class="mb-3">
-              <label for="username" class="form-label">Email </label>
+              <label for="username" class="form-label">Name </label>
               <input
-                type="email"
+                type="text"
                 class="form-control"
                 formControlName="username"
                 id="username"
@@ -207,16 +229,45 @@
               />
             </div>
             <div class="mb-3">
-              <label for="details" class="form-label">details </label>
+              <label for="email" class="form-label">Email </label>
               <input
                 type="text"
                 class="form-control"
-                formControlName="details"
-                id="details"
+                formControlName="email"
+                id="email"
                 aria-describedby="emailHelp"
               />
             </div>
-
+            <div class="mb-3">
+              <label for="dob" class="form-label">Date of Birth</label>
+              <input
+                type="date"
+                class="form-control"
+                formControlName="dob"
+                id="dob"
+                aria-describedby="emailHelp"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="mobileno" class="form-label">Mobile No </label>
+              <input
+                type="number"
+                class="form-control"
+                formControlName="mobileno"
+                id="mobileno"
+                aria-describedby="emailHelp"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="bloodgroup" class="form-label">Blood Group </label>
+              <input
+                type="text"
+                class="form-control"
+                formControlName="bloodgroup"
+                id="bloodgroup"
+                aria-describedby="emailHelp"
+              />
+            </div>
             <div class="modal-footer">
               <button
                 type="button"
@@ -227,8 +278,10 @@
               </button>
               <button
                 type="button"
-                class="btn btn-outline-success"
-                (click)="addEmployee(this.addform.value)"
+                class="btn btn-primary"
+                data-bs-toggle="modal"
+                data-bs-target="#update"
+                (click)="update(this.addform.value)"
               >
                 Update
               </button>

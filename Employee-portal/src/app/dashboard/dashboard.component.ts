@@ -41,11 +41,12 @@ export class DashboardComponent {
     });
   }
   getuser(){
+    this.store=[];
     this.api.getEmployee().subscribe(res=>{
       console.log(res);
       console.log("response is comming");
       this.alluser=res;
-      this.alluser=this.alluser.data;
+      // this.alluser=this.alluser.data;
       this.alluser=this.alluser.rows;
       console.log(this.alluser);
       for (const key in this.alluser) {
@@ -55,7 +56,7 @@ export class DashboardComponent {
               this.api.getAllEmployee(element.id).subscribe(res=>{
                 console.log(res);
                 this.exchange=res;
-                this.exchange=this.exchange.data;
+                // this.exchange=this.exchange.data;
                 this.store.push(this.exchange);
                 console.log("data is came");
               },rej=>{
@@ -69,8 +70,8 @@ export class DashboardComponent {
     })
   }
   
-  delete(data:any,data1:any){
-    this.api.deleteEmployee(data._id,data1._rev).subscribe(res=>{
+  delete(data:any){
+    this.api.deleteEmployee(data._id,data._rev).subscribe(res=>{
       console.log("your data has deleted, please refresh the page");
     },rej=>{
       console.log("oops can not delete"+rej);
@@ -79,12 +80,15 @@ export class DashboardComponent {
   }
   
   onEdit(row:any){
-    this.addform.controls['name'].setValue(row.name);
+    // console.log(row);
+    this.addform.controls['id'].setValue(row.id);
     this.addform.controls['username'].setValue(row.username);
-    this.addform.controls['details'].setValue(row.details);
-    // this.addform.controls['date'].setValue(row.date);
-  //   this.addform.controls['_id'].setValue(row._id);
-  //   this.addform.controls['_rev'].setValue(row._rev);
+    this.addform.controls['email'].setValue(row.email);
+    this.addform.controls['dob'].setValue(row.dob);
+    this.addform.controls['mobileno'].setValue(row.mobileno);
+    this.addform.controls['bloodgroup'].setValue(row.bloodgroup);
+    this.addform.controls['_id'].setValue(row._id);
+    this.addform.controls['_rev'].setValue(row._rev);
   }
 
   update(formvalue:NgForm){

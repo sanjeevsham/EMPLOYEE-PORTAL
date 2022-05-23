@@ -2,7 +2,7 @@
   <div class="imgBx"><img src="../../assets/project 14.jpg" /></div>
   <div class="content">
     <div class="formbox">
-      <h2>User</h2>
+      <h2>Admin</h2>
       <form [formGroup]="formgroup">
         <div class="inputbox">
           <input
@@ -37,7 +37,12 @@
           </span>
         </div>
         <div class="inputbox">
-          <input type="submit" value="Login" />
+          <input
+            type="submit"
+            value="Login"
+            routerLink="/dashboard"
+            routerLinkActive="active"
+          />
         </div>
         <p>
           Don't have a account?

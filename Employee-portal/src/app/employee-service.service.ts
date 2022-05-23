@@ -12,6 +12,7 @@ export class EmployeeServiceService {
     console.log(doc);
     return this.http.post('http://localhost:8000/post_query/',doc);
   }
+  
 
   getEmployee(){
     return this.http.get('http://localhost:8000/get_query/');
@@ -30,5 +31,8 @@ export class EmployeeServiceService {
 
   registerdata(formObject:any){
     return this.http.post('http://localhost:8000/postquery',formObject)
+  }
+  getregisterdata(formObject:any){
+    return this.http.get('http://localhost:8000/postquery',formObject)
   }
 }
