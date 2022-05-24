@@ -11,11 +11,12 @@ import { DashboardComponent} from './dashboard/dashboard.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { StartUpComponent } from './start-up/start-up.component';
-import { FotgotPassComponent } from './fotgot-pass/fotgot-pass.component';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import{ HttpClientModule} from '@angular/common/http';
 import { SplasherComponent } from './splasher/splasher.component';
 import { QueryComponent } from './query/query.component';
+import { ApplyComponent } from './apply/apply.component';
+import { AppliedUsersComponent } from './applied-users/applied-users.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,9 +29,10 @@ import { QueryComponent } from './query/query.component';
     AboutUsComponent,
     ContactUsComponent,
     StartUpComponent,
-    FotgotPassComponent,
     SplasherComponent,
     QueryComponent,
+    ApplyComponent,
+    AppliedUsersComponent,
   ],
   imports: [
     BrowserModule,

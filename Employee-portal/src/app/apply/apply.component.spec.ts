@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FotgotPassComponent } from './fotgot-pass.component';
+import { ApplyComponent } from './apply.component';
 
-describe('FotgotPassComponent', () => {
-  let component: FotgotPassComponent;
-  let fixture: ComponentFixture<FotgotPassComponent>;
+describe('ApplyComponent', () => {
+  let component: ApplyComponent;
+  let fixture: ComponentFixture<ApplyComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FotgotPassComponent ]
+      declarations: [ ApplyComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(FotgotPassComponent);
+    fixture = TestBed.createComponent(ApplyComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

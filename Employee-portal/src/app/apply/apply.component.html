@@ -1,0 +1,128 @@
+<section>
+  <form [formGroup]="addform">
+    <div class="mb-3">
+      <label for="firstname" class="form-label">First Name </label>
+      <input
+        type="text"
+        class="form-control"
+        formControlName="firstname"
+        id="firstname"
+        aria-describedby="emailHelp"
+        required
+      />
+      <span
+        class="text-danger"
+        *ngIf="
+          addform.controls['firstname'].touched &&
+          addform.hasError('required', 'firstname')
+        "
+        >* Name required!!</span
+      >
+    </div>
+    <div class="mb-3">
+      <label for="username" class="form-label">Last Name </label>
+      <input
+        type="text"
+        class="form-control"
+        formControlName="username"
+        id="username"
+        aria-describedby="emailHelp"
+      />
+      <span
+        class="text-danger"
+        *ngIf="
+          addform.controls['lastname'].touched &&
+          addform.hasError('required', 'lastname')
+        "
+        >* Last Name required!!</span
+      >
+    </div>
+    <div class="mb-3">
+      <label for="email" class="form-label">Email </label>
+      <input
+        type="text"
+        class="form-control"
+        formControlName="email"
+        id="email"
+        aria-describedby="emailHelp"
+      />
+      <span
+        class="text-danger"
+        *ngIf="addform.controls.email.errors && addform.controls.email.touched"
+      >
+        <br />Invalid Email Address
+      </span>
+    </div>
+    <div class="mb-3">
+      <label for="dob" class="form-label">Date of Birth</label>
+      <input
+        type="date"
+        class="form-control"
+        formControlName="dob"
+        id="dob"
+        aria-describedby="emailHelp"
+      />
+      <span
+        class="text-danger"
+        *ngIf="
+          addform.controls['dob'].touched && addform.hasError('required', 'dob')
+        "
+        >* DOB required!!</span
+      >
+    </div>
+    <div class="mb-3">
+      <label for="mobileno" class="form-label">Mobile No </label>
+      <input
+        type="number"
+        class="form-control"
+        formControlName="mobileno"
+        id="mobileno"
+        aria-describedby="emailHelp"
+      />
+      <span
+        class="text-danger"
+        *ngIf="
+          addform.controls['mobileno'].touched &&
+          addform.hasError('required', 'mobileno')
+        "
+        >* Mobile no required!!</span
+      >
+    </div>
+    <div class="mb-3">
+      <label for="bloodgroup" class="form-label">Blood Group </label>
+      <input
+        type="text"
+        class="form-control"
+        formControlName="bloodgroup"
+        id="bloodgroup"
+        aria-describedby="emailHelp"
+      />
+      <span
+        class="text-danger"
+        *ngIf="
+          addform.controls['bloodgroup'].touched &&
+          addform.hasError('required', 'bloodgroup')
+        "
+        >* Blood group required!!</span
+      >
+    </div>
+    <div class="row100">
+      <div class="col">
+        <input
+          type="submit"
+          value="Het me"
+          (click)="addUser(this.addform.value)"
+        />
+      </div>
+      <!-- <button
+        type="button"
+        class="btn btn-primary"
+        data-bs-toggle="modal"
+        data-bs-target="#addform"
+        (click)="update(this.addform.value)"
+      >
+        Edit employee
+      </button> -->
+    </div>
+  </form>
+</section>

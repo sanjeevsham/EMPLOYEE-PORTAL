@@ -40,6 +40,15 @@
       >
         Getdata
       </button>
+      <button
+        class="btn btn-outline-success"
+        id="button1"
+        data-bs-toggle="modal"
+        routerLink="/applied"
+        routerLinkActive="active-link"
+      >
+        Applied
+      </button>
       <input
         class="input1"
         type="submit"
@@ -126,7 +135,16 @@
                 formControlName="id"
                 id="id"
                 aria-describedby="emailHelp"
+                required
               />
+              <span
+                class="text-danger"
+                *ngIf="
+                  addform.controls['id'].touched &&
+                  addform.hasError('required', 'id')
+                "
+                >* ID required!!</span
+              >
             </div>
             <div class="mb-3">
               <label for="username" class="form-label">Name </label>
@@ -137,6 +155,14 @@
                 id="username"
                 aria-describedby="emailHelp"
               />
+              <span
+                class="text-danger"
+                *ngIf="
+                  addform.controls['username'].touched &&
+                  addform.hasError('required', 'username')
+                "
+                >* Name required!!</span
+              >
             </div>
             <div class="mb-3">
               <label for="email" class="form-label">Email </label>
@@ -147,6 +173,15 @@
                 id="email"
                 aria-describedby="emailHelp"
               />
+              <span
+                class="text-danger"
+                *ngIf="
+                  addform.controls.email.errors &&
+                  addform.controls.email.touched
+                "
+              >
+                <br />Invalid Email Address
+              </span>
             </div>
             <div class="mb-3">
               <label for="dob" class="form-label">Date of Birth</label>
@@ -157,6 +192,14 @@
                 id="dob"
                 aria-describedby="emailHelp"
               />
+              <span
+                class="text-danger"
+                *ngIf="
+                  addform.controls['dob'].touched &&
+                  addform.hasError('required', 'dob')
+                "
+                >* DOB required!!</span
+              >
             </div>
             <div class="mb-3">
               <label for="mobileno" class="form-label">Mobile No </label>
@@ -167,6 +210,14 @@
                 id="mobileno"
                 aria-describedby="emailHelp"
               />
+              <span
+                class="text-danger"
+                *ngIf="
+                  addform.controls['mobileno'].touched &&
+                  addform.hasError('required', 'mobileno')
+                "
+                >* Mobile no required!!</span
+              >
             </div>
             <div class="mb-3">
               <label for="bloodgroup" class="form-label">Blood Group </label>
@@ -177,6 +228,14 @@
                 id="bloodgroup"
                 aria-describedby="emailHelp"
               />
+              <span
+                class="text-danger"
+                *ngIf="
+                  addform.controls['bloodgroup'].touched &&
+                  addform.hasError('required', 'bloodgroup')
+                "
+                >* Blood group required!!</span
+              >
             </div>
             <div class="modal-footer">
               <button
