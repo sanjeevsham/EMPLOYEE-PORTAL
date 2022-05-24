@@ -11,6 +11,11 @@ import { EmployeeServiceService } from '../employee-service.service';
 export class AdminLoginComponent implements OnInit {
   successMessage: string = '';
   adminform!: FormGroup;
+  empRecord: any = {
+    username: '',
+    password: '',
+   };
+  
   constructor(
     private formbuilder: FormBuilder,
     private api: EmployeeServiceService,
@@ -25,11 +30,16 @@ export class AdminLoginComponent implements OnInit {
   }
 
   ngOnInit(): void {
-  }
+    this.adminform = this.formbuilder.group({
+    username: ['', Validators.required],
+    // password: ['',[Validators.required,Validators.pattern("[a-zA-z@_]{6,}")]],
+    password: ['',[Validators.required]]
+  });
+}
 
   alogin(FormValue: any) {
     console.log(FormValue.username);
-    this.api.getdata(FormValue).subscribe((data: any) => {
+    this.api.getdata(FormValue.username).subscribe((data: any) => {
       console.log(data);
       const adminData= data.docs[0];
    if (

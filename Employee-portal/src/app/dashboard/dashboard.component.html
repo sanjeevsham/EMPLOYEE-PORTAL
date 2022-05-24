@@ -1,6 +1,6 @@
-<nav class="navbar navbar-expand-lg bg-light">
+<nav class="navbar navbar-expand-lg bg-dark">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Employee Portal</a>
+    <a class="navbar-brand" href="">Employee Portal</a>
     <button
       class="navbar-toggler"
       type="button"
@@ -17,6 +17,7 @@
       <button
         class="btn btn-outline-success"
         data-bs-toggle="modal"
+        id="button1"
         data-bs-target="#addform"
         type="submit"
       >
@@ -24,12 +25,28 @@
       </button>
       <button
         class="btn btn-outline-success"
+        id="button1"
         data-bs-toggle="modal"
         routerLink="/query"
         routerLinkActive="active-link"
       >
         Query
       </button>
+      <button
+        class="btn btn-outline-success"
+        id="button1"
+        data-bs-toggle="modal"
+        (click)="getuser()"
+      >
+        Getdata
+      </button>
+      <input
+        class="input1"
+        type="submit"
+        value="Logout"
+        routerLink="/splasher"
+        routerLinkActive="active"
+      />
     </div>
   </div>
 </nav>
@@ -78,9 +95,7 @@
       </tr>
     </tbody>
   </table>
-  <div>
-    <button type="button" (click)="getuser()">get</button>
-  </div>
+  <div></div>
 
   <!-- Add Employee -->
   <div
