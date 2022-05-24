@@ -14,6 +14,8 @@ import { StartUpComponent } from './start-up/start-up.component';
 import { FotgotPassComponent } from './fotgot-pass/fotgot-pass.component';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import{ HttpClientModule} from '@angular/common/http';
+import { SplasherComponent } from './splasher/splasher.component';
+import { QueryComponent } from './query/query.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,6 +29,8 @@ import{ HttpClientModule} from '@angular/common/http';
     ContactUsComponent,
     StartUpComponent,
     FotgotPassComponent,
+    SplasherComponent,
+    QueryComponent,
   ],
   imports: [
     BrowserModule,

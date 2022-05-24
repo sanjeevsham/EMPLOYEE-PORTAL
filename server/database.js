@@ -5,6 +5,7 @@ var username = 'apikey-v2-msz5pn0gamsoigpftay3cndoju75rdeejvo1cd3paw0';
 var password = '1cd6b51776516316358ce28da3097318';
 
 var cloudant = Cloudant({ url: url, username: username, password: password });
+var employee = cloudant.use('employee-details');
 
 // module.exports.insert = function (paramsvalue) {
 //   console.log(paramsvalue);
@@ -30,6 +31,7 @@ update = function (doc, dbname) {
 };
 
 module.exports = {
+  employee,
   insert,
   get,
   getAll,

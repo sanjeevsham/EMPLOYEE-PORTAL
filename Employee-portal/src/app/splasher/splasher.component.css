@@ -1,0 +1,90 @@
+/* * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "poppins", sans-serif;
+} */
+section {
+  overflow-x: hidden;
+  margin: 10px;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "poppins", sans-serif;
+}
+.container {
+  position: relative;
+  width: 100%;
+}
+.sidebar {
+  position: fixed;
+  width: 300px;
+  height: 100%;
+  margin-left: -8%;
+  border-radius: 20px;
+  background: rgb(34, 31, 31);
+  overflow-x: hidden;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  z-index: 2;
+}
+.sidebar ul li {
+  width: 100%;
+  list-style: none;
+}
+.sidebar ul li :hover {
+  color: lightgray;
+}
+.sidebar ul li :first-child:hover {
+  background: none;
+}
+/* .sidebar ul li :first-child {
+  line-height: 60px;
+  margin-bottom: 20px;
+  font-weight: 600;
+  border-bottom: 1px solid silver;
+} */
+.sidebar ul li a {
+  width: 100%;
+  text-decoration: none;
+  color: white;
+  height: 60px;
+  display: flex;
+  align-items: center;
+}
+.sidebar ul li a i {
+  min-width: 60px;
+  font-size: 24px;
+  text-align: center;
+}
+.sidebar.title {
+  padding: 0 10px;
+  font-size: 20;
+}
+.top {
+  /* position: absolute; */
+  width: calc(100% -300px);
+  min-height: 100vh;
+  left: 300px;
+  /* background: lightgray; */
+}
+.user {
+  position: relative;
+  width: 50px;
+  height: 50px;
+}
+img {
+  position: absolute;
+  width: 5%;
+  height: 5%;
+  top: 15px;
+  left: 100%;
+  object-fit: cover;
+}
+input {
+  width: 40%;
+  margin-left: 25%;
+  margin-top: 20px;
+  border-radius: 20px;
+  border: none;
+  background: transparent;
+  border: 2px solid silver;
+}

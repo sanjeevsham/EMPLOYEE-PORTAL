@@ -1,50 +1,137 @@
 <section>
   <div class="container">
     <h2>Contact Us</h2>
-    <div class="row100">
-      <div class="col">
-        <div class="inputBox">
-          <input type="text" name="" required="required" />
-          <span class="text">First Name </span>
-          <span class="line"></span>
+    <form [formGroup]="addform">
+      <div class="row100">
+        <div class="col">
+          <div class="inputBox">
+            <input
+              type="text"
+              id="firstname"
+              formControlName="firstname"
+              class="form-control"
+            />
+            <span for="firstname" class="text">First Name </span>
+            <span class="line"></span>
+          </div>
+        </div>
+        <div class="col">
+          <div class="inputBox">
+            <input
+              type="text"
+              id="lastname"
+              formControlName="lastname"
+              class="form-control"
+            />
+            <span for="lastname" class="text">Last Name </span>
+            <span class="line"></span>
+          </div>
+        </div>
+        <div class="col">
+          <div class="inputBox">
+            <input
+              type="text"
+              id="email"
+              formControlName="email"
+              class="form-control"
+            />
+            <span for="email" class="text">Email </span>
+            <span class="line"></span>
+          </div>
+        </div>
+        <div class="col">
+          <div class="inputBox">
+            <input
+              type="text"
+              value=""
+              formControlName="mobileno"
+              class="form-control"
+              id="mobileno"
+            />
+            <span for="mobileno" class="text">Mobile</span>
+            <span class="line"></span>
+          </div>
+        </div>
+        -
+      </div>
+      <div class="row100">
+        <div class="col">
+          <div class="inputBox textarea">
+            <input
+              type="text"
+              value=""
+              formControlName="query"
+              class="form-control"
+              id="query"
+            />
+            <textarea required="required"></textarea>
+            <span for="query" class="text">Type Your Message Here....</span>
+            <span class="line"></span>
+          </div>
         </div>
       </div>
-      <div class="col">
-        <div class="inputBox">
-          <input type="text" name="" required="required" />
-          <span class="text">Last Name </span>
-          <span class="line"></span>
+      <div class="row100">
+        <div class="col">
+          <input
+            type="submit"
+            value="Het me"
+            (click)="addQuery(this.addform.value)"
+          />
         </div>
       </div>
-      <div class="col">
-        <div class="inputBox">
-          <input type="text" name="" required="required" />
-          <span class="text">Email </span>
-          <span class="line"></span>
-        </div>
-      </div>
-      <div class="col">
-        <div class="inputBox">
-          <input type="text" name="" required="required" />
-          <span class="text">Mobile</span>
-          <span class="line"></span>
-        </div>
-      </div>
-      -
-    </div>
-    <div class="row100">
-      <div class="col">
-        <div class="inputBox textarea">
-          <textarea required="required"></textarea>
-          <span class="text">Type Your Message Here....</span>
-          <span class="line"></span>
-        </div>
-      </div>
-    </div>
-    <div class="row100">
-      <div class="col">
-        <input type="submit" value="Het me" />
-      </div>
-    </div>
+    </form>
   </div>
 </section>
+<!-- <div class="container">
+  <h1>ADD CONTACTS</h1>
+  <form [formGroup]="addform">
+    <label for="firstname">First Name</label>
+    <input
+      type="text"
+      id="firstname"
+      formControlName="firstname"
+      class="form-control"
+      placeholder="Your name.."
+    />
+
+    <label for="lastname">Last Name</label>
+    <input
+      type="text"
+      id="lastname"
+      formControlName="lastname"
+      class="form-control"
+      placeholder="Your last name.."
+    />
+
+    <label for="email">Email</label>
+    <select id="email" formControlName="email" class="form-control"></select>
+
+    <label for="mobileno">Mobile Number</label>
+    <input
+      type="text"
+      value=""
+      placeholder="enter your mobile number"
+      formControlName="mobileno"
+      class="form-control"
+      id="mobileno"
+    />
+    <label for="query"> Query</label>
+    <input
+      type="text"
+      value=""
+      placeholder="enter your mobile number"
+      formControlName="query"
+      class="form-control"
+      id="query"
+    />
+    <div>
+      <button
+        type="button"
+        class="btn btn-primary"
+        (click)="addQuery(this.addform.value)"
+      >
+        ADD
+      </button>
+    </div>
+  </form>
+</div> -->

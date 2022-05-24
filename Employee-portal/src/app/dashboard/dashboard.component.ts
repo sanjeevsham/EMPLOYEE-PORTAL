@@ -58,7 +58,7 @@ export class DashboardComponent {
                 this.exchange=res;
                 // this.exchange=this.exchange.data;
                 this.store.push(this.exchange);
-                console.log("data is came");
+                console.log("data receved");
               },rej=>{
                 console.log("error"+rej);
               })
@@ -73,6 +73,7 @@ export class DashboardComponent {
   delete(data:any){
     this.api.deleteEmployee(data._id,data._rev).subscribe(res=>{
       console.log("your data has deleted, please refresh the page");
+      alert('your data was deleted successfully')
     },rej=>{
       console.log("oops can not delete"+rej);
     })
@@ -94,9 +95,8 @@ export class DashboardComponent {
   update(formvalue:NgForm){
     console.log(formvalue);
     this.api.updateEmployee(formvalue).subscribe(res=>{
-      // console.log("update success");
-      // console.log(res);
       console.log("Your data was updated successfully!");
+      alert('your data was Updated successfully')
     },rej=>{
       console.log("can not update....."+rej);
     })

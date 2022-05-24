@@ -1,0 +1,30 @@
+<div class="container">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Firstname</th>
+        <th scope="col">Lastname</th>
+        <th scope="col">Email</th>
+        <th scope="col">Mobile NO</th>
+        <th scope="col">Query</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let row of store">
+        <th>{{ row.firstname }}</th>
+        <th>{{ row.lastname }}</th>
+        <th>{{ row.email }}</th>
+        <th>{{ row.mobileno }}</th>
+        <th>{{ row.query }}</th>
+
+        <!-- <th>{{ row._id }}</th>
+          <th>{{ row._rev }}</th> -->
+        <td>
+          <button class="btn btn-primary" (click)="erase(row._id, row._rev)">
+            Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

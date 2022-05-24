@@ -3,19 +3,24 @@
   <div class="content">
     <div class="formbox">
       <h2>Admin</h2>
-      <form [formGroup]="formgroup">
+      <form
+        class="myform"
+        [formGroup]="adminform"
+        (ngSubmit)="alogin(this.adminform.value)"
+      >
         <div class="inputbox">
           <input
             type="text"
             placeholder="Username"
             formControlName="username"
+            id="adminname"
             class="form-control"
           />
           <span
             class="text-danger"
             *ngIf="
-              formgroup.controls['username'].touched &&
-              formgroup.hasError('required', 'username')
+              adminform.controls['username'].touched &&
+              adminform.hasError('required', 'username')
             "
             >* Name is required!!</span
           >
@@ -25,12 +30,14 @@
             type="password"
             placeholder="Password"
             formControlName="password"
+            id="password"
+            class="form-control"
           />
           <span
             class="text-danger"
             *ngIf="
-              formgroup.controls.password.errors &&
-              formgroup.controls.password.touched
+              adminform.controls.password.errors &&
+              adminform.controls.password.touched
             "
           >
             <br />Atleast 6 character Password is Required
@@ -44,10 +51,14 @@
             routerLinkActive="active"
           />
         </div>
-        <p>
+        <div class="text-center text-success" *ngIf="successMessage">
+          {{ successMessage }}
+        </div>
+        <!-- <p>
           Don't have a account?
           <a routerLink="/sign-up" class="text-primary">Signup</a>
-        </p>
+        </p>  routerLink="/dashboard"
+            routerLinkActive="active" -->
       </form>
     </div>
   </div>

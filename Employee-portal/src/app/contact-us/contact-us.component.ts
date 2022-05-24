@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup,FormBuilder,Validators, NgForm} from '@angular/forms';
+import { EmployeeServiceService } from '../employee-service.service';
 
 @Component({
   selector: 'app-contact-us',
@@ -7,20 +8,38 @@ import { FormGroup,FormBuilder,Validators, NgForm} from '@angular/forms';
   styleUrls: ['./contact-us.component.css']
 })
 export class ContactUsComponent implements OnInit {
-  signupform!:FormGroup;
-  
-  constructor(private formbuilder:FormBuilder) { }
+  addform!:FormGroup;
+  store:any=[];
+
+
+  constructor(private formbuilder:FormBuilder,private api:EmployeeServiceService) { }
 
   ngOnInit(): void {
-    this.signupform=this.formbuilder.group (
-      {
-       username:['',Validators.required],
-       email: ['',[Validators.required,Validators.pattern("[a-zA-Z0-9]*@gmail.com")]],
-       password: ['',[Validators.required,Validators.pattern("[a-zA-z@_]{6,}")]],
-       confirmpassword: ['',[Validators.required,Validators.pattern("[a-zA-z@_]{6,}")]],
-
-      }
-    )
-   
-   }
+      this.addform=this.formbuilder.group({
+       firstname:['',Validators.required],
+       lastname:['',Validators.required],
+       email:['',Validators.required],
+       mobileno:['',Validators.required],
+       query:['',Validators.required],
+       _id:[''],
+       _rev:[''],
+      })
+     }
+    
+    
+     
+     addQuery(formvalue:NgForm){
+       console.log('hi');
+       console.log(formvalue);
+       this.store.push(formvalue)
+       this.api.addQuery(formvalue).subscribe(res=>{
+        console.log("hello"+res);
+        console.log("Your data was posted successfully!");
+        window.location.replace("/query")
+        alert('your data is added successfully')
+        },rej=>{
+        console.log("opps! Can not post data"+rej);
+        });
+     }
+     
 }

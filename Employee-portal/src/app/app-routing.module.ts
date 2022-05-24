@@ -10,8 +10,10 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
 import { StartUpComponent } from './start-up/start-up.component';
 import { dashCaseToCamelCase } from '@angular/compiler/src/util';
 import { HomeComponent } from './home/home.component';
+import { SplasherComponent } from './splasher/splasher.component';
+import { QueryComponent } from './query/query.component';
 const routes: Routes = [
-  {path:'',component:AdminLoginComponent },
+  {path:'adminlogin',component:AdminLoginComponent },
   {path:'userlogin',component:UserLoginComponent },
   {path:'sign-up',component:SignUpComponent },
   {path:'startup',component:StartUpComponent},
@@ -19,7 +21,9 @@ const routes: Routes = [
   {path:'contactus',component:ContactUsComponent},
   {path:'login',component:CarrierWayComponent},
   {path:'dashboard',component:DashboardComponent},
-  {path:'home',component:HomeComponent}
+  {path:'home',component:HomeComponent},
+  {path:'splasher',component:SplasherComponent},
+  {path:'query',component:QueryComponent}
   
 ];
 

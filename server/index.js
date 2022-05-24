@@ -48,6 +48,23 @@ app.post('/post_query', (request, response) => {
   });
   console.log('Data added');
 });
+app.post('/post_data', (request, response) => {
+  var object = {
+    firstname: request.body.firstname,
+    lastname: request.body.lastname,
+    email: request.body.email,
+    mobileno: request.body.mobileno,
+    query: request.body.query,
+  };
+  dbconnection.insert(object, 'query-data').then((res) => {
+    if (res) {
+      response.send(res);
+    } else {
+      response.send('error');
+    }
+  });
+  console.log('Data added');
+});
 
 //To get all the _id,_rev... form database
 app.get('/get_query', (request, response) => {
@@ -60,10 +77,32 @@ app.get('/get_query', (request, response) => {
     }
   });
 });
+app.get('/get_data', (request, response) => {
+  console.log('start');
+  dbconnection.get('query-data').then((res) => {
+    if (res) {
+      response.send(res);
+    } else {
+      response.send('error');
+    }
+  });
+});
 
 //To get the all user data value from database
 app.get('/get_all_query/:id', (request, response) => {
   dbconnection.getAll(request.params.id, 'employee-details').then((res) => {
+    if (res) {
+      console.log(res);
+      response.send(res);
+    } else {
+      response.send('error');
+    }
+  });
+
+  console.log('end');
+});
+app.get('/get_all_data/:id', (request, response) => {
+  dbconnection.getAll(request.params.id, 'query-data').then((res) => {
     if (res) {
       console.log(res);
       response.send(res);
@@ -90,6 +129,19 @@ app.delete('/delete_query/:id/:id1', (request, response) => {
       }
     });
 });
+// app.delete('/delete_query/:id/:id1', (request, response) => {
+//   dbconnection
+//     .deleted(request.params.id, request.params.id1, 'query-data')
+//     .then((res) => {
+//       if (res) {
+//         console.log('deleted success');
+//         response.send(res);
+//       } else {
+//         console.log('can not deleted...');
+//         response.send('error');
+//       }
+//     });
+// });
 
 // To update the particular user data using id
 app.put('/update_query', (request, response) => {
@@ -115,6 +167,28 @@ app.put('/update_query', (request, response) => {
     }
   });
 });
+// app.put('/update_query', (request, response) => {
+//   console.log('hey');
+//   var object = {
+//     _id: request.body._id,
+//     _rev: request.body._rev,
+//     firstname: request.body.firstname,
+//     lastname: request.body.lastname,
+//     email: request.body.email,
+//     mobileno: request.body.mobileno,
+//     query: request.body.query,
+//   };
+//   // console.log(object);
+//   dbconnection.update(object, 'query-data').then((res) => {
+//     if (res) {
+//       console.log('updated....');
+//       response.send(res);
+//     } else {
+//       console.log('can not updated....');
+//       response.send('error');
+//     }
+//   });
+// });
 
 app.listen(port, (err) => {
   if (err) {

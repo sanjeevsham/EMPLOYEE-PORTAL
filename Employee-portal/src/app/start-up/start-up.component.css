@@ -173,7 +173,7 @@ p {
 }
 .heading1:hover {
   background: linear-gradient(to left, rgb(152, 228, 117), rgb(219, 27, 75));
-  /* -webkit-background-clip: text; */
+  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 #slider {
