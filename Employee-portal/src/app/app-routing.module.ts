@@ -13,6 +13,9 @@ import { SplasherComponent } from './splasher/splasher.component';
 import { QueryComponent } from './query/query.component';
 import { ApplyComponent } from './apply/apply.component';
 import { AppliedUsersComponent } from './applied-users/applied-users.component';
+import { DepartmentComponent } from './department/department.component';
+import { EmployeeServiceService } from './employee-service.service';
+import { EmployementComponent } from './employement/employement.component';
 const routes: Routes = [
   {path:'adminlogin',component:AdminLoginComponent },
   {path:'userlogin',component:UserLoginComponent },
@@ -26,7 +29,9 @@ const routes: Routes = [
   {path:'splasher',component:SplasherComponent},
   {path:'query',component:QueryComponent},
   {path:'applied',component:AppliedUsersComponent},
-  {path:'apply',component:ApplyComponent}
+  {path:'apply',component:ApplyComponent},
+  {path:'dept',component:DepartmentComponent},
+  {path:'employee',component:EmployementComponent}
 
   
 ];

@@ -17,6 +17,8 @@ import { SplasherComponent } from './splasher/splasher.component';
 import { QueryComponent } from './query/query.component';
 import { ApplyComponent } from './apply/apply.component';
 import { AppliedUsersComponent } from './applied-users/applied-users.component';
+import { DepartmentComponent } from './department/department.component';
+import { EmployementComponent } from './employement/employement.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,6 +35,8 @@ import { AppliedUsersComponent } from './applied-users/applied-users.component';
     QueryComponent,
     ApplyComponent,
     AppliedUsersComponent,
+    DepartmentComponent,
+    EmployementComponent,
   ],
   imports: [
     BrowserModule,
