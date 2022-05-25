@@ -55,7 +55,8 @@ app.post('/post_user', (request, response) => {
     email: request.body.email,
     dob: request.body.dob,
     mobileno: request.body.mobileno,
-    bloodgroup: request.body.bloodgroup,
+    qualification: request.body.qualification,
+    age: request.body.age,
   };
   dbconnection.insert(object, 'user-data').then((res) => {
     if (res) {

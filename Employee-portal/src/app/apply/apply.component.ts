@@ -21,7 +21,8 @@ export class ApplyComponent implements OnInit {
       email: ['',[Validators.required,Validators.pattern("[a-zA-Z0-9]*@gmail.com")]],
       dob:['',Validators.required],
       mobileno:['',Validators.required],
-      bloodgroup:['',Validators.required],
+      qualification:['',Validators.required],
+      age:['',Validators.required],
       _id:[''], 
       _rev:[''],
       })

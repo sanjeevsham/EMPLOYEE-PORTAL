@@ -1,15 +1,17 @@
-<section>
+<section class="container">
   <form [formGroup]="addform">
     <div class="mb-3">
-      <label for="firstname" class="form-label">First Name </label>
-      <input
-        type="text"
-        class="form-control"
-        formControlName="firstname"
-        id="firstname"
-        aria-describedby="emailHelp"
-        required
-      />
+      <label for="firstname" class="head">First Name </label>
+      <div class="inputbox">
+        <input
+          type="text"
+          class="form-control"
+          formControlName="firstname"
+          id="firstname"
+          aria-describedby="emailHelp"
+          required
+        />
+      </div>
       <span
         class="text-danger"
         *ngIf="
@@ -20,14 +22,16 @@
       >
     </div>
     <div class="mb-3">
-      <label for="username" class="form-label">Last Name </label>
-      <input
-        type="text"
-        class="form-control"
-        formControlName="username"
-        id="username"
-        aria-describedby="emailHelp"
-      />
+      <label for="lastname" class="head">Last Name </label>
+      <div class="inputbox">
+        <input
+          type="text"
+          class="form-control"
+          formControlName="lastname"
+          id="lastname"
+          aria-describedby="emailHelp"
+        />
+      </div>
       <span
         class="text-danger"
         *ngIf="
@@ -38,14 +42,16 @@
       >
     </div>
     <div class="mb-3">
-      <label for="email" class="form-label">Email </label>
-      <input
-        type="text"
-        class="form-control"
-        formControlName="email"
-        id="email"
-        aria-describedby="emailHelp"
-      />
+      <label for="email" class="head">Email </label>
+      <div class="inputbox">
+        <input
+          type="text"
+          class="form-control"
+          formControlName="email"
+          id="email"
+          aria-describedby="emailHelp"
+        />
+      </div>
       <span
         class="text-danger"
         *ngIf="addform.controls.email.errors && addform.controls.email.touched"
@@ -54,14 +60,16 @@
       </span>
     </div>
     <div class="mb-3">
-      <label for="dob" class="form-label">Date of Birth</label>
-      <input
-        type="date"
-        class="form-control"
-        formControlName="dob"
-        id="dob"
-        aria-describedby="emailHelp"
-      />
+      <label for="dob" class="head">Date of Birth</label>
+      <div class="inputbox">
+        <input
+          type="date"
+          class="form-control"
+          formControlName="dob"
+          id="dob"
+          aria-describedby="emailHelp"
+        />
+      </div>
       <span
         class="text-danger"
         *ngIf="
@@ -71,14 +79,16 @@
       >
     </div>
     <div class="mb-3">
-      <label for="mobileno" class="form-label">Mobile No </label>
-      <input
-        type="number"
-        class="form-control"
-        formControlName="mobileno"
-        id="mobileno"
-        aria-describedby="emailHelp"
-      />
+      <label for="mobileno" class="head">Mobile No </label>
+      <div class="inputbox">
+        <input
+          type="number"
+          class="form-control"
+          formControlName="mobileno"
+          id="mobileno"
+          aria-describedby="emailHelp"
+        />
+      </div>
       <span
         class="text-danger"
         *ngIf="
@@ -89,21 +99,42 @@
       >
     </div>
     <div class="mb-3">
-      <label for="bloodgroup" class="form-label">Blood Group </label>
-      <input
-        type="text"
-        class="form-control"
-        formControlName="bloodgroup"
-        id="bloodgroup"
-        aria-describedby="emailHelp"
-      />
+      <label for="qualification" class="head">Qualification </label>
+      <div class="inputbox">
+        <input
+          type="text"
+          class="form-control"
+          formControlName="qualification"
+          id="qualification"
+          aria-describedby="emailHelp"
+        />
+      </div>
       <span
         class="text-danger"
         *ngIf="
-          addform.controls['bloodgroup'].touched &&
-          addform.hasError('required', 'bloodgroup')
+          addform.controls['qualification'].touched &&
+          addform.hasError('required', 'qualification')
         "
-        >* Blood group required!!</span
+        >* Qualification required!!</span
+      >
+    </div>
+    <div class="mb-3">
+      <label for="age" class="head">Age </label>
+      <div class="inputbox">
+        <input
+          type="text"
+          class="form-control"
+          formControlName="age"
+          id="age"
+          aria-describedby="emailHelp"
+        />
+      </div>
+      <span
+        class="text-danger"
+        *ngIf="
+          addform.controls['age'].touched && addform.hasError('required', 'age')
+        "
+        >* Qualification required!!</span
       >
     </div>
     <div class="row100">

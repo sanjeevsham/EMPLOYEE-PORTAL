@@ -19,13 +19,16 @@ section {
   width: 100%;
   max-width: 1000px;
   padding: 50px;
-  background: rgba(255, 255, 255, 0.1);
+  /* background: rgba(255, 255, 255, 0.1); */
   box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 20px;
   overflow: hidden;
   border: 2px solid silver;
   backdrop-filter: blur(25px);
+}
+.container:hover {
+  box-shadow: 0 5px 10px 0 rgb(8, 212, 248);
 }
 .container::before {
   content: "";
@@ -34,7 +37,7 @@ section {
   left: -40%;
   width: 100%;
   height: 100%;
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(0, 0, 0, 0.1);
   pointer-events: none;
   transform: skewX(-15deg);
 }
@@ -119,7 +122,7 @@ section {
   display: block;
   width: 100%;
   height: 2px;
-  background: rgba(235, 222, 222, 0.541);
+  background: silver;
   transition: 0.5s;
   border-radius: 2px;
   pointer-events: none;
@@ -142,10 +145,10 @@ section {
   padding: 10px 40px;
   cursor: pointer;
   border-radius: 20px;
-  border: 2px solid lightgray;
+  border: 2px solid silver;
   background: transparent;
   color: aliceblue;
 }
 .container .row100 .col input[type="submit"]:hover {
-  background-color: rgb(56, 47, 47);
+  background-color: rgb(47, 47, 221);
 }

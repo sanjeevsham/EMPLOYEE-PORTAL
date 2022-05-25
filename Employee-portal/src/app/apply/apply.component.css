@@ -1,0 +1,30 @@
+.container {
+  width: 40%;
+  margin-left: 30%;
+  margin-bottom: 10%;
+  border: 2px solid white;
+  padding: 30px;
+  border-radius: 20px;
+}
+.head {
+  color: white;
+}
+input {
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+input[type="submit"] {
+  padding: 10px 40px;
+  cursor: pointer;
+  border-radius: 20px;
+  border: 2px solid silver;
+  background: transparent;
+  color: aliceblue;
+}
+input[type="submit"]:hover {
+  box-shadow: 0 0 10px rgb(119, 188, 211);
+}
+.inputbox input:hover {
+  border-color: rgb(119, 204, 211);
+  box-shadow: 0 0 10px rgb(119, 188, 211);
+}
