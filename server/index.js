@@ -214,6 +214,7 @@ app.put('/update_query', (request, response) => {
     }
   });
 });
+
 // app.put('/update_query', (request, response) => {
 //   console.log('hey');
 //   var object = {
@@ -236,7 +237,27 @@ app.put('/update_query', (request, response) => {
 //     }
 //   });
 // });
+app.get('/getdata/:id', (req, res) => {
+  console.log('retreived......', req.params.id);
 
+  //all data retrieved
+
+  // const doc = dbconnection.trainee.list().then(body => {
+  //     body.rows.forEach((doc) => {
+  //         console.log(doc);
+  //     })
+  // })
+
+  var object = {
+    selector: {
+      email: req.params.id,
+    },
+  };
+  dbconnection.trainee.find(object).then((data) => {
+    console.log('firstname', data);
+    res.json(data);
+  });
+});
 app.listen(port, (err) => {
   if (err) {
     return console.log('something bad happened', err);

@@ -4,7 +4,9 @@
   box-sizing: border-box;
 }
 .manager {
-  display: flex;
+  /* display: flex; */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
 }
 .order-center-container {
   position: relative;
@@ -21,9 +23,6 @@
   border-radius: 25px;
   text-align: center;
   overflow: hidden;
-  /* -webkit-box-shadow: var(--container-box-shadow);
-    -moz-box-shadow: var(--container-box-shadow);
-    box-shadow: var(--container-box-shadow); */
 }
 .order-header-image {
   width: 100%;
@@ -40,8 +39,6 @@
   width: 80%;
   height: 100%;
   max-height: 14rem;
-  /* font-family: var(--main-font);
-    color: var(--dark-blue); */
   text-align: center;
   margin: 0 auto;
   margin-top: 3rem;
@@ -53,13 +50,12 @@
 }
 .order-title-container p {
   font-weight: lighter;
-  color: var(--desaturated-blue);
+  color: blue;
   margin-top: 1.2rem;
   line-height: 25px;
 }
 .order-pricing-container {
-  background-color: var(--very-pale-blue);
-  font-family: var(--main-font);
+  background-color: rgba(44, 40, 40, 0.2);
   width: 70%;
   display: inline-flex;
   flex-direction: row;
@@ -83,32 +79,30 @@
   border-radius: 100%;
 }
 .order-pricing-container .order-annual-plan {
-  color: var(--dark-blue);
+  color: darkblue;
   margin-bottom: 1rem;
 }
 .order-pricing-container p {
-  color: hsl(224, 23%, 55%);
+  color: hsl(224, 74%, 60%);
   line-height: 10px;
 }
 .btn-change {
   background-color: transparent;
-  color: var(--bright-blue);
+  color: rgb(66, 62, 62);
   font-weight: 900;
   font-size: 1rem;
 }
 .btn-payment {
-  /* background-color: var(--bright-blue); */
   border-radius: 15px;
-  /* font-family: var(--main-font); */
   width: 80%;
   min-width: 80%;
   padding: 1rem;
   margin-top: 2rem;
   border: transparent;
-  /* box-shadow: var(--btn-box-shadow); */
-  /* color: var(--white); */
+
   font-size: 1rem;
   font-weight: 700;
+  background-color: rgba(44, 40, 40, 0.2);
 }
 .btn-payment:hover,
 .btn-cancel:hover {
@@ -125,7 +119,6 @@
   font-weight: 700;
   margin-top: 10px;
   text-transform: capitalize;
-  /* color: var(--light-grey); */
   text-decoration: none;
   font-size: 1rem;
 }

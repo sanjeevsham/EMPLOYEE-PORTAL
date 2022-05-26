@@ -14,7 +14,7 @@ export class EmployeeServiceService {
 
  httpOptions = {
   headers : new HttpHeaders({
-   'content-type' : 'application/json',
+   'content-type' : 'application/json', 
    'Authorization' : this.basicAuth
   })
  }
@@ -88,7 +88,9 @@ export class EmployeeServiceService {
   getRegisterdata(formObject:any){
     return this.http.get('http://localhost:8000/postquery',formObject)
   }
-  // getAdmin(id: any) {
-  //   return this.http.get(`http://localhost:8000/get_all_query/${id}`);
-  // }
-}
+  checkuserlogin(email:any,password:any)
+  {
+    console.log("hi");
+   return this.http.get<any>('http://localhost:8000/getdata/'+email);
+  }
+ }

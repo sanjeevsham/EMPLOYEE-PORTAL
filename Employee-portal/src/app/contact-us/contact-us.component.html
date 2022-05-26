@@ -73,8 +73,9 @@
         <div class="col">
           <input
             type="submit"
-            value="Het me"
+            value="Hit me"
             (click)="addQuery(this.addform.value)"
+            [disabled]="!addform.valid"
           />
         </div>
       </div>

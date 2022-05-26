@@ -2,22 +2,22 @@
   <div class="imgBx"><img src="../../assets/project 14.jpg" /></div>
   <div class="content">
     <div class="formbox">
-      <h2>Admin</h2>
+      <h2>User</h2>
       <form [formGroup]="formgroup">
         <div class="inputbox">
           <input
             type="text"
-            placeholder="Username"
-            formControlName="username"
+            placeholder="Email"
+            formControlName="email"
             class="form-control"
           />
           <span
             class="text-danger"
             *ngIf="
-              formgroup.controls['username'].touched &&
-              formgroup.hasError('required', 'username')
+              formgroup.controls['email'].touched &&
+              formgroup.hasError('required', 'email')
             "
-            >* Name is required!!</span
+            >* Email is required!!</span
           >
         </div>
         <div class="inputbox">
@@ -40,8 +40,7 @@
           <input
             type="submit"
             value="Login"
-            routerLink="/dashboard"
-            routerLinkActive="active"
+            (click)="login(this.formgroup.value)"
           />
         </div>
         <p>
