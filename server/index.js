@@ -19,7 +19,7 @@ app.post('/postquery', (request, response) => {
     username: request.body.username,
     password: request.body.password,
     email: request.body.email,
-    confirmpassword: request.body.confirmpassword,
+    // confirmpassword: request.body.confirmpassword,
   };
   dbconnection.insert(object, 'employee-portal').then((res) => {
     if (res) {
@@ -38,6 +38,8 @@ app.post('/post_query', (request, response) => {
     dob: request.body.dob,
     mobileno: request.body.mobileno,
     bloodgroup: request.body.bloodgroup,
+    userlogin: request.body.userlogin,
+    userpassword: request.body.userpassword,
   };
   dbconnection.insert(object, 'employee-details').then((res) => {
     if (res) {

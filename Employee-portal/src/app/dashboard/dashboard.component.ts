@@ -22,6 +22,8 @@ export class DashboardComponent {
       dob:['',Validators.required],
       mobileno:['',Validators.required],
       bloodgroup:['',Validators.required],
+      userlogin:['',Validators.required],
+      userpassword:['',Validators.required],
       _id:[''], 
       _rev:[''],
     })

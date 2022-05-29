@@ -49,6 +49,19 @@
       >
         Applied
       </button>
+      <button
+        class="btn btn-outline-success"
+        id="button1"
+        data-bs-toggle="modal"
+        routerLink="/sign-up"
+        routerLinkActive="active-link"
+      >
+        User
+      </button>
+      <!-- <p>
+        Don't have a account?
+        <a routerLink="/sign-up" class="text-primary">Signup</a>
+      </p> -->
       <input
         class="input1"
         type="submit"
@@ -69,6 +82,8 @@
         <th scope="col">Date of Birth</th>
         <th scope="col">Mobile No</th>
         <th scope="col">Blood Group</th>
+        <th scope="col">User login Id</th>
+        <th scope="col">userPassword</th>
         <th scope="col">Action</th>
       </tr>
     </thead>
@@ -80,6 +95,8 @@
         <th>{{ row.dob }}</th>
         <th>{{ row.mobileno }}</th>
         <th>{{ row.bloodgroup }}</th>
+        <th>{{ row.userlogin }}</th>
+        <th>{{ row.userpassword }}</th>
         <!-- <th>{{ row._id }}</th>
         <th>{{ row._rev }}</th> -->
         <td>
@@ -237,6 +254,43 @@
                 >* Blood group required!!</span
               >
             </div>
+            <div class="mb-3">
+              <label for="userlogin" class="form-label">User-login Id </label>
+              <input
+                type="text"
+                class="form-control"
+                formControlName="userlogin"
+                id="userlogin"
+                aria-describedby="emailHelp"
+              />
+              <span
+                class="text-danger"
+                *ngIf="
+                  addform.controls['userlogin'].touched &&
+                  addform.hasError('required', 'userlogin')
+                "
+                >* required!!</span
+              >
+            </div>
+
+            <div class="mb-3">
+              <label for="userpassword" class="form-label">userPassword </label>
+              <input
+                type="text"
+                class="form-control"
+                formControlName="userpassword"
+                id="userpassword"
+                aria-describedby="emailHelp"
+              />
+              <span
+                class="text-danger"
+                *ngIf="
+                  addform.controls['userpassword'].touched &&
+                  addform.hasError('required', 'userpassword')
+                "
+                >* required!!</span
+              >
+            </div>
             <div class="modal-footer">
               <button
                 type="button"
@@ -347,6 +401,26 @@
                 class="form-control"
                 formControlName="bloodgroup"
                 id="bloodgroup"
+                aria-describedby="emailHelp"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="userlogin" class="form-label">User-login Id </label>
+              <input
+                type="text"
+                class="form-control"
+                formControlName="userlogin"
+                id="userlogin"
+                aria-describedby="emailHelp"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="userpassword" class="form-label">userPassword </label>
+              <input
+                type="text"
+                class="form-control"
+                formControlName="userpassword"
+                id="userpassword"
                 aria-describedby="emailHelp"
               />
             </div>
