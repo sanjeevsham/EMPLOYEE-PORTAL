@@ -207,15 +207,17 @@ td i {
 }  */
 h1 {
   color: #ffffff;
+  margin-left: 17%;
 }
 
 .container1 {
-  min-height: 100vh;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 3rem;
+  margin-left: -15%;
 }
 
 .cards {
@@ -236,22 +238,22 @@ h1 {
 }
 
 .card.one {
-  background-image: url("../../assets/project 15.jpg");
+  background-image: url("https://thumbs.dreamstime.com/b/colorful-bead-black-letter-word-admin-abbreviation-administration-wood-background-187718269.jpg");
 }
 
-.card.tow {
-  background-image: url("https://media.istockphoto.com/photos/business-man-pressing-emoticon-on-laptop-notebook-keyboard-customer-picture-id1328697319?b=1&k=20&m=1328697319&s=170667a&w=0&h=fbi7jXC3U6IHdaT0ONqU7X8nI-W3BMOormlq2v2820Y=");
+.card.two {
+  background-image: url("../../assets/project 13.jpg");
 }
 
 .card.three {
-  background-image: url("../../assets/background 2.webp");
+  background-image: url("https://media.gettyimages.com/photos/contact-us-icon-on-wood-cube-customer-service-and-support-for-self-picture-id1221940414?b=1&k=20&m=1221940414&s=170667a&w=0&h=WgsNa832aPmuk_L4UG1gx9qjITpuxW1N3vf4u9Sjfgo=");
 }
 
 .details {
   width: 100%;
   display: flex;
   justify-content: center;
-  background-color: #ffffff10;
+  background-color: #1b1b1b91;
   border-top: 1px solid #ffffff30;
   border-radius: 2rem;
   -webkit-backdrop-filter: blur(0.75rem);
@@ -271,7 +273,7 @@ h1 {
 }
 
 .content h2 {
-  color: black;
+  color: white;
   font-size: 30px;
   margin-bottom: 0.5rem;
 }

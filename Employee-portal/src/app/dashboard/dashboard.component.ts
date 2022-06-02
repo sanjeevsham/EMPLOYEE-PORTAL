@@ -90,6 +90,8 @@ export class DashboardComponent {
     this.addform.controls['dob'].setValue(row.dob);
     this.addform.controls['mobileno'].setValue(row.mobileno);
     this.addform.controls['bloodgroup'].setValue(row.bloodgroup);
+    this.addform.controls['userlogin'].setValue(row.userlogin);
+    this.addform.controls['userpassword'].setValue(row.userpassword);
     this.addform.controls['_id'].setValue(row._id);
     this.addform.controls['_rev'].setValue(row._rev);
   }

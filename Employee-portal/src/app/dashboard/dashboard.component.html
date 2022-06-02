@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg bg-dark">
+<nav class="navbar navbar-expand-lg bg-dark" id="head">
   <div class="container-fluid">
     <a class="navbar-brand" href="">Employee Portal</a>
     <button
@@ -49,19 +49,6 @@
       >
         Applied
       </button>
-      <button
-        class="btn btn-outline-success"
-        id="button1"
-        data-bs-toggle="modal"
-        routerLink="/sign-up"
-        routerLinkActive="active-link"
-      >
-        New User
-      </button>
-      <!-- <p>
-        Don't have a account?
-        <a routerLink="/sign-up" class="text-primary">Signup</a>
-      </p> -->
       <input
         class="input1"
         type="submit"
@@ -74,6 +61,7 @@
 </nav>
 <div class="container">
   <table class="table table-hover">
+    <caption></caption>
     <thead>
       <tr>
         <th scope="col">ID</th>
@@ -89,16 +77,14 @@
     </thead>
     <tbody>
       <tr *ngFor="let row of store">
-        <th>{{ row.id }}</th>
-        <th>{{ row.username }}</th>
-        <th>{{ row.email }}</th>
-        <th>{{ row.dob }}</th>
-        <th>{{ row.mobileno }}</th>
-        <th>{{ row.bloodgroup }}</th>
-        <th>{{ row.userlogin }}</th>
-        <th>{{ row.userpassword }}</th>
-        <!-- <th>{{ row._id }}</th>
-        <th>{{ row._rev }}</th> -->
+        <th scope="col">{{ row.id }}</th>
+        <th scope="col">{{ row.username }}</th>
+        <th scope="col">{{ row.email }}</th>
+        <th scope="col">{{ row.dob }}</th>
+        <th scope="col">{{ row.mobileno }}</th>
+        <th scope="col">{{ row.bloodgroup }}</th>
+        <th scope="col">{{ row.userlogin }}</th>
+        <th scope="col">{{ row.userpassword }}</th>
         <td>
           <button
             type="button"
@@ -306,15 +292,6 @@
               >
                 Add Employee
               </button>
-              <!-- <button
-                type="button"
-                class="btn btn-primary"
-                data-bs-toggle="modal"
-                data-bs-target="#addform"
-                (click)="update(this.addform.value)"
-              >
-                Edit employee
-              </button> -->
             </div>
           </form>
         </div>

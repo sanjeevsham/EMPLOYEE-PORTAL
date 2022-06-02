@@ -2,6 +2,10 @@
   background-image: url("../../assets/background 5.webp");
   background-size: cover;
 }
+#head {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
 #button1 {
   margin-left: 30px;
   background: transparent;

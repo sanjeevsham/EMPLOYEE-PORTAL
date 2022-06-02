@@ -3,7 +3,6 @@ import { Routes, RouterModule } from '@angular/router';
 import { UserLoginComponent } from './user-login/user-login.component';
 import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
-import { CarrierWayComponent } from './carrier-way/carrier-way.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
@@ -23,7 +22,6 @@ const routes: Routes = [
   {path:'startup',component:StartUpComponent},
   {path:'aboutus',component:AboutUsComponent},
   {path:'contactus',component:ContactUsComponent},
-  {path:'login',component:CarrierWayComponent},
   {path:'dashboard',component:DashboardComponent},
   {path:'home',component:HomeComponent},
   {path:'splasher',component:SplasherComponent},

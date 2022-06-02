@@ -205,6 +205,8 @@ app.put('/update_query', (request, response) => {
     dob: request.body.dob,
     mobileno: request.body.mobileno,
     bloodgroup: request.body.bloodgroup,
+    userlogin: request.body.userlogin,
+    userpassword: request.body.userpassword,
   };
   // console.log(object);
   dbconnection.update(object, 'employee-details').then((res) => {

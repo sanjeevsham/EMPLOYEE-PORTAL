@@ -1,4 +1,8 @@
 .container {
   background-image: url("../../assets/background 5.webp");
   background-size: cover;
+  margin-top: 20px;
+}
+.back {
+  margin-left: 10%;
 }

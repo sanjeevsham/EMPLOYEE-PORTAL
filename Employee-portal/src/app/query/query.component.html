@@ -1,5 +1,6 @@
 <div class="container">
   <table class="table table-hover">
+    <caption></caption>
     <thead>
       <tr>
         <th scope="col">Firstname</th>
@@ -11,14 +12,11 @@
     </thead>
     <tbody>
       <tr *ngFor="let row of store">
-        <th>{{ row.firstname }}</th>
-        <th>{{ row.lastname }}</th>
-        <th>{{ row.email }}</th>
-        <th>{{ row.mobileno }}</th>
-        <th>{{ row.query }}</th>
-
-        <!-- <th>{{ row._id }}</th>
-          <th>{{ row._rev }}</th> -->
+        <th scope="col">{{ row.firstname }}</th>
+        <th scope="col">{{ row.lastname }}</th>
+        <th scope="col">{{ row.email }}</th>
+        <th scope="col">{{ row.mobileno }}</th>
+        <th scope="col">{{ row.query }}</th>
         <td>
           <button class="btn btn-primary" (click)="erase(row._id, row._rev)">
             Delete
@@ -27,4 +25,7 @@
       </tr>
     </tbody>
   </table>
+</div>
+<div class="back">
+  <button class="btn btn-primary" routerLink="/dashboard">Back</button>
 </div>
