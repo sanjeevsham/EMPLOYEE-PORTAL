@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup,FormBuilder,NgForm } from '@angular/forms';
+import { FormGroup,FormBuilder,NgForm ,Validators} from '@angular/forms';
 import { EmployeeServiceService } from '../employee-service.service';
-import { Validators } from '@angular/forms';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -48,7 +47,6 @@ export class DashboardComponent {
       console.log(res);
       console.log("response is comming");
       this.alluser=res;
-      // this.alluser=this.alluser.data;
       this.alluser=this.alluser.rows;
       console.log(this.alluser);
       for (const key in this.alluser) {
@@ -58,7 +56,6 @@ export class DashboardComponent {
               this.api.getAllEmployee(element.id).subscribe(res=>{
                 console.log(res);
                 this.exchange=res;
-                // this.exchange=this.exchange.data;
                 this.store.push(this.exchange);
                 console.log("data receved");
               },rej=>{
@@ -83,7 +80,6 @@ export class DashboardComponent {
   }
   
   onEdit(row:any){
-    // console.log(row);
     this.addform.controls['id'].setValue(row.id);
     this.addform.controls['username'].setValue(row.username);
     this.addform.controls['email'].setValue(row.email);

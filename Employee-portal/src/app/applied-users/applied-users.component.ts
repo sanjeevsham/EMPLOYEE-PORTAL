@@ -31,10 +31,8 @@ export class AppliedUsersComponent implements OnInit {
       console.log(res);
       console.log("response is comming");
       this.alluser=res;
-      // this.alluser=this.alluser.data;
       this.alluser=this.alluser.rows;
       console.log(this.alluser);
-      // const temp = this.alluser;
       for (const key in this.alluser) {
             if (Object.prototype.hasOwnProperty.call(this.alluser, key)) {
               const element = this.alluser[key];
@@ -42,7 +40,6 @@ export class AppliedUsersComponent implements OnInit {
               this.api.getAllUser(element.id).subscribe(res=>{
                 console.log(res);
                 this.exchange=res;
-                // this.exchange=this.exchange.data;
                 this.store.push(this.exchange);
                 console.log("data receved");
               },rej=>{

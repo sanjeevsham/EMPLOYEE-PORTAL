@@ -21,11 +21,7 @@ export class SignUpComponent implements OnInit {
        username:['',Validators.required],
        email: ['',[Validators.required,Validators.pattern("[a-zA-Z0-9]*@gmail.com")]],
       password: ['',[Validators.required,Validators.pattern("[a-zA-z0-9@_]{6,}")]],
-      // confirmpassword: ['',[Validators.required,Validators.pattern("[a-zA-z@_]{6,}")]]
       },
-    //   {
-    //     Validators:this.mustmatch('password','confirmpassword')
-    //   }
     )
    
    }
@@ -50,7 +46,6 @@ export class SignUpComponent implements OnInit {
      },rej=>{
        console.log("Error"+rej);
      });
-    //  console.log(typeof(FormValue));
      console.log(FormValue);
 
 
