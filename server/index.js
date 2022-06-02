@@ -208,7 +208,6 @@ app.put('/update_query', (request, response) => {
     userlogin: request.body.userlogin,
     userpassword: request.body.userpassword,
   };
-  // console.log(object);
   dbconnection.update(object, 'employee-details').then((res) => {
     if (res) {
       console.log('updated....');

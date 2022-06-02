@@ -35,7 +35,6 @@ export class ContactUsComponent implements OnInit {
        this.api.addQuery(formvalue).subscribe(res=>{
         console.log("hello"+res);
         console.log("Your data was posted successfully!");
-        // window.location.replace("/query")
         alert('your data is added successfully')
         },rej=>{
         console.log("opps! Can not post data"+rej);
