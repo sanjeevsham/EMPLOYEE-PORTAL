@@ -255,7 +255,7 @@ app.get('/getdata/:id', (req, res) => {
 
   var object = {
     selector: {
-      email: req.params.id,
+      userlogin: req.params.id,
     },
   };
   dbconnection.trainee.find(object).then((data) => {

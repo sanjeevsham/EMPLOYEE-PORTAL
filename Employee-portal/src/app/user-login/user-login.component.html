@@ -8,15 +8,15 @@
         <div class="inputbox">
           <input
             type="text"
-            placeholder="Email"
-            formControlName="email"
+            placeholder="username"
+            formControlName="userlogin"
             class="form-control"
           />
           <span
             class="text-danger"
             *ngIf="
-              formgroup.controls['email'].touched &&
-              formgroup.hasError('required', 'email')
+              formgroup.controls['userlogin'].touched &&
+              formgroup.hasError('required', 'userlogin')
             "
             >* Email is required!!</span
           >
@@ -25,13 +25,13 @@
           <input
             type="password"
             placeholder="Password"
-            formControlName="password"
+            formControlName="userpassword"
           />
           <span
             class="text-danger"
             *ngIf="
-              formgroup.controls.password.errors &&
-              formgroup.controls.password.touched
+              formgroup.controls.userpassword.errors &&
+              formgroup.controls.userpassword.touched
             "
           >
             <br />Atleast 6 character Password is Required

@@ -15,6 +15,7 @@ import { AppliedUsersComponent } from './applied-users/applied-users.component';
 import { DepartmentComponent } from './department/department.component';
 import { EmployeeServiceService } from './employee-service.service';
 import { EmployementComponent } from './employement/employement.component';
+import { UserdashboardComponent } from './userdashboard/userdashboard.component';
 const routes: Routes = [
   {path:'adminlogin',component:AdminLoginComponent },
   {path:'userlogin',component:UserLoginComponent },
@@ -23,13 +24,14 @@ const routes: Routes = [
   {path:'aboutus',component:AboutUsComponent},
   {path:'contactus',component:ContactUsComponent},
   {path:'dashboard',component:DashboardComponent},
-  {path:'home',component:HomeComponent},
+  {path:'',component:HomeComponent},
   {path:'splasher',component:SplasherComponent},
   {path:'query',component:QueryComponent},
   {path:'applied',component:AppliedUsersComponent},
   {path:'apply',component:ApplyComponent},
   {path:'dept',component:DepartmentComponent},
-  {path:'employee',component:EmployementComponent}
+  {path:'employee',component:EmployementComponent},
+  {path:'userdb',component:UserdashboardComponent}
 
   
 ];

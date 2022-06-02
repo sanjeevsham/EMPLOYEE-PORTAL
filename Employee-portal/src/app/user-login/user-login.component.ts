@@ -12,37 +12,37 @@ export class UserLoginComponent implements OnInit {
 formgroup!:FormGroup;
 successMessage:string="";
 emp:any={
-  email:'',
-  password:''
+  userlogin:'',
+  userpassword:''
 }
  
   constructor(private fb:FormBuilder,private api:EmployeeServiceService,private route:Router) { 
     this.formgroup = this.fb.group({
-      email : [this.emp.email],
-      password : [this.emp.password]
+      userlogin : [this.emp.userlogin],
+      userpassword : [this.emp.userpassword]
     })
    }
 
   
   ngOnInit(): void {
     this.formgroup = this.fb.group({
-      email:['',[Validators.required, Validators.pattern("[A-Za-z0-9]*@gmail.com")]],
-      password:['',[Validators.required,Validators.pattern("[A-Za-z0-9@!_]{6,}")]]
+      userlogin:['',[Validators.required, Validators.pattern("[A-Za-z0-9]*@gmail.com")]],
+      userpassword:['',[Validators.required,Validators.pattern("[A-Za-z0-9@!_]{6,}")]]
     })
   }
 login(obj:any){
-  this.email=obj.email
-  this.password=obj.password 
-  console.log(this.email);
-  console.log(this.password);
+  this.userlogin=obj.userlogin
+  this.userpassword=obj.userpassword 
+  console.log(this.userlogin);
+  console.log(this.userpassword);
   
- this.api.checkuserlogin(this.email,this.password).subscribe(data => {
+ this.api.checkuserlogin(this.userlogin,this.userpassword).subscribe(data => {
    console.log("hi");
      console.log(data);
-     if((data.docs[0].password == this.password))
+     if((data.docs[0].userpassword == this.userpassword))
      {
        alert("success!!")
-      this.route.navigate(['splasher']);
+      this.route.navigate(['userdb']);
      }
      else{
       // this.toastr.warning("Hi Patient wrong authentication,Please enter correct Email and Password");

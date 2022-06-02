@@ -88,9 +88,9 @@ export class EmployeeServiceService {
   getRegisterdata(formObject:any){
     return this.http.get('http://localhost:8000/postquery',formObject)
   }
-  checkuserlogin(email:any,password:any)
+  checkuserlogin(userlogin:any,userpassword:any)
   {
     console.log("hi");
-   return this.http.get<any>('http://localhost:8000/getdata/'+email);
+   return this.http.get<any>('http://localhost:8000/getdata/'+userlogin);
   }
  }

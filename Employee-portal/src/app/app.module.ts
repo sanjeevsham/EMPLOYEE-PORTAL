@@ -18,6 +18,7 @@ import { ApplyComponent } from './apply/apply.component';
 import { AppliedUsersComponent } from './applied-users/applied-users.component';
 import { DepartmentComponent } from './department/department.component';
 import { EmployementComponent } from './employement/employement.component';
+import { UserdashboardComponent } from './userdashboard/userdashboard.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,6 +36,7 @@ import { EmployementComponent } from './employement/employement.component';
     AppliedUsersComponent,
     DepartmentComponent,
     EmployementComponent,
+    UserdashboardComponent,
   ],
   imports: [
     BrowserModule,

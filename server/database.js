@@ -3,7 +3,7 @@ var nano = require('nano');
 const url1 =
   'https://apikey-v2-msz5pn0gamsoigpftay3cndoju75rdeejvo1cd3paw0:1cd6b51776516316358ce28da3097318@97233c10-e8bd-4684-98ca-20e5eaf8dd35-bluemix.cloudant.com';
 const nanodb = nano(process.env.COUCHDB_URL || url1); // connect with couchdb
-const trainee = nanodb.use('employee-portal');
+const trainee = nanodb.use('employee-details');
 
 var url =
   'https://97233c10-e8bd-4684-98ca-20e5eaf8dd35-bluemix.cloudantnosqldb.appdomain.cloud ';
