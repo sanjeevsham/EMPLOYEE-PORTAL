@@ -59,6 +59,7 @@ app.post('/post_user', (request, response) => {
     mobileno: request.body.mobileno,
     qualification: request.body.qualification,
     age: request.body.age,
+    archive: request.body.archive,
   };
   dbconnection.insert(object, 'user-data').then((res) => {
     if (res) {

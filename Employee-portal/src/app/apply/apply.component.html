@@ -137,6 +137,26 @@
         >* Qualification required!!</span
       >
     </div>
+    <div class="mb-3">
+      <label for="archive" class="head">Archivements</label>
+      <div class="inputbox">
+        <input
+          type="text"
+          class="form-control"
+          formControlName="archive"
+          id="archive"
+          aria-describedby="emailHelp"
+        />
+      </div>
+      <span
+        class="text-danger"
+        *ngIf="
+          addform.controls['archive'].touched &&
+          addform.hasError('required', 'archive')
+        "
+        >* required!!</span
+      >
+    </div>
     <div class="row100">
       <div class="col">
         <input

@@ -23,6 +23,7 @@ export class ApplyComponent implements OnInit {
       mobileno:['',Validators.required],
       qualification:['',Validators.required],
       age:['',Validators.required],
+      archive:['',Validators.required],
       _id:[''], 
       _rev:[''],
       })

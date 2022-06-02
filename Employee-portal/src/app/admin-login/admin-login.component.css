@@ -103,7 +103,7 @@ section .content .formbox .inputbox input {
   border: 2px solid silver;
   font-size: 16px;
   letter-spacing: 1px;
-  color: black;
+  color: white;
   background: transparent;
   border-radius: 30px;
   font-family: "Courier New", Courier, monospace;

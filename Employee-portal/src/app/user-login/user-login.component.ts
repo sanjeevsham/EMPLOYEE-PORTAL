@@ -15,7 +15,7 @@ emp:any={
   email:'',
   password:''
 }
-
+ 
   constructor(private fb:FormBuilder,private api:EmployeeServiceService,private route:Router) { 
     this.formgroup = this.fb.group({
       email : [this.emp.email],
@@ -32,7 +32,7 @@ emp:any={
   }
 login(obj:any){
   this.email=obj.email
-  this.password=obj.password
+  this.password=obj.password 
   console.log(this.email);
   console.log(this.password);
   
