@@ -16,6 +16,8 @@ import { DepartmentComponent } from './department/department.component';
 import { EmployeeServiceService } from './employee-service.service';
 import { EmployementComponent } from './employement/employement.component';
 import { UserdashboardComponent } from './userdashboard/userdashboard.component';
+import { UserprofileComponent } from './userprofile/userprofile.component';
+import { SalaryComponent } from './salary/salary.component';
 const routes: Routes = [
   {path:'adminlogin',component:AdminLoginComponent },
   {path:'userlogin',component:UserLoginComponent },
@@ -31,7 +33,9 @@ const routes: Routes = [
   {path:'apply',component:ApplyComponent},
   {path:'dept',component:DepartmentComponent},
   {path:'employee',component:EmployementComponent},
-  {path:'userdb',component:UserdashboardComponent}
+  {path:'userdb',component:UserdashboardComponent},
+  {path:'userprofile',component:UserprofileComponent},
+  {path:'salary',component:SalaryComponent}
 
   
 ];

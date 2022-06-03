@@ -16,14 +16,14 @@ export class ApplyComponent implements OnInit {
 
   ngOnInit(): void {
     this.addform=this.formbuilder.group({
+      empid:['',Validators.required],
       firstname:['',Validators.required],
-      lastname:['',Validators.required],
       email: ['',[Validators.required,Validators.pattern("[a-zA-Z0-9]*@gmail.com")]],
-      dob:['',Validators.required],
+      fromdate:['',Validators.required],
+      todate: ['', [Validators.required, Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")]],  
+      days:['',Validators.required],
       mobileno:['',Validators.required],
-      qualification:['',Validators.required],
-      age:['',Validators.required],
-      archive:['',Validators.required],
+      reason:['',Validators.required],
       _id:[''], 
       _rev:[''],
       })

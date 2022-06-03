@@ -52,14 +52,14 @@ app.post('/post_query', (request, response) => {
 });
 app.post('/post_user', (request, response) => {
   var object = {
+    empid: request.body.empid,
     firstname: request.body.firstname,
-    lastname: request.body.lastname,
     email: request.body.email,
-    dob: request.body.dob,
+    fromdate: request.body.fromdate,
+    todate: request.body.todate,
+    days: request.body.days,
     mobileno: request.body.mobileno,
-    qualification: request.body.qualification,
-    age: request.body.age,
-    archive: request.body.archive,
+    reason: request.body.reason,
   };
   dbconnection.insert(object, 'user-data').then((res) => {
     if (res) {

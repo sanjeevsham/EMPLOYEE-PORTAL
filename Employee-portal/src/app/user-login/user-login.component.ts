@@ -39,10 +39,14 @@ login(obj:any){
  this.api.checkuserlogin(this.userlogin,this.userpassword).subscribe(data => {
    console.log("hi");
      console.log(data);
+     this.sample=data
+     this.temp=this.sample.docs
+     this.id=this.temp[0]._id
+     localStorage.setItem("userId",this.id)
      if((data.docs[0].userpassword == this.userpassword))
      {
        alert("success!!")
-      this.route.navigate(['userdb']);
+      // this.route.navigate(['']);
      }
      else{
       // this.toastr.warning("Hi Patient wrong authentication,Please enter correct Email and Password");

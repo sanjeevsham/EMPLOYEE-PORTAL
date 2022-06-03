@@ -93,4 +93,8 @@ export class EmployeeServiceService {
     console.log("hi");
    return this.http.get<any>('http://localhost:8000/getdata/'+userlogin);
   }
+  getDataById(database: string, id: any) {
+    const url = this.url + database + '/' + id;
+    return this.http.get(url, this.httpOptions);
+  }
  }

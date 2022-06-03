@@ -1,6 +1,7 @@
 h1 {
   color: #ffffff;
   margin-left: 17%;
+  margin-top: 20px;
 }
 
 .container1 {
@@ -31,11 +32,11 @@ h1 {
 }
 
 .card.one {
-  background-image: url("https://thumbs.dreamstime.com/b/colorful-bead-black-letter-word-admin-abbreviation-administration-wood-background-187718269.jpg");
+  background-image: url("https://t3.ftcdn.net/jpg/02/60/69/76/360_F_260697680_vuQrEKww7yNFnpIFq8U5UiAgCQeJz6Ok.jpg");
 }
 
 .card.two {
-  background-image: url("../../assets/project 13.jpg");
+  background-image: url("https://www.indiafilings.com/learn/wp-content/uploads/2017/12/Salary-Components.jpg");
 }
 
 .card.three {
@@ -99,4 +100,8 @@ h1 {
 
 .content a:hover {
   background-position: right;
+}
+#btn {
+  margin-left: 46%;
+  margin-top: 20px;
 }

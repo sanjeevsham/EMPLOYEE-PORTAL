@@ -1,0 +1,17 @@
+.container {
+  background-image: url("../../assets/background 5.webp");
+  background-size: cover;
+  margin-top: 50px;
+  padding: 20px;
+  border-radius: 20px;
+}
+#head1 {
+  background-color: rgba(15, 14, 14, 0.74);
+  color: white;
+}
+.back {
+  margin-left: 10px;
+}
+h1 {
+  text-align: center;
+}

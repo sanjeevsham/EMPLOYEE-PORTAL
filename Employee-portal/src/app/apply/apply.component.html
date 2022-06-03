@@ -1,7 +1,29 @@
+<h1>Apply Leave</h1>
 <section class="container">
   <form [formGroup]="addform">
     <div class="mb-3">
-      <label for="firstname" class="head">First Name </label>
+      <label for="empid" class="head">Employee-ID</label>
+      <div class="inputbox">
+        <input
+          type="text"
+          class="form-control"
+          formControlName="empid"
+          id="empid"
+          aria-describedby="emailHelp"
+          required
+        />
+      </div>
+      <span
+        class="text-danger"
+        *ngIf="
+          addform.controls['empid'].touched &&
+          addform.hasError('required', 'empid')
+        "
+        >* Name required!!</span
+      >
+    </div>
+    <div class="mb-3">
+      <label for="firstname" class="head"> Name </label>
       <div class="inputbox">
         <input
           type="text"
@@ -19,26 +41,6 @@
           addform.hasError('required', 'firstname')
         "
         >* Name required!!</span
-      >
-    </div>
-    <div class="mb-3">
-      <label for="lastname" class="head">Last Name </label>
-      <div class="inputbox">
-        <input
-          type="text"
-          class="form-control"
-          formControlName="lastname"
-          id="lastname"
-          aria-describedby="emailHelp"
-        />
-      </div>
-      <span
-        class="text-danger"
-        *ngIf="
-          addform.controls['lastname'].touched &&
-          addform.hasError('required', 'lastname')
-        "
-        >* Last Name required!!</span
       >
     </div>
     <div class="mb-3">
@@ -60,29 +62,71 @@
       </span>
     </div>
     <div class="mb-3">
-      <label for="dob" class="head">Date of Birth</label>
+      <label for="fromdate" class="head">From-date</label>
       <div class="inputbox">
         <input
           type="date"
           class="form-control"
-          formControlName="dob"
-          id="dob"
+          formControlName="fromdate"
+          id="fromdate"
           aria-describedby="emailHelp"
         />
       </div>
       <span
         class="text-danger"
         *ngIf="
-          addform.controls['dob'].touched && addform.hasError('required', 'dob')
+          addform.controls['fromdate'].touched &&
+          addform.hasError('required', 'fromdate')
         "
-        >* DOB required!!</span
+        >* fromdate required!!</span
       >
     </div>
     <div class="mb-3">
-      <label for="mobileno" class="head">Mobile No </label>
+      <label for="todate" class="head">To-date</label>
       <div class="inputbox">
         <input
-          type="number"
+          type="date"
+          class="form-control"
+          formControlName="todate"
+          id="todate"
+          aria-describedby="emailHelp"
+        />
+      </div>
+      <span
+        class="text-danger"
+        *ngIf="
+          addform.controls['todate'].touched &&
+          addform.hasError('required', 'todate')
+        "
+        >* todate required!!</span
+      >
+    </div>
+    <div class="mb-3">
+      <label for="days" class="head">No of days</label>
+      <div class="inputbox">
+        <input
+          type="text"
+          class="form-control"
+          formControlName="days"
+          id="days"
+          aria-describedby="emailHelp"
+        />
+      </div>
+      <span
+        class="text-danger"
+        *ngIf="
+          addform.controls['days'].touched &&
+          addform.hasError('required', 'days')
+        "
+        >*No of days required!!</span
+      >
+    </div>
+
+    <div class="mb-3">
+      <label for="mobileno" class="head">Contact-no</label>
+      <div class="inputbox">
+        <input
+          type="text"
           class="form-control"
           formControlName="mobileno"
           id="mobileno"
@@ -99,62 +143,23 @@
       >
     </div>
     <div class="mb-3">
-      <label for="qualification" class="head">Qualification </label>
+      <label for="reason" class="head">Reason For leave </label>
       <div class="inputbox">
         <input
           type="text"
           class="form-control"
-          formControlName="qualification"
-          id="qualification"
+          formControlName="reason"
+          id="reason"
           aria-describedby="emailHelp"
         />
       </div>
       <span
         class="text-danger"
         *ngIf="
-          addform.controls['qualification'].touched &&
-          addform.hasError('required', 'qualification')
+          addform.controls['reason'].touched &&
+          addform.hasError('required', 'reason')
         "
-        >* Qualification required!!</span
-      >
-    </div>
-    <div class="mb-3">
-      <label for="age" class="head">Age </label>
-      <div class="inputbox">
-        <input
-          type="text"
-          class="form-control"
-          formControlName="age"
-          id="age"
-          aria-describedby="emailHelp"
-        />
-      </div>
-      <span
-        class="text-danger"
-        *ngIf="
-          addform.controls['age'].touched && addform.hasError('required', 'age')
-        "
-        >* Qualification required!!</span
-      >
-    </div>
-    <div class="mb-3">
-      <label for="archive" class="head">Archivements</label>
-      <div class="inputbox">
-        <input
-          type="text"
-          class="form-control"
-          formControlName="archive"
-          id="archive"
-          aria-describedby="emailHelp"
-        />
-      </div>
-      <span
-        class="text-danger"
-        *ngIf="
-          addform.controls['archive'].touched &&
-          addform.hasError('required', 'archive')
-        "
-        >* required!!</span
+        >* Reason required!!</span
       >
     </div>
     <div class="row100">
@@ -162,7 +167,6 @@
         <input
           type="submit"
           value="Het me"
-          [disabled]="!addform.valid"
           (click)="addUser(this.addform.value)"
         />
       </div>
