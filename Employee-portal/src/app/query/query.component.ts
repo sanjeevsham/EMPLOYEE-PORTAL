@@ -10,9 +10,9 @@ import { EmployeeServiceService } from '../employee-service.service';
 })
 export class QueryComponent implements OnInit {
   addform!:FormGroup;
-  alluser!:any;
+  alldata:any;
   exchange!:any;
-  store:any=[];
+  object:any=[];
   constructor(private formbuilder:FormBuilder,private api:EmployeeServiceService,private route:Router) { }
 
   ngOnInit(): void {
@@ -27,31 +27,19 @@ export class QueryComponent implements OnInit {
     
   }
   getQuery(){
-    this.store=[];
-    this.api.getQuery().subscribe(res=>{
-      console.log(res);
-      console.log("response is comming");
-      this.alluser=res;
-      this.alluser=this.alluser.rows;
-      console.log(this.alluser);
-      for (const key in this.alluser) {
-            if (Object.prototype.hasOwnProperty.call(this.alluser, key)) {
-              const element = this.alluser[key];
-              console.log(element.id);
-              this.api.getAllQuery(element.id).subscribe(res=>{
-                console.log(res);
-                this.exchange=res;
-                this.store.push(this.exchange);
-                console.log("data receved");
-              },rej=>{
-                console.log("error"+rej);
-              })
-            
-            }
-          }
-    },rej=>{
-        console.log("opps! Somthing went wrong"+rej);
-    })
+    this.api.getQuery().subscribe(data=>{
+      console.log(data);
+      console.log('Data was fetching');
+      this.alldata=data;
+      this.alldata=this.alldata.docs;
+      console.log(this.alldata);
+      for(const i of this.alldata){
+            this.object.push(i);
+            console.log('Fetched successfuly in add component')
+  
+      }
+    
+    });
   }
   
   // delete(data:any){

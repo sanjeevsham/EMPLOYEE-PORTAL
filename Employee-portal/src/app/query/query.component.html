@@ -12,14 +12,14 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let row of store">
-        <th scope="col">{{ row.firstname }}</th>
-        <th scope="col">{{ row.lastname }}</th>
-        <th scope="col">{{ row.email }}</th>
-        <th scope="col">{{ row.mobileno }}</th>
-        <th scope="col">{{ row.query }}</th>
+      <tr *ngFor="let obj of object">
+        <th scope="col">{{ obj.firstname }}</th>
+        <th scope="col">{{ obj.lastname }}</th>
+        <th scope="col">{{ obj.email }}</th>
+        <th scope="col">{{ obj.mobileno }}</th>
+        <th scope="col">{{ obj.query }}</th>
         <td>
-          <button class="btn btn-primary" (click)="erase(row._id, row._rev)">
+          <button class="btn btn-primary" (click)="erase(obj._id, obj._rev)">
             Delete
           </button>
         </td>

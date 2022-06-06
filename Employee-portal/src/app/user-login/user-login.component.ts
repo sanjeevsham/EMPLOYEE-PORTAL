@@ -46,7 +46,7 @@ login(obj:any){
      if((data.docs[0].userpassword == this.userpassword))
      {
        alert("success!!")
-      // this.route.navigate(['']);
+      this.route.navigate(['/userprofile']);
      }
      else{
       // this.toastr.warning("Hi Patient wrong authentication,Please enter correct Email and Password");

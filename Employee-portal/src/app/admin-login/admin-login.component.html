@@ -7,7 +7,7 @@
       <form
         class="myform"
         [formGroup]="adminform"
-        (ngSubmit)="alogin(this.adminform.value)"
+        (ngSubmit)="adminlogin(this.adminform.value)"
       >
         <div class="inputbox">
           <input
@@ -46,9 +46,6 @@
         </div>
         <div class="inputbox">
           <input type="submit" value="Login" routerLinkActive="active" />
-        </div>
-        <div class="text-center text-success" *ngIf="successMessage">
-          {{ successMessage }}
         </div>
       </form>
     </div>

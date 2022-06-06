@@ -25,8 +25,8 @@ insert = function (paramsvalue, dbname) {
   return cloudant.use(dbname).insert(paramsvalue);
 };
 
-get = function (dbname) {
-  return cloudant.use(dbname).list();
+get = function (id, dbname) {
+  return cloudant.use(dbname).find(id);
 };
 getAll = function (id, dbname) {
   return cloudant.use(dbname).get(id);

@@ -1,3 +1,4 @@
+import { invalid } from '@angular/compiler/src/render3/view/util';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup,FormBuilder,Validators,NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -9,56 +10,51 @@ import { EmployeeServiceService } from '../employee-service.service';
   styleUrls: ['./admin-login.component.css']
 })
 export class AdminLoginComponent implements OnInit {
-  successMessage: string = '';
-  adminform!: FormGroup;
-  empRecord: any = {
-    username: '',
-    password: '',
-   };
+    object: any = [];
+    alldata: any;
+    flag = 0;
+    adminform!: FormGroup;
   
-  constructor(
-    private formbuilder: FormBuilder,
-    private api: EmployeeServiceService,
-    private router: Router
-  ) {
-    this.adminform = this.formbuilder.group({
-      username: ['', Validators.required],
-      // password: ['',[Validators.required,Validators.pattern("[a-zA-z@_]{6,}")]],
-      password: ['',[Validators.required]]
-
-    });
-  }
-
-  ngOnInit(): void {
-    this.adminform = this.formbuilder.group({
-    username: ['', Validators.required],
-    // password: ['',[Validators.required,Validators.pattern("[a-zA-z@_]{6,}")]],
-    password: ['',[Validators.required]]
-  });
-}
-
-  alogin(FormValue: any) {
-    console.log(FormValue.username);
-    this.api.getdata(FormValue.username).subscribe((data: any) => {
-      console.log(data);
-      const adminData= data.docs[0];
-   if (
-  adminData.id== FormValue.username &&
-  adminData.password == FormValue.password
-   ) {
-  this.router.navigate(['dashboard']);
-  alert('Verified');
-   } else {
-  alert('err');
-   }
-  });
-  console.log(FormValue);
-  }
-
-  get username() {
-    return this.adminform.get('username');
-  }
-  get password() {
-    return this.adminform.get('password');
-  }
+    constructor(
+      private formbuilder: FormBuilder,
+      private api:EmployeeServiceService,
+      private router: Router,
+    ) {}
+  
+    ngOnInit(): void {
+      this.adminform = this.formbuilder.group({
+        username: ['', [Validators.required]],
+        password: [
+          '',
+          [Validators.required, Validators.pattern('[A-Za-z0-9@!_]{10,}')],
+        ],
+      });
+      this.api.getadmin().subscribe((data) => {
+        console.log(data);
+        this.alldata = data;
+        this.alldata = this.alldata.docs;
+        console.log(this.alldata);
+        for (const i of this.alldata) {
+          console.log(i);
+          this.object.push(i);
+        }
+      });
+    }
+  
+    adminlogin(formvalue: any) {
+      for (const i of this.object) {
+        if (
+          i.username == formvalue.username &&
+          i.password == formvalue.password
+        ) {
+          this.flag = 1;
+        }
+      }
+      if (this.flag == 1) {
+        this.router.navigate(['/dashboard']);
+      } else {
+      alert("Login authentication failed");
+        location.reload();
+      }
+    }
 }

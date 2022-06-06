@@ -23,6 +23,7 @@
     "@cloudant/cloudant": "^4.5.1",
     "cors": "^2.8.5",
     "express": "^4.18.1",
-    "nano": "^10.0.0"
+    "nano": "^10.0.0",
+    "nodemon": "^2.0.16"
   }
 }

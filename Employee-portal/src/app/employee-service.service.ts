@@ -34,6 +34,10 @@ export class EmployeeServiceService {
     console.log(doc);
     return this.http.post('http://localhost:8000/post_user/',doc);
   }
+  addSalary(doc:any){
+    console.log(doc);
+    return this.http.post('http://localhost:8000/post_salary/',doc);
+  }
 
   getEmployee(){
     return this.http.get('http://localhost:8000/get_query/');
@@ -47,6 +51,9 @@ export class EmployeeServiceService {
   getQuery(){
     return this.http.get('http://localhost:8000/get_data/');
   }
+  getSalary(){
+    return this.http.get('http://localhost:8000/get_salary/');
+  }
   getAllEmployee(id:any){
     return this.http.get(`http://localhost:8000/get_all_query/${id}`);
   }
@@ -56,17 +63,23 @@ export class EmployeeServiceService {
   getAllUser(id:any){
     return this.http.get(`http://localhost:8000/get_all_user/${id}`);
   }
+  getAllSalary(id:any){
+    return this.http.get(`http://localhost:8000/get_all_salary/${id}`);
+  }
   
   deleteEmployee(id:any,id1:any){
     return this.http.delete(`http://localhost:8000/delete_query/${id}/${id1}`);
   }
+  deleteSalary(id:any,id1:any){
+    return this.http.delete(`http://localhost:8000/delete_salary/${id}/${id1}`);
+  }
   delete(id:string,rev:string){
-    const urld = this.url+'query-data/'+id+'/?rev='+rev;
+    const urld = this.url+'employee-details/'+id+'/?rev='+rev;
     return this.http.delete(urld,this.httpOptions);
 
   }
   deleteUser(id:string,rev:string){
-    const urld = this.url+'user-data/'+id+'/?rev='+rev;
+    const urld = this.url+'employee-details/'+id+'/?rev='+rev;
     return this.http.delete(urld,this.httpOptions);
 
   }
@@ -76,6 +89,10 @@ export class EmployeeServiceService {
   updateEmployee(doc:any){
     console.log(doc);
     return this.http.put('http://localhost:8000/update_query/',doc);
+  }
+  updateSalary(doc:any){
+    console.log(doc);
+    return this.http.put('http://localhost:8000/update_salary/',doc);
   }
   updateQuery(doc:any){
     console.log(doc);
@@ -97,4 +114,32 @@ export class EmployeeServiceService {
     const url = this.url + database + '/' + id;
     return this.http.get(url, this.httpOptions);
   }
+  getByType(type: string) {
+    let url = this.url + 'employee-details/_find'
+    let typedData = {
+      selector: {
+        type: type
+      }
+   
+    };
+    return this.http.post(url, typedData, this.httpOptions)
+
+  }
+  getadmin() {
+    return this.http.get('http://localhost:8000/getadmin/');
+  }
+  getadminId(id: any) {
+    return this.http.get(`http://localhost:8000/getadminId/${id}`);
+  }
+
+  // employeename(id:any){
+  //   var name ={
+  //     selector:{
+  //       "uniqid":id,
+  //       "type":"dashboard"
+  //     }
+  //   }
+  //   return this.http.get('http//locahost:8000/employeename/'+id);
+  
+  // }
  }

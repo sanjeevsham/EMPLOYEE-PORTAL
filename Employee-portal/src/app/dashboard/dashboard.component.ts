@@ -8,9 +8,9 @@ import { EmployeeServiceService } from '../employee-service.service';
 })
 export class DashboardComponent {
   addform!:FormGroup;
-  alluser!:any;
+  alldata:any;
   exchange!:any;
-  store:any=[];
+  object:any=[]
   constructor(private formbuilder:FormBuilder,private api:EmployeeServiceService) { }
 
   ngOnInit(): void {
@@ -32,71 +32,60 @@ export class DashboardComponent {
   
   addEmployee(formvalue:NgForm){
       console.log(formvalue);
-      this.store.push(formvalue)
+      this.object.push(formvalue)
       this.api.addEmployee(formvalue).subscribe(res=>{
       console.log("hello"+res);
       console.log("Your data was posted successfully!");
-      alert('your data is added successfully')
+      location.reload()
+
     },rej=>{
       console.log("opps! Can not post data"+rej);
     });
   }
   getuser(){
-    this.store=[];
-    this.api.getEmployee().subscribe(res=>{
-      console.log(res);
-      console.log("response is comming");
-      this.alluser=res;
-      this.alluser=this.alluser.rows;
-      console.log(this.alluser);
-      for (const key in this.alluser) {
-            if (Object.prototype.hasOwnProperty.call(this.alluser, key)) {
-              const element = this.alluser[key];
-              console.log(element.id);
-              this.api.getAllEmployee(element.id).subscribe(res=>{
-                console.log(res);
-                this.exchange=res;
-                this.store.push(this.exchange);
-                console.log("data receved");
-              },rej=>{
-                console.log("error"+rej);
-              })
-            
-            }
-          }
-    },rej=>{
-        console.log("opps! Somthing went wrong"+rej);
-    })
+    this.object=[];
+    this.api.getEmployee().subscribe(data=>{
+      console.log(data);
+      console.log('Data was fetching');
+      this.alldata=data;
+      this.alldata=this.alldata.docs;
+      console.log(this.alldata);
+      for(const i of this.alldata){
+            this.object.push(i);
+            console.log('Fetched successfuly in add component');
+      }
+    
+    });
   }
-  
   delete(data:any){
     this.api.deleteEmployee(data._id,data._rev).subscribe(res=>{
       console.log("your data has deleted, please refresh the page");
-      alert('your data was deleted successfully')
+      location.reload()
+
     },rej=>{
       console.log("oops can not delete"+rej);
     })
 
   }
   
-  onEdit(row:any){
-    this.addform.controls['id'].setValue(row.id);
-    this.addform.controls['username'].setValue(row.username);
-    this.addform.controls['email'].setValue(row.email);
-    this.addform.controls['dob'].setValue(row.dob);
-    this.addform.controls['mobileno'].setValue(row.mobileno);
-    this.addform.controls['bloodgroup'].setValue(row.bloodgroup);
-    this.addform.controls['userlogin'].setValue(row.userlogin);
-    this.addform.controls['userpassword'].setValue(row.userpassword);
-    this.addform.controls['_id'].setValue(row._id);
-    this.addform.controls['_rev'].setValue(row._rev);
+  onEdit(obj:any){
+    this.addform.controls['id'].setValue(obj.id);
+    this.addform.controls['username'].setValue(obj.username);
+    this.addform.controls['email'].setValue(obj.email);
+    this.addform.controls['dob'].setValue(obj.dob);
+    this.addform.controls['mobileno'].setValue(obj.mobileno);
+    this.addform.controls['bloodgroup'].setValue(obj.bloodgroup);
+    this.addform.controls['userlogin'].setValue(obj.userlogin);
+    this.addform.controls['userpassword'].setValue(obj.userpassword);
+    this.addform.controls['_id'].setValue(obj._id);
+    this.addform.controls['_rev'].setValue(obj._rev);
   }
 
   update(formvalue:NgForm){
     console.log(formvalue);
     this.api.updateEmployee(formvalue).subscribe(res=>{
       console.log("Your data was updated successfully!");
-      alert('your data was Updated successfully')
+      location.reload()
     },rej=>{
       console.log("can not update....."+rej);
     })

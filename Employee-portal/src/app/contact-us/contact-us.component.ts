@@ -36,6 +36,8 @@ export class ContactUsComponent implements OnInit {
         console.log("hello"+res);
         console.log("Your data was posted successfully!");
         alert('your data is added successfully')
+      location.reload()
+
         },rej=>{
         console.log("opps! Can not post data"+rej);
         });

@@ -21,6 +21,7 @@ import { EmployementComponent } from './employement/employement.component';
 import { UserdashboardComponent } from './userdashboard/userdashboard.component';
 import { UserprofileComponent } from './userprofile/userprofile.component';
 import { SalaryComponent } from './salary/salary.component';
+import { EmployeeSalaryComponent } from './employee-salary/employee-salary.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,6 +42,7 @@ import { SalaryComponent } from './salary/salary.component';
     UserdashboardComponent,
     UserprofileComponent,
     SalaryComponent,
+    EmployeeSalaryComponent,
   ],
   imports: [
     BrowserModule,

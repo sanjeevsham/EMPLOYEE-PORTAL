@@ -18,7 +18,6 @@ export class UserdashboardComponent implements OnInit {
     this.data.getDataById("employee-details",this.userId).subscribe(res=>{
       console.log(res)
       this.user=res
-      alert("Data Get Success fully ")
     },rej=>{
       alert("sorry Cant get Data"+rej)
     })

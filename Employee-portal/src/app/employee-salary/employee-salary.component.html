@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg bg-dark" id="head">
   <div class="container-fluid">
-    <a class="navbar-brand" href="">Employee Portal</a>
+    <a class="navbar-brand" href="">Employee Salary details</a>
     <button
       class="navbar-toggler"
       type="button"
@@ -27,42 +27,15 @@
         class="btn btn-outline-success"
         id="button1"
         data-bs-toggle="modal"
-        routerLink="/query"
-        routerLinkActive="active-link"
+        (click)="getSalary()"
       >
-        Query
-      </button>
-      <button
-        class="btn btn-outline-success"
-        id="button1"
-        data-bs-toggle="modal"
-        (click)="getuser()"
-      >
-        employee-list
-      </button>
-      <button
-        class="btn btn-outline-success"
-        id="button1"
-        data-bs-toggle="modal"
-        routerLink="/applied"
-        routerLinkActive="active-link"
-      >
-        Leave-details
-      </button>
-      <button
-        class="btn btn-outline-success"
-        id="button1"
-        data-bs-toggle="modal"
-        routerLink="/empsalary"
-        routerLinkActive="active-link"
-      >
-        Employee-payments
+        Empsalary-list
       </button>
       <input
         class="input1"
         type="submit"
         value="Logout"
-        routerLink="/splasher"
+        routerLink="/dashboard"
         routerLinkActive="active"
       />
     </div>
@@ -76,25 +49,21 @@
       <tr>
         <th scope="col">ID</th>
         <th scope="col">Name</th>
-        <th scope="col">Email ID</th>
-        <th scope="col">Date of Birth</th>
-        <th scope="col">Mobile No</th>
-        <th scope="col">Blood Group</th>
-        <th scope="col">User login Id</th>
-        <th scope="col">userPassword</th>
+        <th scope="col">Date of joining</th>
+        <th scope="col">Month</th>
+        <th scope="col">leave Days</th>
+        <th scope="col">Salary</th>
         <th scope="col">Action</th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let obj of object">
-        <th scope="col">{{ obj.id }}</th>
-        <th scope="col">{{ obj.username }}</th>
-        <th scope="col">{{ obj.email }}</th>
-        <th scope="col">{{ obj.dob }}</th>
-        <th scope="col">{{ obj.mobileno }}</th>
-        <th scope="col">{{ obj.bloodgroup }}</th>
-        <th scope="col">{{ obj.userlogin }}</th>
-        <th scope="col">{{ obj.userpassword }}</th>
+        <th scope="col">{{ obj.userid }}</th>
+        <th scope="col">{{ obj.name }}</th>
+        <th scope="col">{{ obj.doj }}</th>
+        <th scope="col">{{ obj.month }}</th>
+        <th scope="col">{{ obj.leave }}</th>
+        <th scope="col">{{ obj.salary }}</th>
         <td>
           <button
             type="button"
@@ -117,9 +86,8 @@
       </tr>
     </tbody>
   </table>
-  <div></div>
 
-  <!-- Add Employee -->
+  <!-- Add Salary -->
   <div
     class="modal fade"
     id="addform"
@@ -130,7 +98,7 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Add new employee</h5>
+          <h5 class="modal-title" id="exampleModalLabel">Add Salary</h5>
           <button
             type="button"
             class="btn-close"
@@ -141,150 +109,112 @@
         <div class="modal-body">
           <form [formGroup]="addform">
             <div class="mb-3">
-              <label for="id" class="form-label">ID </label>
+              <label for="userid" class="form-label">Id </label>
               <input
                 type="number"
                 class="form-control"
-                formControlName="id"
-                id="id"
+                formControlName="userid"
+                id="userid"
                 aria-describedby="emailHelp"
                 required
               />
               <span
                 class="text-danger"
                 *ngIf="
-                  addform.controls['id'].touched &&
-                  addform.hasError('required', 'id')
+                  addform.controls['userid'].touched &&
+                  addform.hasError('required', 'userid')
                 "
                 >* ID required!!</span
               >
             </div>
             <div class="mb-3">
-              <label for="username" class="form-label">Name </label>
+              <label for="name" class="form-label">Name </label>
               <input
                 type="text"
                 class="form-control"
-                formControlName="username"
-                id="username"
+                formControlName="name"
+                id="name"
                 aria-describedby="emailHelp"
               />
               <span
                 class="text-danger"
                 *ngIf="
-                  addform.controls['username'].touched &&
-                  addform.hasError('required', 'username')
+                  addform.controls['name'].touched &&
+                  addform.hasError('required', 'name')
                 "
                 >* Name required!!</span
               >
             </div>
             <div class="mb-3">
-              <label for="email" class="form-label">Email </label>
-              <input
-                type="text"
-                class="form-control"
-                formControlName="email"
-                id="email"
-                aria-describedby="emailHelp"
-              />
-              <span
-                class="text-danger"
-                *ngIf="
-                  addform.controls.email.errors &&
-                  addform.controls.email.touched
-                "
-              >
-                <br />Invalid Email Address
-              </span>
-            </div>
-            <div class="mb-3">
-              <label for="dob" class="form-label">Date of Birth</label>
+              <label for="doj" class="form-label">Date of joining</label>
               <input
                 type="date"
                 class="form-control"
-                formControlName="dob"
-                id="dob"
+                formControlName="doj"
+                id="doj"
                 aria-describedby="emailHelp"
               />
               <span
                 class="text-danger"
                 *ngIf="
-                  addform.controls['dob'].touched &&
-                  addform.hasError('required', 'dob')
+                  addform.controls['doj'].touched &&
+                  addform.hasError('required', 'doj')
                 "
-                >* DOB required!!</span
+                >* DOJ required!!</span
               >
             </div>
             <div class="mb-3">
-              <label for="mobileno" class="form-label">Mobile No </label>
-              <input
-                type="number"
-                class="form-control"
-                formControlName="mobileno"
-                id="mobileno"
-                aria-describedby="emailHelp"
-              />
-              <span
-                class="text-danger"
-                *ngIf="
-                  addform.controls['mobileno'].touched &&
-                  addform.hasError('required', 'mobileno')
-                "
-                >* Mobile no required!!</span
-              >
-            </div>
-            <div class="mb-3">
-              <label for="bloodgroup" class="form-label">Blood Group </label>
+              <label for="month" class="form-label">Month </label>
               <input
                 type="text"
                 class="form-control"
-                formControlName="bloodgroup"
-                id="bloodgroup"
+                formControlName="month"
+                id="month"
                 aria-describedby="emailHelp"
               />
               <span
                 class="text-danger"
                 *ngIf="
-                  addform.controls['bloodgroup'].touched &&
-                  addform.hasError('required', 'bloodgroup')
+                  addform.controls['month'].touched &&
+                  addform.hasError('required', 'month')
                 "
-                >* Blood group required!!</span
+                >* Month required!!</span
               >
             </div>
             <div class="mb-3">
-              <label for="userlogin" class="form-label">User-login Id </label>
+              <label for="leave" class="form-label">Leave days </label>
               <input
                 type="text"
                 class="form-control"
-                formControlName="userlogin"
-                id="userlogin"
+                formControlName="leave"
+                id="leave"
                 aria-describedby="emailHelp"
               />
               <span
                 class="text-danger"
                 *ngIf="
-                  addform.controls['userlogin'].touched &&
-                  addform.hasError('required', 'userlogin')
+                  addform.controls['leave'].touched &&
+                  addform.hasError('required', 'leave')
                 "
-                >* required!!</span
+                >* Leave days required!!</span
               >
             </div>
-
             <div class="mb-3">
-              <label for="userpassword" class="form-label">userPassword </label>
+              <label for="salary" class="form-label">Salary </label>
               <input
                 type="text"
                 class="form-control"
-                formControlName="userpassword"
-                id="userpassword"
+                formControlName="salary"
+                id="salary"
                 aria-describedby="emailHelp"
               />
               <span
                 class="text-danger"
                 *ngIf="
-                  addform.controls['userpassword'].touched &&
-                  addform.hasError('required', 'userpassword')
+                  addform.controls['salary'].touched &&
+                  addform.hasError('required', 'salary')
                 "
-                >* required!!</span
+                >* Leave days required!!</span
               >
             </div>
             <div class="modal-footer">
@@ -298,7 +228,7 @@
               <button
                 type="button"
                 class="btn btn-primary"
-                (click)="addEmployee(this.addform.value)"
+                (click)="addSalary(this.addform.value)"
               >
                 Add Employee
               </button>
@@ -320,7 +250,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">
-            Edit employee details
+            Edit Salary details
           </h5>
           <button
             type="button"
@@ -332,84 +262,113 @@
         <div class="modal-body">
           <form [formGroup]="addform">
             <div class="mb-3">
-              <label for="id" class="form-label">ID </label>
+              <label for="userid" class="form-label">ID </label>
               <input
                 type="number"
                 class="form-control"
-                formControlName="id"
-                id="id"
+                formControlName="userid"
+                id="userid"
                 aria-describedby="emailHelp"
+                required
               />
+              <span
+                class="text-danger"
+                *ngIf="
+                  addform.controls['userid'].touched &&
+                  addform.hasError('required', 'userid')
+                "
+                >* ID required!!</span
+              >
             </div>
             <div class="mb-3">
-              <label for="username" class="form-label">Name </label>
+              <label for="name" class="form-label">Name </label>
               <input
                 type="text"
                 class="form-control"
-                formControlName="username"
-                id="username"
+                formControlName="name"
+                id="name"
                 aria-describedby="emailHelp"
               />
+              <span
+                class="text-danger"
+                *ngIf="
+                  addform.controls['name'].touched &&
+                  addform.hasError('required', 'name')
+                "
+                >* Name required!!</span
+              >
             </div>
             <div class="mb-3">
-              <label for="email" class="form-label">Email </label>
-              <input
-                type="text"
-                class="form-control"
-                formControlName="email"
-                id="email"
-                aria-describedby="emailHelp"
-              />
-            </div>
-            <div class="mb-3">
-              <label for="dob" class="form-label">Date of Birth</label>
+              <label for="doj" class="form-label">Date of joining</label>
               <input
                 type="date"
                 class="form-control"
-                formControlName="dob"
-                id="dob"
+                formControlName="doj"
+                id="doj"
                 aria-describedby="emailHelp"
               />
+              <span
+                class="text-danger"
+                *ngIf="
+                  addform.controls['doj'].touched &&
+                  addform.hasError('required', 'doj')
+                "
+                >* DOJ required!!</span
+              >
             </div>
             <div class="mb-3">
-              <label for="mobileno" class="form-label">Mobile No </label>
-              <input
-                type="number"
-                class="form-control"
-                formControlName="mobileno"
-                id="mobileno"
-                aria-describedby="emailHelp"
-              />
-            </div>
-            <div class="mb-3">
-              <label for="bloodgroup" class="form-label">Blood Group </label>
+              <label for="month" class="form-label">Month </label>
               <input
                 type="text"
                 class="form-control"
-                formControlName="bloodgroup"
-                id="bloodgroup"
+                formControlName="month"
+                id="month"
                 aria-describedby="emailHelp"
               />
+              <span
+                class="text-danger"
+                *ngIf="
+                  addform.controls['month'].touched &&
+                  addform.hasError('required', 'month')
+                "
+                >* Month required!!</span
+              >
             </div>
             <div class="mb-3">
-              <label for="userlogin" class="form-label">User-login Id </label>
+              <label for="leave" class="form-label">Leave days </label>
               <input
                 type="text"
                 class="form-control"
-                formControlName="userlogin"
-                id="userlogin"
+                formControlName="leave"
+                id="leave"
                 aria-describedby="emailHelp"
               />
+              <span
+                class="text-danger"
+                *ngIf="
+                  addform.controls['leave'].touched &&
+                  addform.hasError('required', 'leave')
+                "
+                >* Leave days required!!</span
+              >
             </div>
             <div class="mb-3">
-              <label for="userpassword" class="form-label">userPassword </label>
+              <label for="salary" class="form-label">Salary </label>
               <input
                 type="text"
                 class="form-control"
-                formControlName="userpassword"
-                id="userpassword"
+                formControlName="salary"
+                id="salary"
                 aria-describedby="emailHelp"
               />
+              <span
+                class="text-danger"
+                *ngIf="
+                  addform.controls['salary'].touched &&
+                  addform.hasError('required', 'salary')
+                "
+                >* Leave days required!!</span
+              >
             </div>
             <div class="modal-footer">
               <button
