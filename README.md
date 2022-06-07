@@ -85,7 +85,8 @@
           
           the employee will be displayed and the user can also view his/her salary details of the current month. 
           
-      --> I have give a apply leave form in the user dashboard where he/she can apply leave by giving the from day, to day according  the his/her salary will be                
+      --> I have give a apply leave form in the user dashboard where he/she can apply leave by giving the from day, to day according  the his/her salary will be
+          
           updated by the admin the derails the he applied will be stored in the admin dashboard.
           
           * Query Form
