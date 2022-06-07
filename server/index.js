@@ -21,9 +21,9 @@ app.get('/getadmin', (request, response) => {
       type: 'admin',
     },
   };
-  dbconnection.get(data, 'employee-details').then((res) => {
-    if (res) {
-      response.send(res);
+  dbconnection.get(data, 'employee-details').then((admin_res) => {
+    if (admin_res) {
+      response.send(admin_res);
     } else {
       response.send('error');
     }
