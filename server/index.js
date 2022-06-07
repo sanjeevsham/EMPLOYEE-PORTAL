@@ -199,25 +199,25 @@ app.delete('/delete_salary/:id/:id1', (request, response) => {
 
 /////a
 
-app.get('/uniqueidChanged', (request, response) => {
-  console.log(request.params.id);
-  let name = request.params.id;
-  let employeenameall = {
-    selector: {
-      name: request.params.username,
-      uniqueid: request.params._id,
+// app.get('/uniqueidChanged', (request, response) => {
+//   console.log(request.params.id);
+//   let name = request.params.id;
+//   let employeenameall = {
+//     selector: {
+//       name: request.params.username,
+//       uniqueid: request.params._id,
 
-      type: 'dashboard',
-    },
-  };
-  dbconnection.find(employeenameall, 'employee-details').then((res) => {
-    if (res) {
-      response.send(res);
-    } else {
-      response.send('error');
-    }
-  });
-});
+//       type: 'dashboard',
+//     },
+//   };
+//   dbconnection.find(employeenameall, 'employee-details').then((res) => {
+//     if (res) {
+//       response.send(res);
+//     } else {
+//       response.send('error');
+//     }
+//   });
+// });
 
 //---------------------------------------------Apply Leave--------------------------------------------------//
 app.post('/post_user', (request, response) => {

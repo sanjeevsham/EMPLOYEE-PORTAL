@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserprofileComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+console.log("code")
+
+   }
 
   ngOnInit(): void {
+console.log("code")
+
   }
 
 }
