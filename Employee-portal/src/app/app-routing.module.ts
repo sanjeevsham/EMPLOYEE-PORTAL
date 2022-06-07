@@ -12,7 +12,6 @@ import { SplasherComponent } from './splasher/splasher.component';
 import { QueryComponent } from './query/query.component';
 import { ApplyComponent } from './apply/apply.component';
 import { AppliedUsersComponent } from './applied-users/applied-users.component';
-import { DepartmentComponent } from './department/department.component';
 import { EmployementComponent } from './employement/employement.component';
 import { UserdashboardComponent } from './userdashboard/userdashboard.component';
 import { UserprofileComponent } from './userprofile/userprofile.component';
@@ -31,7 +30,6 @@ const routes: Routes = [
   {path:'query',component:QueryComponent},
   {path:'applied',component:AppliedUsersComponent},
   {path:'apply',component:ApplyComponent},
-  {path:'dept',component:DepartmentComponent},
   {path:'employee',component:EmployementComponent},
   {path:'userdb',component:UserdashboardComponent},
   {path:'userprofile',component:UserprofileComponent},

@@ -16,7 +16,6 @@ import { SplasherComponent } from './splasher/splasher.component';
 import { QueryComponent } from './query/query.component';
 import { ApplyComponent } from './apply/apply.component';
 import { AppliedUsersComponent } from './applied-users/applied-users.component';
-import { DepartmentComponent } from './department/department.component';
 import { EmployementComponent } from './employement/employement.component';
 import { UserdashboardComponent } from './userdashboard/userdashboard.component';
 import { UserprofileComponent } from './userprofile/userprofile.component';
@@ -37,7 +36,6 @@ import { EmployeeSalaryComponent } from './employee-salary/employee-salary.compo
     QueryComponent,
     ApplyComponent,
     AppliedUsersComponent,
-    DepartmentComponent,
     EmployementComponent,
     UserdashboardComponent,
     UserprofileComponent,
