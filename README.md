@@ -48,6 +48,22 @@
      
  **Project flow**
  
+ ***Form deteils***
+ 
+     * To start with I have given four forms namely
+        
+        * Admin Form
+        
+        * Login Form
+        
+        * Employee details Form
+        
+        * Query Form
+        
+        * Leave Apply Form
+        
+        
+  ***Execution***
  
      
      
