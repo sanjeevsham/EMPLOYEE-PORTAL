@@ -18,9 +18,9 @@ export class SalaryComponent implements OnInit {
     this.data.getDataById("employee-details",this.userId).subscribe(res=>{
       console.log(res)
       this.user=res
-      this.data.getByType("salary").subscribe(res=>{
-        console.log(res);
-        this.temp=res
+      this.data.getByType("salary").subscribe(Response=>{
+        console.log(Response);
+        this.temp=Response
        console.log(this.temp)
       })
     },rej=>{
