@@ -65,7 +65,7 @@ app.post('/post_query', (request, response) => {
   console.log('Data added');
 });
 
-app.get('/get_query', (request, response) => {
+app.get('/get_query', (_request, response) => {
   console.log('start');
   let data = {
     selector: {
@@ -143,7 +143,7 @@ app.post('/post_salary', (request, response) => {
   });
   console.log('Data added');
 });
-app.get('/get_salary', (request, response) => {
+app.get('/get_salary', (_request, response) => {
   console.log('start');
   let data = {
     selector: {
@@ -240,7 +240,7 @@ app.post('/post_user', (request, response) => {
   });
   console.log('Data added');
 });
-app.get('/get_user', (request, response) => {
+app.get('/get_user', (_request, response) => {
   console.log('start');
   let data = {
     selector: {
@@ -275,7 +275,7 @@ app.post('/post_data', (request, response) => {
   console.log('Data added');
 });
 
-app.get('/get_data', (request, response) => {
+app.get('/get_data', (_request, response) => {
   console.log('start');
   let data = {
     selector: {

@@ -77,7 +77,7 @@ export class EmployeeSalaryComponent  {
   
   
   delete(data:any){
-    this.api.deleteSalary(data._id,data._rev).subscribe(res=>{
+    this.api.deleteSalary(data._id,data._rev).subscribe(_res=>{
       console.log("your data has deleted, please refresh the page");
       location.reload()
     
@@ -100,7 +100,7 @@ export class EmployeeSalaryComponent  {
 
   update(formvalue:NgForm){
     console.log(formvalue);
-    this.api.updateSalary(formvalue).subscribe(res=>{
+    this.api.updateSalary(formvalue).subscribe(_res=>{
       console.log("Your data was updated successfully!");
       location.reload()
 

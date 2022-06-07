@@ -62,7 +62,7 @@ export class DashboardComponent {
     });
   }
   delete(data:any){
-    this.api.deleteEmployee(data._id,data._rev).subscribe(res=>{
+    this.api.deleteEmployee(data._id,data._rev).subscribe(_res=>{
       console.log("your data has deleted, please refresh the page");
       location.reload()
 
@@ -91,7 +91,7 @@ export class DashboardComponent {
 
   update(formvalue:NgForm){
     console.log(formvalue);
-    this.api.updateEmployee(formvalue).subscribe(res=>{
+    this.api.updateEmployee(formvalue).subscribe(_res=>{
       console.log("Your data was updated successfully!");
       alert('your data was Updated successfully')
       location.reload()
