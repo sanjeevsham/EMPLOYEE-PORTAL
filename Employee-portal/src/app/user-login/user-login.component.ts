@@ -36,7 +36,7 @@ login(obj:any){
   console.log(this.userlogin);
   console.log(this.userpassword);
   
- this.api.checkuserlogin(this.userlogin,this.userpassword).subscribe(data => {
+ this.api.checkuserlogin(this.userlogin).subscribe(data => {
    console.log("hi");
      console.log(data);
      this.sample=data
@@ -48,7 +48,8 @@ login(obj:any){
       this.route.navigate(['/userprofile']);
      }
      else{
-      alert("Login authentication failed");
+      // alert("Login authentication failed");
+      this.alert.showError("Invalid data","Login authentication failed")
      }
     })
   
