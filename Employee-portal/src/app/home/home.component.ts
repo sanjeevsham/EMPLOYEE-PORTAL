@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+    console.log("code-samell")
+
+   }
 
   ngOnInit(): void {
+    console.log("code-samell")
+
   }
 
 }

@@ -17,7 +17,7 @@ app.use(
 //------------------------------------------admin--------------------------------//
 app.get('/getadmin', (request, response) => {
   console.log(request);
-  var data = {
+  let data = {
     selector: {
       type: 'admin',
     },
@@ -41,7 +41,7 @@ app.get('/getadminId/:id', (request, response) => {
 });
 //-----------------------------------------dashboard------------------------------------------------------------//
 app.post('/post_query', (request, response) => {
-  var object = {
+  let object = {
     id: request.body.id,
     username: request.body.username,
     email: request.body.email,
@@ -68,7 +68,7 @@ app.post('/post_query', (request, response) => {
 
 app.get('/get_query', (request, response) => {
   console.log('start');
-  var data = {
+  let data = {
     selector: {
       type: 'dashboard',
     },
@@ -96,7 +96,7 @@ app.delete('/delete_query/:id/:id1', (request, response) => {
 });
 app.put('/update_query', (request, response) => {
   console.log('hey');
-  var object = {
+  let object = {
     _id: request.body._id,
     _rev: request.body._rev,
     id: request.body.id,
@@ -126,7 +126,7 @@ app.put('/update_query', (request, response) => {
 
 //------------------------------------salary------------------------------------------//
 app.post('/post_salary', (request, response) => {
-  var object = {
+  let object = {
     userid: request.body.userid,
     name: request.body.name,
     doj: request.body.doj,
@@ -146,7 +146,7 @@ app.post('/post_salary', (request, response) => {
 });
 app.get('/get_salary', (request, response) => {
   console.log('start');
-  var data = {
+  let data = {
     selector: {
       type: 'salary',
     },
@@ -161,7 +161,7 @@ app.get('/get_salary', (request, response) => {
 });
 app.put('/update_salary', (request, response) => {
   console.log('hey');
-  var object = {
+  let object = {
     _id: request.body._id,
     _rev: request.body._rev,
     userid: request.body.userid,
@@ -201,8 +201,8 @@ app.delete('/delete_salary/:id/:id1', (request, response) => {
 
 app.get('/uniqueidChanged', (request, response) => {
   console.log(request.params.id);
-  var name = request.params.id;
-  var employeenameall = {
+  let name = request.params.id;
+  let employeenameall = {
     selector: {
       name: request.params.username,
       uniqueid: request.params._id,
@@ -221,7 +221,7 @@ app.get('/uniqueidChanged', (request, response) => {
 
 //---------------------------------------------Apply Leave--------------------------------------------------//
 app.post('/post_user', (request, response) => {
-  var object = {
+  let object = {
     empid: request.body.empid,
     firstname: request.body.firstname,
     email: request.body.email,
@@ -243,7 +243,7 @@ app.post('/post_user', (request, response) => {
 });
 app.get('/get_user', (request, response) => {
   console.log('start');
-  var data = {
+  let data = {
     selector: {
       type: 'apply',
     },
@@ -258,7 +258,7 @@ app.get('/get_user', (request, response) => {
 });
 //-------------------------------------------query--------------------------------------//
 app.post('/post_data', (request, response) => {
-  var object = {
+  let object = {
     firstname: request.body.firstname,
     lastname: request.body.lastname,
     email: request.body.email,
@@ -278,7 +278,7 @@ app.post('/post_data', (request, response) => {
 
 app.get('/get_data', (request, response) => {
   console.log('start');
-  var data = {
+  let data = {
     selector: {
       type: 'query',
     },
@@ -294,7 +294,7 @@ app.get('/get_data', (request, response) => {
 
 app.get('/get__query/:id', (request, response) => {
   console.log('get id', request.params.id);
-  var fetchdata = {
+  let fetchdata = {
     selector: {
       id: request.params.id,
     },
@@ -313,7 +313,7 @@ app.get('/get__query/:id', (request, response) => {
 //--------------------------------------user login------------------------------------//
 app.get('/getdata/:id', (req, res) => {
   console.log('retreived......', req.params.id);
-  var object = {
+  let object = {
     selector: {
       userlogin: req.params.id,
     },

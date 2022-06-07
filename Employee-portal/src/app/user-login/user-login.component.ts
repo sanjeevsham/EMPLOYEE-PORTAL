@@ -48,7 +48,6 @@ login(obj:any){
       this.route.navigate(['/userprofile']);
      }
      else{
-      // this.toastr.warning("Hi Patient wrong authentication,Please enter correct Email and Password");
       alert("Login authentication failed");
      }
     })

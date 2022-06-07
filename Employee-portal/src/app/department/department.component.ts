@@ -7,9 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DepartmentComponent implements OnInit {
 
-  constructor() { }
+  constructor() { 
+    console.log("code-samell")
+  }
 
   ngOnInit(): void {
+    console.log("code-samell")
+
   }
 
 }
