@@ -21,6 +21,10 @@ export class DashboardComponent {
       dob:['',Validators.required],
       mobileno:['',Validators.required],
       bloodgroup:['',Validators.required],
+      doj:['',Validators.required],
+      month:['',Validators.required],
+      leave:['',Validators.required],
+      salary:['',Validators.required],
       userlogin:['',Validators.required],
       userpassword:['',Validators.required],
       _id:[''],  
@@ -75,6 +79,10 @@ export class DashboardComponent {
     this.addform.controls['dob'].setValue(obj.dob);
     this.addform.controls['mobileno'].setValue(obj.mobileno);
     this.addform.controls['bloodgroup'].setValue(obj.bloodgroup);
+    this.addform.controls['doj'].setValue(obj.doj);
+    this.addform.controls['month'].setValue(obj.month);
+    this.addform.controls['leave'].setValue(obj.leave);
+    this.addform.controls['salary'].setValue(obj.salary);
     this.addform.controls['userlogin'].setValue(obj.userlogin);
     this.addform.controls['userpassword'].setValue(obj.userpassword);
     this.addform.controls['_id'].setValue(obj._id);
@@ -85,6 +93,7 @@ export class DashboardComponent {
     console.log(formvalue);
     this.api.updateEmployee(formvalue).subscribe(res=>{
       console.log("Your data was updated successfully!");
+      alert('your data was Updated successfully')
       location.reload()
     },rej=>{
       console.log("can not update....."+rej);

@@ -10,18 +10,16 @@
         <th scope="col">Month</th>
         <th scope="col">leave Days</th>
         <th scope="col">Salary</th>
-        <th scope="col">Action</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let user of temp.docs[0]">
-        <th scope="col">{{ user.userid }}</th>
-        <th scope="col">{{ user.name }}</th>
+      <tr>
+        <th scope="col">{{ user.id }}</th>
+        <th scope="col">{{ user.username }}</th>
         <th scope="col">{{ user.doj }}</th>
         <th scope="col">{{ user.month }}</th>
         <th scope="col">{{ user.leave }}</th>
         <th scope="col">{{ user.salary }}</th>
-        <th scope="col">{{ user._id }}</th>
       </tr>
     </tbody>
   </table>

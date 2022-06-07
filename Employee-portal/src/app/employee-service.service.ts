@@ -132,14 +132,14 @@ export class EmployeeServiceService {
     return this.http.get(`http://localhost:8000/getadminId/${id}`);
   }
 
-  // employeename(id:any){
-  //   var name ={
-  //     selector:{
-  //       "uniqid":id,
-  //       "type":"dashboard"
-  //     }
-  //   }
-  //   return this.http.get('http//locahost:8000/employeename/'+id);
+  uniqueidChanged(id:any){
+    var name ={
+      selector:{
+        "name":id,
+        "type":"dashboard"
+      }
+    }
+    return this.http.get('http//locahost:8000/uniqueidChanged/'+name);
   
-  // }
+  }
  }

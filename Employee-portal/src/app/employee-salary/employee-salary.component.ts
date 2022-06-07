@@ -26,27 +26,27 @@ export class EmployeeSalaryComponent  {
       _rev:[''],
     })
   }
-  // employeename(arg:any){
+  uniqueidChange(arg:any){
 
-  //   console.log(arg.target.value);
-  //   var target = arg.target.value;
-  //   this.api.employeename(target).subscribe((data) => {
-  //     console.log(data);
-  //     this.alldata = data;
-  //     this.alldata = this.alldata.docs;
-  //     console.log(this.alldata);
+    console.log(arg.target.value);
+    var target = arg.target.value;
+    this.api.uniqueidChanged(target).subscribe((data) => {
+      console.log(data);
+      this.alldata = data;
+      this.alldata = this.alldata.docs;
+      console.log(this.alldata);
 
-  //     for(const i of this.alldata) {
-  //       console.log(i.uniqid);
-  //       this.val.push(i.uniqid);
-  //       this.addform.controls['uniqid'].setValue(i._id)
-  //       this.object.push(i)
-  //     }
+      for(const i of this.alldata) {
+        console.log(i.name);
+        this.val.push(i.name);
+        this.addform.controls['uniqueid'].setValue(i.name)
+        this.object.push(i)
+      }
     
-  //   });
+    });
     
 
-  // }
+  }
   addSalary(formvalue:NgForm){
       console.log(formvalue);
       this.object.push(formvalue)
@@ -73,6 +73,8 @@ export class EmployeeSalaryComponent  {
     
     });
   }
+
+  
   
   delete(data:any){
     this.api.deleteSalary(data._id,data._rev).subscribe(res=>{

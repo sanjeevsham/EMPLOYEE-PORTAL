@@ -49,7 +49,7 @@
       >
         Leave-details
       </button>
-      <button
+      <!-- <button
         class="btn btn-outline-success"
         id="button1"
         data-bs-toggle="modal"
@@ -57,14 +57,16 @@
         routerLinkActive="active-link"
       >
         Employee-payments
-      </button>
-      <input
-        class="input1"
-        type="submit"
-        value="Logout"
+      </button> -->
+      <button
+        class="btn btn-outline-success"
+        id="button1"
+        data-bs-toggle="modal"
         routerLink="/splasher"
-        routerLinkActive="active"
-      />
+        routerLinkActive="active-link"
+      >
+        logout
+      </button>
     </div>
   </div>
 </nav>
@@ -80,8 +82,12 @@
         <th scope="col">Date of Birth</th>
         <th scope="col">Mobile No</th>
         <th scope="col">Blood Group</th>
-        <th scope="col">User login Id</th>
-        <th scope="col">userPassword</th>
+        <th scope="col">Date of joining</th>
+        <th scope="col">Salary-month</th>
+        <th scope="col">Leave-days</th>
+        <th scope="col">salary</th>
+        <th scope="col">login Id</th>
+        <th scope="col">Password</th>
         <th scope="col">Action</th>
       </tr>
     </thead>
@@ -93,6 +99,10 @@
         <th scope="col">{{ obj.dob }}</th>
         <th scope="col">{{ obj.mobileno }}</th>
         <th scope="col">{{ obj.bloodgroup }}</th>
+        <th scope="col">{{ obj.doj }}</th>
+        <th scope="col">{{ obj.month }}</th>
+        <th scope="col">{{ obj.leave }}</th>
+        <th scope="col">{{ obj.salary }}</th>
         <th scope="col">{{ obj.userlogin }}</th>
         <th scope="col">{{ obj.userpassword }}</th>
         <td>
@@ -251,6 +261,78 @@
               >
             </div>
             <div class="mb-3">
+              <label for="doj" class="form-label">Date-of-joining </label>
+              <input
+                type="date"
+                class="form-control"
+                formControlName="doj"
+                id="doj"
+                aria-describedby="emailHelp"
+              />
+              <span
+                class="text-danger"
+                *ngIf="
+                  addform.controls['doj'].touched &&
+                  addform.hasError('required', 'doj')
+                "
+                >* Blood group required!!</span
+              >
+            </div>
+            <div class="mb-3">
+              <label for="month" class="form-label">Salary month </label>
+              <input
+                type="text"
+                class="form-control"
+                formControlName="month"
+                id="month"
+                aria-describedby="emailHelp"
+              />
+              <span
+                class="text-danger"
+                *ngIf="
+                  addform.controls['month'].touched &&
+                  addform.hasError('required', 'month')
+                "
+                >* Blood group required!!</span
+              >
+            </div>
+            <div class="mb-3">
+              <label for="leave" class="form-label">leave days </label>
+              <input
+                type="text"
+                class="form-control"
+                formControlName="leave"
+                id="leave"
+                aria-describedby="emailHelp"
+              />
+              <span
+                class="text-danger"
+                *ngIf="
+                  addform.controls['leave'].touched &&
+                  addform.hasError('required', 'leave')
+                "
+                >* Blood group required!!</span
+              >
+            </div>
+            <div class="mb-3">
+              <label for="salary" class="form-label">Salary </label>
+              <input
+                type="text"
+                class="form-control"
+                formControlName="salary"
+                id="salary"
+                aria-describedby="emailHelp"
+              />
+              <span
+                class="text-danger"
+                *ngIf="
+                  addform.controls['salary'].touched &&
+                  addform.hasError('required', 'salary')
+                "
+                >* Blood group required!!</span
+              >
+            </div>
+            <div class="mb-3">
               <label for="userlogin" class="form-label">User-login Id </label>
               <input
                 type="text"
@@ -388,6 +470,46 @@
                 class="form-control"
                 formControlName="bloodgroup"
                 id="bloodgroup"
+                aria-describedby="emailHelp"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="doj" class="form-label">Date-of-joining </label>
+              <input
+                type="date"
+                class="form-control"
+                formControlName="doj"
+                id="doj"
+                aria-describedby="emailHelp"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="month" class="form-label">Salary month </label>
+              <input
+                type="text"
+                class="form-control"
+                formControlName="month"
+                id="month"
+                aria-describedby="emailHelp"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="leave" class="form-label">Leave-days</label>
+              <input
+                type="text"
+                class="form-control"
+                formControlName="leave"
+                id="leave"
+                aria-describedby="emailHelp"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="salary" class="form-label">Salary</label>
+              <input
+                type="text"
+                class="form-control"
+                formControlName="salary"
+                id="salary"
                 aria-describedby="emailHelp"
               />
             </div>

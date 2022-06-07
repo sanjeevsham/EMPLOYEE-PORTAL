@@ -48,6 +48,10 @@ app.post('/post_query', (request, response) => {
     dob: request.body.dob,
     mobileno: request.body.mobileno,
     bloodgroup: request.body.bloodgroup,
+    doj: request.body.doj,
+    month: request.body.month,
+    leave: request.body.leave,
+    salary: request.body.salary,
     userlogin: request.body.userlogin,
     userpassword: request.body.userpassword,
     type: 'dashboard',
@@ -101,6 +105,10 @@ app.put('/update_query', (request, response) => {
     dob: request.body.dob,
     mobileno: request.body.mobileno,
     bloodgroup: request.body.bloodgroup,
+    doj: request.body.doj,
+    month: request.body.month,
+    leave: request.body.leave,
+    salary: request.body.salary,
     userlogin: request.body.userlogin,
     userpassword: request.body.userpassword,
     type: 'dashboard',
@@ -191,23 +199,25 @@ app.delete('/delete_salary/:id/:id1', (request, response) => {
 
 /////a
 
-// app.get('/employeename', (request, response) => {
-//   console.log(request.params.id);
-//   var name = request.params.id;
-//   var employeenameall = {
-//     selector: {
-//       name: request.params.id,
-//       type: 'dashboard',
-//     },
-//   };
-//   dbconnection.find(employeenameall, 'employee-details').then((res) => {
-//     if (res) {
-//       response.send(res);
-//     } else {
-//       response.send('error');
-//     }
-//   });
-// });
+app.get('/uniqueidChanged', (request, response) => {
+  console.log(request.params.id);
+  var name = request.params.id;
+  var employeenameall = {
+    selector: {
+      name: request.params.username,
+      uniqueid: request.params._id,
+
+      type: 'dashboard',
+    },
+  };
+  dbconnection.find(employeenameall, 'employee-details').then((res) => {
+    if (res) {
+      response.send(res);
+    } else {
+      response.send('error');
+    }
+  });
+});
 
 //---------------------------------------------Apply Leave--------------------------------------------------//
 app.post('/post_user', (request, response) => {

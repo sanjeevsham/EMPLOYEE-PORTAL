@@ -45,7 +45,6 @@ login(obj:any){
      localStorage.setItem("userId",this.id)
      if((data.docs[0].userpassword == this.userpassword))
      {
-       alert("success!!")
       this.route.navigate(['/userprofile']);
      }
      else{
