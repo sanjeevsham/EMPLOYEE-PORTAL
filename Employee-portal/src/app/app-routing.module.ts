@@ -13,7 +13,6 @@ import { QueryComponent } from './query/query.component';
 import { ApplyComponent } from './apply/apply.component';
 import { AppliedUsersComponent } from './applied-users/applied-users.component';
 import { DepartmentComponent } from './department/department.component';
-import { EmployeeServiceService } from './employee-service.service';
 import { EmployementComponent } from './employement/employement.component';
 import { UserdashboardComponent } from './userdashboard/userdashboard.component';
 import { UserprofileComponent } from './userprofile/userprofile.component';

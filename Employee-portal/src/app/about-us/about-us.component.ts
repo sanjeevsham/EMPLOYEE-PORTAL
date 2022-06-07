@@ -7,6 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutUsComponent implements OnInit {
 
-  constructor() {}
+  constructor() {
+    console.log("code-smell")
+  }
 
-  ngOnInit(): void { }}
+  ngOnInit(): void { 
+    console.log("code-smell")
+  }}

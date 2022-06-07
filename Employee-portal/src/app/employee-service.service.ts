@@ -105,7 +105,7 @@ export class EmployeeServiceService {
   getRegisterdata(formObject:any){
     return this.http.get('http://localhost:8000/postquery',formObject)
   }
-  checkuserlogin(userlogin:any,userpassword:any)
+  checkuserlogin(userlogin:any)
   {
     console.log("hi");
    return this.http.get<any>('http://localhost:8000/getdata/'+userlogin);
@@ -133,7 +133,7 @@ export class EmployeeServiceService {
   }
 
   uniqueidChanged(id:any){
-    var name ={
+    let name ={
       selector:{
         "name":id,
         "type":"dashboard"

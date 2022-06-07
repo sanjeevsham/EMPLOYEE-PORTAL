@@ -29,7 +29,7 @@ export class EmployeeSalaryComponent  {
   uniqueidChange(arg:any){
 
     console.log(arg.target.value);
-    var target = arg.target.value;
+    let target = arg.target.value;
     this.api.uniqueidChanged(target).subscribe((data) => {
       console.log(data);
       this.alldata = data;
