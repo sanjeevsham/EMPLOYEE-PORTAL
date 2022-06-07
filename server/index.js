@@ -30,13 +30,15 @@ app.get('/getadmin', (request, response) => {
   });
 });
 app.get('/getadminId/:id', (request, response) => {
-  dbconnection.getId(request.params.id, 'employee-details').then((res) => {
-    if (res) {
-      response.send(res);
-    } else {
-      response.send('error');
-    }
-  });
+  dbconnection
+    .getId(request.params.id, 'employee-details')
+    .then((adminid_res) => {
+      if (adminid_res) {
+        response.send(adminid_res);
+      } else {
+        response.send('error');
+      }
+    });
 });
 //-----------------------------------------dashboard------------------------------------------------------------//
 app.post('/post_query', (request, response) => {
@@ -55,9 +57,9 @@ app.post('/post_query', (request, response) => {
     userpassword: request.body.userpassword,
     type: 'dashboard',
   };
-  dbconnection.insert(object, 'employee-details').then((res) => {
-    if (res) {
-      response.send(res);
+  dbconnection.insert(object, 'employee-details').then((dash_res) => {
+    if (dash_res) {
+      response.send(dash_res);
     } else {
       response.send('error');
     }
@@ -72,9 +74,9 @@ app.get('/get_query', (_request, response) => {
       type: 'dashboard',
     },
   };
-  dbconnection.get(data, 'employee-details').then((res) => {
-    if (res) {
-      response.send(res);
+  dbconnection.get(data, 'employee-details').then((dashget_res) => {
+    if (dashget_res) {
+      response.send(dashget_res);
     } else {
       response.send('error');
     }
@@ -83,10 +85,10 @@ app.get('/get_query', (_request, response) => {
 app.delete('/delete_query/:id/:id1', (request, response) => {
   dbconnection
     .deleted(request.params.id, request.params.id1, 'employee-details')
-    .then((res) => {
-      if (res) {
+    .then((delete_res) => {
+      if (delete_res) {
         console.log('deleted success');
-        response.send(res);
+        response.send(delete_res);
       } else {
         console.log('can not deleted...');
         response.send('error');
@@ -112,10 +114,10 @@ app.put('/update_query', (request, response) => {
     userpassword: request.body.userpassword,
     type: 'dashboard',
   };
-  dbconnection.update(object, 'employee-details').then((res) => {
-    if (res) {
+  dbconnection.update(object, 'employee-details').then((updata_res) => {
+    if (updata_res) {
       console.log('updated....');
-      response.send(res);
+      response.send(updata_res);
     } else {
       console.log('can not updated....');
       response.send('error');
@@ -124,77 +126,77 @@ app.put('/update_query', (request, response) => {
 });
 
 //------------------------------------salary------------------------------------------//
-app.post('/post_salary', (request, response) => {
-  let object = {
-    userid: request.body.userid,
-    name: request.body.name,
-    doj: request.body.doj,
-    month: request.body.month,
-    leave: request.body.leave,
-    salary: request.body.salary,
-    type: 'salary',
-  };
-  dbconnection.insert(object, 'employee-details').then((res) => {
-    if (res) {
-      response.send(res);
-    } else {
-      response.send('error');
-    }
-  });
-  console.log('Data added');
-});
-app.get('/get_salary', (_request, response) => {
-  console.log('start');
-  let data = {
-    selector: {
-      type: 'salary',
-    },
-  };
-  dbconnection.get(data, 'employee-details').then((res) => {
-    if (res) {
-      response.send(res);
-    } else {
-      response.send('error');
-    }
-  });
-});
-app.put('/update_salary', (request, response) => {
-  console.log('hey');
-  let object = {
-    _id: request.body._id,
-    _rev: request.body._rev,
-    userid: request.body.userid,
-    name: request.body.name,
-    doj: request.body.doj,
-    month: request.body.month,
-    leave: request.body.leave,
-    salary: request.body.salary,
-    type: 'salary',
-  };
-  dbconnection.update(object, 'employee-details').then((res) => {
-    if (res) {
-      console.log('updated....');
-      response.send(res);
-    } else {
-      console.log('can not updated....');
-      response.send('error');
-    }
-  });
-});
+// app.post('/post_salary', (request, response) => {
+//   let object = {
+//     userid: request.body.userid,
+//     name: request.body.name,
+//     doj: request.body.doj,
+//     month: request.body.month,
+//     leave: request.body.leave,
+//     salary: request.body.salary,
+//     type: 'salary',
+//   };
+//   dbconnection.insert(object, 'employee-details').then((res) => {
+//     if (res) {
+//       response.send(res);
+//     } else {
+//       response.send('error');
+//     }
+//   });
+//   console.log('Data added');
+// });
+// app.get('/get_salary', (_request, response) => {
+//   console.log('start');
+//   let data = {
+//     selector: {
+//       type: 'salary',
+//     },
+//   };
+//   dbconnection.get(data, 'employee-details').then((res) => {
+//     if (res) {
+//       response.send(res);
+//     } else {
+//       response.send('error');
+//     }
+//   });
+// });
+// app.put('/update_salary', (request, response) => {
+//   console.log('hey');
+//   let object = {
+//     _id: request.body._id,
+//     _rev: request.body._rev,
+//     userid: request.body.userid,
+//     name: request.body.name,
+//     doj: request.body.doj,
+//     month: request.body.month,
+//     leave: request.body.leave,
+//     salary: request.body.salary,
+//     type: 'salary',
+//   };
+//   dbconnection.update(object, 'employee-details').then((res) => {
+//     if (res) {
+//       console.log('updated....');
+//       response.send(res);
+//     } else {
+//       console.log('can not updated....');
+//       response.send('error');
+//     }
+//   });
+// });
 
-app.delete('/delete_salary/:id/:id1', (request, response) => {
-  dbconnection
-    .deleted(request.params.id, request.params.id1, 'employee-details')
-    .then((res) => {
-      if (res) {
-        console.log('deleted success');
-        response.send(res);
-      } else {
-        console.log('can not deleted...');
-        response.send('error');
-      }
-    });
-});
+// app.delete('/delete_salary/:id/:id1', (request, response) => {
+//   dbconnection
+//     .deleted(request.params.id, request.params.id1, 'employee-details')
+//     .then((res) => {
+//       if (res) {
+//         console.log('deleted success');
+//         response.send(res);
+//       } else {
+//         console.log('can not deleted...');
+//         response.send('error');
+//       }
+//     });
+// });
 
 /////a
 
@@ -231,9 +233,9 @@ app.post('/post_user', (request, response) => {
     reason: request.body.reason,
     type: 'apply',
   };
-  dbconnection.insert(object, 'employee-details').then((res) => {
-    if (res) {
-      response.send(res);
+  dbconnection.insert(object, 'employee-details').then((leave_res) => {
+    if (leave_res) {
+      response.send(leave_res);
     } else {
       response.send('error');
     }
@@ -247,9 +249,9 @@ app.get('/get_user', (_request, response) => {
       type: 'apply',
     },
   };
-  dbconnection.get(data, 'employee-details').then((res) => {
-    if (res) {
-      response.send(res);
+  dbconnection.get(data, 'employee-details').then((leaveger_res) => {
+    if (leaveger_res) {
+      response.send(leaveger_res);
     } else {
       response.send('error');
     }
@@ -265,9 +267,9 @@ app.post('/post_data', (request, response) => {
     query: request.body.query,
     type: 'query',
   };
-  dbconnection.insert(object, 'employee-details').then((res) => {
-    if (res) {
-      response.send(res);
+  dbconnection.insert(object, 'employee-details').then((query_res) => {
+    if (query_res) {
+      response.send(query_res);
     } else {
       response.send('error');
     }
@@ -282,9 +284,9 @@ app.get('/get_data', (_request, response) => {
       type: 'query',
     },
   };
-  dbconnection.get(data, 'employee-details').then((res) => {
-    if (res) {
-      response.send(res);
+  dbconnection.get(data, 'employee-details').then((queryget_res) => {
+    if (queryget_res) {
+      response.send(queryget_res);
     } else {
       response.send('error');
     }
@@ -298,10 +300,10 @@ app.get('/get__query/:id', (request, response) => {
       id: request.params.id,
     },
   };
-  dbconnection.employee.find(fetchdata).then((res) => {
-    if (res) {
-      console.log(res);
-      response.json(res);
+  dbconnection.employee.find(fetchdata).then((queryid_res) => {
+    if (queryid_res) {
+      console.log(queryid_res);
+      response.json(queryid_res);
     } else {
       response.send('error');
     }
