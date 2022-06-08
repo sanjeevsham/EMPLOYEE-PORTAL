@@ -80,7 +80,7 @@
           addform.controls['fromdate'].touched &&
           addform.hasError('required', 'fromdate')
         "
-        >* Tromdate required!!</span
+        >* Fromdate required!!</span
       >
     </div>
     <div class="mb-3">
@@ -173,6 +173,7 @@
           type="submit"
           value="Hit me"
           (click)="addUser(this.addform.value)"
+          [disabled]="!addform.valid"
         />
       </div>
     </div>

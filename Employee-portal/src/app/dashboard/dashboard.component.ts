@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { FormGroup,FormBuilder,NgForm ,Validators} from '@angular/forms';
-import { Router } from '@angular/router';
 import { EmployeeServiceService } from '../employee-service.service';
 @Component({
   selector: 'app-dashboard',
@@ -12,7 +11,7 @@ export class DashboardComponent {
   alldata:any;
   exchange!:any;
   object:any=[]
-  constructor(private formbuilder:FormBuilder,private api:EmployeeServiceService,private route:Router) { }
+  constructor(private formbuilder:FormBuilder,private api:EmployeeServiceService) { }
 
   ngOnInit(): void {
     this.addform=this.formbuilder.group({
@@ -20,7 +19,7 @@ export class DashboardComponent {
       username:['',Validators.required],
       email: ['',[Validators.required,Validators.pattern("[a-zA-Z0-9]*@gmail.com")]],
       dob:['',Validators.required],
-      mobileno: ['',[Validators.required, Validators.min(1000000000),Validators.max(9999999999)]],
+      mobileno:['',Validators.required],
       bloodgroup:['',Validators.required],
       doj:['',Validators.required],
       month:['',Validators.required],
@@ -100,9 +99,5 @@ export class DashboardComponent {
       console.log("can not update....."+rej);
     })
 
-  }
-  out() {
-    localStorage.clear();
-    this.route.navigate(['/adminlogin']);
   }
 }

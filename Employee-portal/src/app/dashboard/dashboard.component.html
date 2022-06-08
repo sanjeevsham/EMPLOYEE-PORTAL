@@ -53,7 +53,7 @@
         class="btn btn-outline-success"
         id="button1"
         data-bs-toggle="modal"
-        (click)="out()"
+        routerLink="/splasher"
         routerLinkActive="active-link"
       >
         logout
@@ -227,12 +227,11 @@
               <span
                 class="text-danger"
                 *ngIf="
-                  addform.controls.mobileno.errors &&
-                  addform.controls.mobileno.touched
+                  addform.controls['mobileno'].touched &&
+                  addform.hasError('required', 'mobileno')
                 "
+                >* Mobile no required!!</span
               >
-                <br />Invalid Mobile Number
-              </span>
             </div>
             <div class="mb-3">
               <label for="bloodgroup" class="form-label">Blood Group </label>
@@ -373,7 +372,6 @@
                 type="button"
                 class="btn btn-primary"
                 (click)="addEmployee(this.addform.value)"
-                [disabled]="!addform.valid"
               >
                 Add Employee
               </button>
@@ -540,7 +538,6 @@
                 data-bs-toggle="modal"
                 data-bs-target="#update"
                 (click)="update(this.addform.value)"
-                [disabled]="!addform.valid"
               >
                 Update
               </button>

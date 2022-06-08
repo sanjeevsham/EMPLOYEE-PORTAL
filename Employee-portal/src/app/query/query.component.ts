@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder,FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ToastarService } from '../toastar.service';
 import { EmployeeServiceService } from '../employee-service.service';
 
 @Component({
@@ -13,18 +14,10 @@ export class QueryComponent implements OnInit {
   alldata:any;
   exchange!:any;
   object:any=[];
-  constructor(private formbuilder:FormBuilder,private api:EmployeeServiceService,private route:Router) { }
+  constructor(private formbuilder:FormBuilder,private api:EmployeeServiceService,private route:Router,private tostr:ToastarService) { }
 
   ngOnInit(): void {
     this.getQuery();
-  }
-  erase (id:string,rev:string){
-    this.api.delete(id,rev).subscribe((data) => {
-      console.log(data);
-      alert("your data was deleted");
-      window.location.reload();
-    });
-    
   }
   getQuery(){
     this.api.getQuery().subscribe(data=>{
@@ -42,15 +35,18 @@ export class QueryComponent implements OnInit {
     });
   }
   
-  // delete(data:any){
-  //   this.api.deleteQuery(data._id,data._rev).subscribe(res=>{
-  //     console.log("your data has deleted, please refresh the page");
-  //     alert('your data was deleted successfully')
-  //   },rej=>{
-  //     console.log("oops can not delete"+rej);
-  //   })
+  delete(data:any,data1:any){
+    this.api.deleteQuery(data._id,data._rev).subscribe(_res=>{
+      console.log("your data has deleted, please refresh the page");
+      this.tostr.showSuccess("delete"," deleted successfully")
+    },rej=>{
+      setTimeout(() => {
+        
+      }, 20000);
+      console.log("oops can not delete"+rej);
+    })
 
-  // }
+  }
   
   // onEdit(row:any){
   //   // console.log(row);

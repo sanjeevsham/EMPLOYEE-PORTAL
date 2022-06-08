@@ -73,19 +73,23 @@ export class EmployeeServiceService {
   deleteSalary(id:any,id1:any){
     return this.http.delete(`http://localhost:8000/delete_salary/${id}/${id1}`);
   }
-  delete(id:string,rev:string){
-    const urld = this.url+'employee-details/'+id+'/?rev='+rev;
-    return this.http.delete(urld,this.httpOptions);
+  // delete(id:string,rev:string){
+  //   const urld = this.url+'employee-details/'+id+'/?rev='+rev;
+  //   return this.http.delete(urld,this.httpOptions);
 
-  }
-  deleteUser(id:string,rev:string){
-    const urld = this.url+'employee-details/'+id+'/?rev='+rev;
-    return this.http.delete(urld,this.httpOptions);
+  // }
+  // deleteUser(id:string,rev:string){
+  //   const urld = this.url+'employee-details/'+id+'/?rev='+rev;
+  //   return this.http.delete(urld,this.httpOptions);
 
-  }
+  // }
   deleteQuery(id:any,id1:any){
     return this.http.delete(`http://localhost:8000/delete_query/${id}/${id1}`);
   }
+  deleteleave(id:any,id1:any){
+    return this.http.delete(`http://localhost:8000/delete_leave/${id}/${id1}`);
+  }
+
   updateEmployee(doc:any){
     console.log(doc);
     return this.http.put('http://localhost:8000/update_query/',doc);

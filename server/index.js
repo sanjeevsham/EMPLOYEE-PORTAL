@@ -257,6 +257,20 @@ app.get('/get_user', (_request, response) => {
     }
   });
 });
+
+app.delete('/delete_leave/:id/:id1', (request, response) => {
+  dbconnection
+    .deleted_id(request.params.id, request.params.id1, 'employee-details')
+    .then((res) => {
+      if (res) {
+        console.log('deleted success');
+        response.send(res);
+      } else {
+        console.log('can not deleted...');
+        response.send('error');
+      }
+    });
+});
 //-------------------------------------------query--------------------------------------//
 app.post('/post_data', (request, response) => {
   let object = {
@@ -291,6 +305,20 @@ app.get('/get_data', (_request, response) => {
       response.send('error');
     }
   });
+});
+
+app.delete('/delete_data/:id/:id1', (request, response) => {
+  dbconnection
+    .deleted_id(request.params.id, request.params.id1, 'employee-details')
+    .then((res) => {
+      if (res) {
+        console.log('deleted success');
+        response.send(res);
+      } else {
+        console.log('can not deleted...');
+        response.send('error');
+      }
+    });
 });
 
 app.get('/get__query/:id', (request, response) => {

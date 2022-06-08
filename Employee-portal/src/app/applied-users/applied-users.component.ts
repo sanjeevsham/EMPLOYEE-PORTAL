@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder,FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ToastarService } from '../toastar.service';
 import { EmployeeServiceService } from '../employee-service.service';
+import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-applied-users',
   templateUrl: './applied-users.component.html',
@@ -12,18 +14,10 @@ export class AppliedUsersComponent implements OnInit {
   alldata:any;
   exchange!:any;
   object:any=[];
-  constructor(private formbuilder:FormBuilder,private api:EmployeeServiceService,private route:Router) { }
+  constructor(private formbuilder:FormBuilder,private api:EmployeeServiceService,private route:Router, private tostr:ToastarService) { }
 
   ngOnInit(): void {
     this.getuser();
-  }
-  erase (id:string,rev:string){
-    this.api.deleteUser(id,rev).subscribe((data) => {
-      console.log(data);
-      alert("your data was deleted");
-      window.location.reload();
-    });
-    
   }
   getuser(){
     this.api.getUser().subscribe(data=>{
@@ -39,5 +33,18 @@ export class AppliedUsersComponent implements OnInit {
       }
     
     });
+  }
+  delete(data:any,data1:any){
+    this.api.deleteQuery(data._id,data._rev).subscribe(_res=>{
+      console.log("your data has deleted, please refresh the page");
+      this.tostr.showSuccess("delete"," deleted successfully")
+
+    },rej=>{
+      setTimeout(() => {
+        
+      }, 20000);
+      this.tostr.showError("delete","data not deletsd")
+    })
+
   }
 }
