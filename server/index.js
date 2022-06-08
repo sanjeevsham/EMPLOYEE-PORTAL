@@ -184,22 +184,6 @@ app.put('/update_query', (request, response) => {
 //   });
 // });
 
-// app.delete('/delete_salary/:id/:id1', (request, response) => {
-//   dbconnection
-//     .deleted(request.params.id, request.params.id1, 'employee-details')
-//     .then((res) => {
-//       if (res) {
-//         console.log('deleted success');
-//         response.send(res);
-//       } else {
-//         console.log('can not deleted...');
-//         response.send('error');
-//       }
-//     });
-// });
-
-/////a
-
 // app.get('/uniqueidChanged', (request, response) => {
 //   console.log(request.params.id);
 //   let name = request.params.id;
@@ -260,9 +244,9 @@ app.get('/get_user', (_request, response) => {
   });
 });
 
-app.delete('/delete_leave/:id/:id1', (request, response) => {
+app.delete('/delete_leave/:id/:id1', (_request, response) => {
   dbconnection
-    .deleted_id(request.params.id, request.params.id1, 'employee-details')
+    .deleted_id(_request.params.id, _request.params.id1, 'employee-details')
     .then((delete_res) => {
       if (delete_res) {
         console.log('deleted success');
