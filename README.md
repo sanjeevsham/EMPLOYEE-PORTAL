@@ -46,7 +46,7 @@
      
      * Responsive
      
- **Project flow**
+ **Project Flow**
  
  ***Form deteils***
  
