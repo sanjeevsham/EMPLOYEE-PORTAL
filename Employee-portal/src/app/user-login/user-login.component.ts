@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup,FormBuilder,Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { EmployeeServiceService } from '../employee-service.service';
 @Component({
   selector: 'app-user-login',
@@ -16,7 +17,7 @@ emp:any={
   userpassword:''
 }
  
-  constructor(private fb:FormBuilder,private api:EmployeeServiceService,private route:Router) { 
+  constructor(private fb:FormBuilder,private api:EmployeeServiceService,private route:Router,private toasterService:ToastrService) { 
     this.formgroup = this.fb.group({
       userlogin : [this.emp.userlogin],
       userpassword : [this.emp.userpassword]
@@ -46,13 +47,27 @@ login(obj:any){
      if((data.docs[0].userpassword == this.userpassword))
      {
       this.route.navigate(['/userprofile']);
+      this.showmsg();
      }
      else{
-      // alert("Login authentication failed");
-      this.alert.showError("Invalid data","Login authentication failed")
+      //  setTimeout(() => {
+      //     location.reload();
+      //  }, 3000);
+      location.reload();
+      alert("invalid user")
+       this.showear();
      }
     })
   
  }
 
+ showmsg()
+ {
+   this.toasterService.success("Logged In!!!");
+ }
+ showear()
+ {
+   this.toasterService.error("invalid admin");
+   
+ }
 }

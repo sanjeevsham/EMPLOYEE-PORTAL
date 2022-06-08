@@ -68,6 +68,8 @@
           type="date"
           class="form-control"
           formControlName="fromdate"
+          (change)="checkAppointmentdate($event)"
+          min="{{ currentDate | date: 'yyyy-MM-dd' }}"
           id="fromdate"
           aria-describedby="emailHelp"
         />
@@ -78,7 +80,7 @@
           addform.controls['fromdate'].touched &&
           addform.hasError('required', 'fromdate')
         "
-        >* fromdate required!!</span
+        >* Tromdate required!!</span
       >
     </div>
     <div class="mb-3">
@@ -88,6 +90,8 @@
           type="date"
           class="form-control"
           formControlName="todate"
+          (change)="checkAppointmentdate($event)"
+          min="{{ currentDate | date: 'yyyy-MM-dd' }}"
           id="todate"
           aria-describedby="emailHelp"
         />
@@ -98,7 +102,7 @@
           addform.controls['todate'].touched &&
           addform.hasError('required', 'todate')
         "
-        >* todate required!!</span
+        >* Todate required!!</span
       >
     </div>
     <div class="mb-3">
@@ -108,6 +112,7 @@
           type="text"
           class="form-control"
           formControlName="days"
+          (change)="calculatedate($event)"
           id="days"
           aria-describedby="emailHelp"
         />

@@ -52,7 +52,7 @@ import { ToastrModule } from 'ngx-toastr';
     HttpClientModule,
     ToastrModule.forRoot({
       closeButton: true,
-      timeOut: 15000, // 15 seconds
+      timeOut: 10000, // 15 seconds
       progressBar: true,
     })
   ],
