@@ -6,5 +6,7 @@ import { Injectable } from '@angular/core';
 export class SharedService {
   loginUserId:any;
   setEmployeeDetails:any;
-  constructor() { }
+  constructor() {
+    console.log("sanjeev")
+   }
 }

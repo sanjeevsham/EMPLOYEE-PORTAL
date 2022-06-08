@@ -33,7 +33,7 @@ export class AppliedUsersComponent implements OnInit {
     
     });
   }
-  delete(data:any,data1:any){
+  delete(data:any,_data1:any){
     this.api.deleteQuery(data._id,data._rev).subscribe(_res=>{
       console.log("your data has deleted, please refresh the page");
       this.tostr.showSuccess("delete"," deleted successfully")

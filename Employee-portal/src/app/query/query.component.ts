@@ -35,7 +35,7 @@ export class QueryComponent implements OnInit {
     });
   }
   
-  delete(data:any,data1:any){
+  delete(data:any,_data1:any){
     this.api.deleteQuery(data._id,data._rev).subscribe(_res=>{
       console.log("your data has deleted, please refresh the page");
       this.tostr.showSuccess("delete"," deleted successfully")
@@ -49,15 +49,4 @@ export class QueryComponent implements OnInit {
 
   }
   
-  // onEdit(row:any){
-  //   // console.log(row);
-  //   // this.route.navigate(['contactus']);
-  //   this.addform.controls['firstname'].setValue(row.firstname);
-  //   this.addform.controls['lastname'].setValue(row.lastname);
-  //   this.addform.controls['email'].setValue(row.email);
-  //   this.addform.controls['mobileno'].setValue(row.mobileno);
-  //   this.addform.controls['query'].setValue(row.query);
-  //   this.addform.controls['_id'].setValue(row._id);
-  //   this.addform.controls['_rev'].setValue(row._rev);
-  // }
 }

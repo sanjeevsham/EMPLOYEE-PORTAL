@@ -1,7 +1,5 @@
-import { getLocaleDirection } from '@angular/common';
-import { localizedString } from '@angular/compiler/src/output/output_ast';
 import { Component, OnInit } from '@angular/core';
-import { FormGroup,FormBuilder,Validators, NgForm} from '@angular/forms';
+import { FormGroup,FormBuilder,Validators} from '@angular/forms';
 import { EmployeeServiceService } from '../employee-service.service';
 import { SharedService } from '../service/shared.service';
 import { ToastarService } from '../toastar.service';
@@ -76,8 +74,8 @@ detailsCheck:any=0;
               reason:formvalue.reason,
               employee_id:iterator._id,
             }
-            this.api.addUser(this.createObj).subscribe(res=>{
-              console.log("Added successfully",res);
+            this.api.addUser(this.createObj).subscribe(_res=>{
+              console.log("Added successfully",_res);
 
             },rej=>{
               console.log("cannot add employee leave",rej);
@@ -101,14 +99,6 @@ detailsCheck:any=0;
          }
        }, 1000);
 
-      //  this.api.addUser(formvalue).subscribe(res=>{
-      //   console.log("hello"+res);
-      //   console.log("Your data was posted successfully!");
-      //   // window.location.replace("/query")
-      //   alert('your data is added successfully')
-      //   },rej=>{
-      //   console.log("opps! Can not post data"+rej);
-      //   });
      }
      checkFirstdate(event:any)
      {

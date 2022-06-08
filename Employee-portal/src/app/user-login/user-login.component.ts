@@ -52,9 +52,6 @@ login(obj:any){
       this.showmsg();
      }
      else{
-      //  setTimeout(() => {
-      //     location.reload();
-      //  }, 3000);
       location.reload();
       alert("invalid user")
        this.showear();

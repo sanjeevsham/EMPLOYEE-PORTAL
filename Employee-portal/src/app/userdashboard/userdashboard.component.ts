@@ -1,4 +1,3 @@
-import { JsonpClientBackend } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { EmployeeServiceService } from '../employee-service.service';
 

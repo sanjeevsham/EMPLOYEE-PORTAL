@@ -11,7 +11,7 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { StartUpComponent } from './start-up/start-up.component';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
-import{ HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
+import{ HttpClientModule} from '@angular/common/http';
 import { SplasherComponent } from './splasher/splasher.component';
 import { QueryComponent } from './query/query.component';
 import { ApplyComponent } from './apply/apply.component';
@@ -21,7 +21,6 @@ import { UserdashboardComponent } from './userdashboard/userdashboard.component'
 import { UserprofileComponent } from './userprofile/userprofile.component';
 import { SalaryComponent } from './salary/salary.component';
 import { EmployeeSalaryComponent } from './employee-salary/employee-salary.component';
-// import { HttpCallInterceptorService } from './interceptor.service';
 import { ToastrModule } from 'ngx-toastr';
 @NgModule({
   declarations: [

@@ -263,10 +263,10 @@ app.get('/get_user', (_request, response) => {
 app.delete('/delete_leave/:id/:id1', (request, response) => {
   dbconnection
     .deleted_id(request.params.id, request.params.id1, 'employee-details')
-    .then((res) => {
-      if (res) {
+    .then((delete_res) => {
+      if (delete_res) {
         console.log('deleted success');
-        response.send(res);
+        response.send(delete_res);
       } else {
         console.log('can not deleted...');
         response.send('error');

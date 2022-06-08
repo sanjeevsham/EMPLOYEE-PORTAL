@@ -36,7 +36,6 @@ console.log("code")
     this.api.getadminId(paresedValue).subscribe(res=>{
       this.employeeDetails=res;
       console.log(this.employeeDetails);
-      // this.employeeDetails=this.employeeDetails.docs[0];
       this.shared.setEmployeeDetails=this.employeeDetails;
       console.log(this.employeeDetails);
       this.route.navigate(['/apply']);
