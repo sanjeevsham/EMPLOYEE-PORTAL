@@ -22,6 +22,7 @@ import { UserprofileComponent } from './userprofile/userprofile.component';
 import { SalaryComponent } from './salary/salary.component';
 import { EmployeeSalaryComponent } from './employee-salary/employee-salary.component';
 // import { HttpCallInterceptorService } from './interceptor.service';
+import { ToastrModule } from 'ngx-toastr';
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,12 +43,18 @@ import { EmployeeSalaryComponent } from './employee-salary/employee-salary.compo
     UserprofileComponent,
     SalaryComponent,
     EmployeeSalaryComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,FormsModule,
     HttpClientModule,
+    ToastrModule.forRoot({
+      closeButton: true,
+      timeOut: 15000, // 15 seconds
+      progressBar: true,
+    })
   ],
   providers: [
 

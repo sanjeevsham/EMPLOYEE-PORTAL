@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup,FormBuilder,Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { EmployeeServiceService } from '../employee-service.service';
 
 @Component({
@@ -18,6 +19,7 @@ export class AdminLoginComponent implements OnInit {
       private formbuilder: FormBuilder,
       private api:EmployeeServiceService,
       private router: Router,
+      private toastrService:ToastrService
     ) {}
   
     ngOnInit(): void {
@@ -38,6 +40,7 @@ export class AdminLoginComponent implements OnInit {
           this.object.push(i);
         }
       });
+
     }
   
     adminlogin(formvalue: any) {
@@ -50,10 +53,26 @@ export class AdminLoginComponent implements OnInit {
         }
       }
       if (this.flag == 1) {
-        this.router.navigate(['/dashboard']);
+         const admindata = formvalue
+        localStorage.setItem("admindata",JSON.stringify(admindata));
+                this.router.navigate(['/dashboard']);
+                this.showmsg();
+
       } else {
-      alert("Login authentication failed");
-        location.reload();
+        setTimeout(() => {
+          location.reload();
+        },3000);
+        this.showear();
       }
+    }
+
+    showmsg()
+    {
+      this.toastrService.success("Logged In!!!");
+    }
+    showear()
+    {
+      this.toastrService.error("invalid admin");
+      
     }
 }

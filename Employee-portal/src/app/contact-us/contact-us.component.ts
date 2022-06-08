@@ -19,7 +19,7 @@ export class ContactUsComponent implements OnInit {
        firstname:['',Validators.required],
        lastname:['',Validators.required],
        email:['',Validators.required],
-       mobileno:['',Validators.required],
+       mobileNumber: ['',[Validators.required, Validators.min(1000000000),Validators.max(9999999999)]],
        query:['',Validators.required],
        _id:[''],
        _rev:[''],
@@ -36,7 +36,7 @@ export class ContactUsComponent implements OnInit {
         console.log("hello"+res);
         console.log("Your data was posted successfully!");
         alert('your data is added successfully')
-      location.reload()
+        location.reload()
 
         },rej=>{
         console.log("opps! Can not post data"+rej);
