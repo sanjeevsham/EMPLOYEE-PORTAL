@@ -31,7 +31,7 @@ app.get('/getadmin', (request, response) => {
 });
 app.get('/getadminId/:id', (request, response) => {
   dbconnection
-    .getId(request.params.id, 'employee-details')
+    .getAll(request.params.id, 'employee-details')
     .then((adminid_res) => {
       if (adminid_res) {
         response.send(adminid_res);
@@ -230,7 +230,9 @@ app.post('/post_user', (request, response) => {
     todate: request.body.todate,
     days: request.body.days,
     mobileno: request.body.mobileno,
+    type1: request.body.type1,
     reason: request.body.reason,
+    employee_id: request.body.employee_id,
     type: 'apply',
   };
   dbconnection.insert(object, 'employee-details').then((leave_res) => {

@@ -14,8 +14,9 @@ export class SalaryComponent implements OnInit {
 
   ngOnInit(): void {
     this.userId=localStorage.getItem("userId")
+    let parse=JSON.parse(this.userId);
     console.log(this.userId)
-    this.data.getDataById("employee-details",this.userId).subscribe(res=>{
+    this.data.getDataById("employee-details",parse).subscribe(res=>{
       console.log(res)
       this.user=res
       this.data.getByType("salary").subscribe(Response=>{

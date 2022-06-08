@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup,FormBuilder,Validators, NgForm} from '@angular/forms';
 import { EmployeeServiceService } from '../employee-service.service';
+import { ToastarService } from '../toastar.service';
 
 @Component({
   selector: 'app-contact-us',
@@ -12,14 +13,14 @@ export class ContactUsComponent implements OnInit {
   store:any=[];
 
 
-  constructor(private formbuilder:FormBuilder,private api:EmployeeServiceService) { }
+  constructor(private formbuilder:FormBuilder,private api:EmployeeServiceService,private tostr:ToastarService) { }
 
   ngOnInit(): void {
       this.addform=this.formbuilder.group({
        firstname:['',Validators.required],
        lastname:['',Validators.required],
        email:['',Validators.required],
-       mobileNumber: ['',[Validators.required, Validators.min(1000000000),Validators.max(9999999999)]],
+       mobileno: ['',[Validators.required, Validators.min(1000000000),Validators.max(9999999999)]],
        query:['',Validators.required],
        _id:[''],
        _rev:[''],
@@ -35,8 +36,11 @@ export class ContactUsComponent implements OnInit {
        this.api.addQuery(formvalue).subscribe(res=>{
         console.log("hello"+res);
         console.log("Your data was posted successfully!");
-        alert('your data is added successfully')
+        this.tostr.showSuccess("data","Query added successfully")
+        setTimeout(() => {
         location.reload()
+          
+        }, 1000);
 
         },rej=>{
         console.log("opps! Can not post data"+rej);

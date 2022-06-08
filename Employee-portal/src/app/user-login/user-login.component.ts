@@ -3,6 +3,7 @@ import { FormGroup,FormBuilder,Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { EmployeeServiceService } from '../employee-service.service';
+import { SharedService } from '../service/shared.service';
 @Component({
   selector: 'app-user-login',
   templateUrl: './user-login.component.html',
@@ -17,7 +18,7 @@ emp:any={
   userpassword:''
 }
  
-  constructor(private fb:FormBuilder,private api:EmployeeServiceService,private route:Router,private toasterService:ToastrService) { 
+  constructor(private fb:FormBuilder,private api:EmployeeServiceService,private route:Router,private toasterService:ToastrService,private shared:SharedService) { 
     this.formgroup = this.fb.group({
       userlogin : [this.emp.userlogin],
       userpassword : [this.emp.userpassword]
@@ -43,8 +44,9 @@ login(obj:any){
      this.sample=data
      this.temp=this.sample.docs
      this.id=this.temp[0]._id
-     localStorage.setItem("userId",this.id)
-     if((data.docs[0].userpassword == this.userpassword))
+     localStorage.setItem("userId",JSON.stringify(this.id));
+      this.shared.loginUserId=this.id;
+           if((data.docs[0].userpassword == this.userpassword))
      {
       this.route.navigate(['/userprofile']);
       this.showmsg();

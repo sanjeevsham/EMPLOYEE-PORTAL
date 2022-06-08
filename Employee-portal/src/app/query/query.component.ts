@@ -39,10 +39,11 @@ export class QueryComponent implements OnInit {
     this.api.deleteQuery(data._id,data._rev).subscribe(_res=>{
       console.log("your data has deleted, please refresh the page");
       this.tostr.showSuccess("delete"," deleted successfully")
-    },rej=>{
       setTimeout(() => {
-        
-      }, 20000);
+        location.reload();
+      }, 300);
+    },rej=>{
+     
       console.log("oops can not delete"+rej);
     })
 

@@ -372,6 +372,7 @@
                 type="button"
                 class="btn btn-primary"
                 (click)="addEmployee(this.addform.value)"
+                [disabled]="!addform.valid"
               >
                 Add Employee
               </button>

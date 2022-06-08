@@ -3,7 +3,6 @@ import { FormBuilder,FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastarService } from '../toastar.service';
 import { EmployeeServiceService } from '../employee-service.service';
-import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-applied-users',
   templateUrl: './applied-users.component.html',
@@ -38,11 +37,13 @@ export class AppliedUsersComponent implements OnInit {
     this.api.deleteQuery(data._id,data._rev).subscribe(_res=>{
       console.log("your data has deleted, please refresh the page");
       this.tostr.showSuccess("delete"," deleted successfully")
-
-    },rej=>{
       setTimeout(() => {
+      location.reload();
         
-      }, 20000);
+      }, 1000);
+
+    },_rej=>{
+    
       this.tostr.showError("delete","data not deletsd")
     })
 

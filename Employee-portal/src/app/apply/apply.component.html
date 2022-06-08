@@ -68,6 +68,8 @@
           type="date"
           class="form-control"
           formControlName="fromdate"
+          #firstdate
+          (change)="checkFirstdate($event)"
           (change)="checkAppointmentdate($event)"
           min="{{ currentDate | date: 'yyyy-MM-dd' }}"
           id="fromdate"
@@ -90,6 +92,8 @@
           type="date"
           class="form-control"
           formControlName="todate"
+          #seconddate
+          (change)="calculatedate($event)"
           (change)="checkAppointmentdate($event)"
           min="{{ currentDate | date: 'yyyy-MM-dd' }}"
           id="todate"
@@ -112,7 +116,6 @@
           type="text"
           class="form-control"
           formControlName="days"
-          (change)="calculatedate($event)"
           id="days"
           aria-describedby="emailHelp"
         />
@@ -147,6 +150,21 @@
         >* Mobile no required!!</span
       >
     </div>
+    <select for="type1" class="form-select" aria-label="Default select example">
+      <option selected>Leave type</option>
+      <option value="1">Annual leave</option>
+      <option value="2">Lose of pay</option>
+      <option value="3">Sike leave</option>
+      <div>
+        <input
+          type="text"
+          class="form-control"
+          formControlName="type1"
+          id="type1"
+          aria-describedby="emailHelp"
+        />
+      </div>
+    </select>
     <div class="mb-3">
       <label for="reason" class="head">Reason For leave </label>
       <div class="inputbox">

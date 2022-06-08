@@ -19,7 +19,7 @@ export class DashboardComponent {
       username:['',Validators.required],
       email: ['',[Validators.required,Validators.pattern("[a-zA-Z0-9]*@gmail.com")]],
       dob:['',Validators.required],
-      mobileno:['',Validators.required],
+      mobileno: ['',[Validators.required, Validators.min(1000000000),Validators.max(9999999999)]],
       bloodgroup:['',Validators.required],
       doj:['',Validators.required],
       month:['',Validators.required],
