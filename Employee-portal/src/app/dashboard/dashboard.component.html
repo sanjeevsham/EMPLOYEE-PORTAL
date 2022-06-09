@@ -258,6 +258,8 @@
                 type="date"
                 class="form-control"
                 formControlName="doj"
+                (change)="checkAppointmentdate($event)"
+                min="{{ currentDate | date: 'yyyy-MM-dd' }}"
                 id="doj"
                 aria-describedby="emailHelp"
               />

@@ -1,132 +1,119 @@
 <app-home></app-home>
 <section>
   <div class="container">
-    <h2>Contact Us</h2>
+    <h2>Contact us</h2>
     <form [formGroup]="addform">
-      <div class="row100">
-        <div class="col">
-          <div class="inputBox">
-            <input
-              type="text"
-              id="firstname"
-              formControlName="firstname"
-              class="form-control"
-              required
-            />
-            <span for="firstname" class="text">First Name </span>
-            <span class="line"></span>
-            <span
-              class="text-danger"
-              *ngIf="
-                addform.controls['firstname'].touched &&
-                addform.hasError('required', 'firstname')
-              "
-              >* First name required!!</span
-            >
-          </div>
-        </div>
-        <div class="col">
-          <div class="inputBox">
-            <input
-              type="text"
-              id="lastname"
-              formControlName="lastname"
-              class="form-control"
-              required
-            />
-            <span for="lastname" class="text">Last Name </span>
-            <span class="line"></span>
-            <span
-              class="text-danger"
-              *ngIf="
-                addform.controls['lastname'].touched &&
-                addform.hasError('required', 'lastname')
-              "
-              >* Last name required!!</span
-            >
-          </div>
-        </div>
-        <div class="col">
-          <div class="inputBox">
-            <input
-              type="text"
-              id="email"
-              formControlName="email"
-              class="form-control"
-              required
-            />
-            <span for="email" class="text">Email </span>
-            <span class="line"></span>
-            <span
-              class="text-danger"
-              *ngIf="
-                addform.controls['email'].touched &&
-                addform.hasError('required', 'email')
-              "
-              >* Invalid email !!</span
-            >
-          </div>
-        </div>
-        <div class="col">
-          <div class="inputBox">
-            <input
-              type="text"
-              value=""
-              formControlName="mobileno"
-              class="form-control"
-              id="mobileno"
-              required
-            />
-            <span for="mobileno" class="num">Mobile</span>
-            <span class="line"></span>
-            <span
-              class="text-danger"
-              *ngIf="
-                addform.controls['email'].touched &&
-                addform.hasError('required', 'email')
-              "
-              >* Invalid mobile number!!</span
-            >
-          </div>
-        </div>
+      <div>
+        <label for="firstname">First Name</label>
+        <input
+          for="firstname"
+          class="form-control"
+          formControlName="firstname"
+          required
+        />
+        <span
+          class="text-danger"
+          *ngIf="
+            addform.controls['firstname'].touched &&
+            addform.hasError('required', 'firstname')
+          "
+        >
+          * firstname is required!!
+        </span>
       </div>
-      <div class="row100">
-        <div class="col">
-          <div class="inputBox textarea">
-            <input
-              type="text"
-              value=""
-              formControlName="query"
-              class="form-control"
-              id="query"
-              required
-            />
-            <textarea
-              class="form-control form-group"
-              formControlName="query"
-              id="query"
-            ></textarea>
-            <span for="query" class="text">Type Your Message Here....</span>
-            <span class="line"></span>
-            <span
-              class="text-danger"
-              *ngIf="
-                addform.controls['query'].touched &&
-                addform.hasError('required', 'query')
-              "
-              >* Query required!!</span
-            >
-          </div>
-        </div>
+
+      <div>
+        <label for="lastname">Last Name</label>
+        <input
+          for="lastname"
+          class="form-control"
+          formControlName="lastname"
+          required
+        />
+        <span
+          class="text-danger"
+          *ngIf="
+            addform.controls['lastname'].touched &&
+            addform.hasError('required', 'lastname')
+          "
+        >
+          * lastname is required!!
+        </span>
       </div>
-      <div class="row100">
-        <div class="col">
-          <input
-            type="submit"
-            value="Hit me"
-            (click)="addQuery(this.addform.value)"
-          />
-        </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email </label>
+        <input
+          type="text"
+          class="form-control"
+          formControlName="email"
+          id="email"
+          aria-describedby="emailHelp"
+        />
+        <span
+          class="text-danger"
+          *ngIf="
+            addform.controls.email.errors && addform.controls.email.touched
+          "
+        >
+          <br />Invalid Email Address
+        </span>
+      </div>
+
+      <div>
+        <label for="mobileno">Mobile Number</label>
+        <input
+          for="mobileno"
+          class="form-control"
+          formControlName="mobileno"
+          pattern="^((\\+91-?)|0)?[0-9]{10}$"
+          type="tel"
+          maxlength="10"
+        />
+        <span
+          class="text-danger"
+          *ngIf="
+            addform.controls['mobileno'].touched &&
+            addform.hasError('required', 'mobileno')
+          "
+        >
+          * mobileno is required!!
+        </span>
+        <span
+          class="text-danger"
+          *ngIf="addform.hasError('pattern', 'mobileno')"
+        >
+          * mobileno should contain 10 Numbers!!
+        </span>
+      </div>
+      <div>
+        <label for="query">query</label>
+        <input
+          type="text"
+          value=""
+          formControlName="query"
+          class="form-control"
+          id="query"
+          required
+        />
+        <span for="query" class="text">Type Your Message Here....</span>
+        <span class="line"></span>
+        <span
+          class="text-danger"
+          *ngIf="
+            addform.controls['query'].touched &&
+            addform.hasError('required', 'query')
+          "
+          >* Query required!!</span
+        >
+      </div>
+      <div>
+        <input
+          class="button"
+          type="submit"
+          value="Hit me"
+          (click)="addQuery(this.addform.value)"
+          [disabled]="!addform.valid"
+        />
       </div>
     </form>
   </div>

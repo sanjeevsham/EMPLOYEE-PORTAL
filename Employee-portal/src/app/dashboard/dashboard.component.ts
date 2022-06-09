@@ -12,6 +12,8 @@ export class DashboardComponent {
   alldata:any;
   exchange!:any;
   object:any=[]
+  checkdate:any
+  currentDate:any = new Date();
   constructor(private formbuilder:FormBuilder,private api:EmployeeServiceService, private tostar:ToastarService) { }
 
   ngOnInit(): void {
@@ -32,7 +34,10 @@ export class DashboardComponent {
       _rev:[''],
     })
   }
-
+  checkAppointmentdate(event:any)
+  {
+    this.checkdate = event.target.value;
+  }
 
   
   addEmployee(formvalue:NgForm){

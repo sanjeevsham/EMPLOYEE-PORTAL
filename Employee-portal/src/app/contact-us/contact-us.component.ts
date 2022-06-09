@@ -19,7 +19,7 @@ export class ContactUsComponent implements OnInit {
       this.addform=this.formbuilder.group({
        firstname:['',Validators.required],
        lastname:['',Validators.required],
-       email:['',Validators.required],
+       email: ['',[Validators.required,Validators.pattern("[a-zA-Z0-9]*@gmail.com")]],
        mobileno: ['',[Validators.required, Validators.min(1000000000),Validators.max(9999999999)]],
        query:['',Validators.required],
        _id:[''],
