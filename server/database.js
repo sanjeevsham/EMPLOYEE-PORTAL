@@ -38,9 +38,6 @@ let update = function (doc, dbname) {
   console.log(doc);
   return cloudant.use(dbname).insert(doc);
 };
-// let deleted_id = function (id, id1, dbname) {
-//   return cloudant.use(dbname).destroy(id, id1);
-// };
 
 module.exports = {
   employee,

@@ -5,7 +5,6 @@ app.use(express.static('public'));
 const port = 8000;
 const cors = require('cors');
 const dbconnection = require('./database');
-const { request } = require('express');
 app.use(bodyparser.json());
 app.use(express.static('public'));
 app.use(
