@@ -34,6 +34,10 @@ export class EmployeeServiceService {
     console.log(doc);
     return this.http.post('http://localhost:8000/post_user/',doc);
   }
+  addapproved(doc:any,doc1:any){
+    console.log(doc);
+    return this.http.post('http://localhost:8000/post_approved',doc,doc1);
+  }
   addSalary(doc:any){
     console.log(doc);
     return this.http.post('http://localhost:8000/post_salary/',doc);
@@ -44,6 +48,12 @@ export class EmployeeServiceService {
   }
   getUser(){
     return this.http.get('http://localhost:8000/get_user/');
+  }
+  getapproved(){
+    return this.http.get('http://localhost:8000/get_approved/');
+  }
+  getleaveapproved(id:any){
+    return this.http.get('http://localhost:8000/get_leaveapproved/'+id);
   }
   getdata(id:any){
     return this.http.get(`http://localhost:8000/get__query/${id}`);
@@ -72,6 +82,9 @@ export class EmployeeServiceService {
   }
   deleteSalary(id:any,id1:any){
     return this.http.delete(`http://localhost:8000/delete_salary/${id}/${id1}`);
+  }
+  deleteapproved(id:any,id1:any){
+    return this.http.delete(`http://localhost:8000/delete_approved/${id}/${id1}`);
   }
   // delete(id:string,rev:string){
   //   const urld = this.url+'employee-details/'+id+'/?rev='+rev;

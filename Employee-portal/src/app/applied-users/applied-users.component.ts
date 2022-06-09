@@ -13,6 +13,7 @@ export class AppliedUsersComponent implements OnInit {
   alldata:any;
   exchange!:any;
   object:any=[];
+  sno:number=1;
   constructor(private formbuilder:FormBuilder,private api:EmployeeServiceService,private route:Router, private tostr:ToastarService) { }
 
   ngOnInit(): void {
@@ -27,12 +28,29 @@ export class AppliedUsersComponent implements OnInit {
       console.log(this.alldata);
       for(const i of this.alldata){
             this.object.push(i);
+            this.sno++;
             console.log('Fetched successfuly in add component');
   
       }
     
     });
   }
+
+
+  approve(obj:any,obj1:any){
+    obj.approved = "Leaveapproved";
+    this.api.addapproved(obj,obj1).subscribe(res=>{
+      
+    
+    console.log("hello"+res);
+    console.log("Your data was posted successfully!");
+    
+    location.reload()
+
+  },rej=>{
+    console.log("opps! Can not post data"+rej);
+  });
+}
   delete(data:any,_data1:any){
     this.api.deleteQuery(data._id,data._rev).subscribe(_res=>{
       console.log("your data has deleted, please refresh the page");

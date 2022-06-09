@@ -33,7 +33,7 @@ detailsCheck:any=0;
       days:['',Validators.required],
       mobileno: ['',[Validators.required, Validators.min(1000000000),Validators.max(9999999999)]],
       reason:['',Validators.required],
-      type1:['',Validators.required],
+      leavetype:['',Validators.required],
       _id:[''], 
       _rev:[''],
       });
@@ -70,7 +70,7 @@ detailsCheck:any=0;
               todate: formvalue.todate,  
               days:formvalue.days,
               mobileno: formvalue.mobileno,
-              type1: formvalue.type1,
+              leavetype: formvalue.leavetype,
               reason:formvalue.reason,
               employee_id:iterator._id,
             }

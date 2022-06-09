@@ -17,6 +17,8 @@ import { UserdashboardComponent } from './userdashboard/userdashboard.component'
 import { UserprofileComponent } from './userprofile/userprofile.component';
 import { SalaryComponent } from './salary/salary.component';
 import { EmployeeSalaryComponent } from './employee-salary/employee-salary.component';
+import { ApprovedComponent } from './approved/approved.component';
+import { UserleaveComponent } from './userleave/userleave.component';
 const routes: Routes = [
   {path:'adminlogin',component:AdminLoginComponent },
   {path:'userlogin',component:UserLoginComponent },
@@ -34,7 +36,11 @@ const routes: Routes = [
   {path:'userdb',component:UserdashboardComponent},
   {path:'userprofile',component:UserprofileComponent},
   {path:'salary',component:SalaryComponent},
-  {path:'empsalary',component:EmployeeSalaryComponent}
+  {path:'empsalary',component:EmployeeSalaryComponent},
+  {path:'approved',component:ApprovedComponent},
+  {path:'userleave',component:UserleaveComponent}
+
+
 
   
 ];

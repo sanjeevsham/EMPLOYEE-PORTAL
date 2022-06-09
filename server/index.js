@@ -5,6 +5,7 @@ app.use(express.static('public'));
 const port = 8000;
 const cors = require('cors');
 const dbconnection = require('./database');
+const { request } = require('express');
 app.use(bodyparser.json());
 app.use(express.static('public'));
 app.use(
@@ -76,6 +77,26 @@ app.get('/get_query', (_request, response) => {
   };
   dbconnection.get(data, 'employee-details').then((dashget_res) => {
     if (dashget_res) {
+      response.send(dashget_res);
+    } else {
+      response.send('error');
+    }
+  });
+});
+
+app.get('/get_leaveapproved/:id', (request, response) => {
+  console.log('start', request.params.id);
+  let data = {
+    selector: {
+      employee_id: request.params.id,
+      approved: 'Leaveapproved',
+      type: 'approved',
+    },
+  };
+  console.log(data);
+  dbconnection.get(data, 'employee-details').then((dashget_res) => {
+    if (dashget_res) {
+      console.log('leave', dashget_res);
       response.send(dashget_res);
     } else {
       response.send('error');
@@ -214,7 +235,7 @@ app.post('/post_user', (request, response) => {
     todate: request.body.todate,
     days: request.body.days,
     mobileno: request.body.mobileno,
-    type1: request.body.type1,
+    leavetype: request.body.leavetype,
     reason: request.body.reason,
     employee_id: request.body.employee_id,
     type: 'apply',
@@ -257,6 +278,61 @@ app.delete('/delete_leave/:id/:id1', (_request, response) => {
       }
     });
 });
+///----------------------------------approved---------------------------------------------//
+app.post('/post_approved', (request, response) => {
+  let object = {
+    empid: request.body.empid,
+    firstname: request.body.firstname,
+    email: request.body.email,
+    fromdate: request.body.fromdate,
+    todate: request.body.todate,
+    days: request.body.days,
+    mobileno: request.body.mobileno,
+    leavetype: request.body.leavetype,
+    reason: request.body.reason,
+    employee_id: request.body.employee_id,
+    approved: request.body.approved,
+    type: 'approved',
+  };
+  dbconnection.insert(object, 'employee-details').then((leave_res) => {
+    if (leave_res) {
+      response.send(leave_res);
+    } else {
+      response.send('error');
+    }
+  });
+  console.log('Data added');
+});
+app.get('/get_approved', (_request, response) => {
+  console.log('start');
+  let data = {
+    selector: {
+      type: 'approved',
+    },
+  };
+  dbconnection.get(data, 'employee-details').then((leaveger_res) => {
+    if (leaveger_res) {
+      response.send(leaveger_res);
+    } else {
+      response.send('error');
+    }
+  });
+});
+
+app.delete('/delete_approved/:id/:id1', (request, response) => {
+  dbconnection
+    .deleted(request.params.id, request.params.id1, 'employee-details')
+    .then((res) => {
+      if (res) {
+        console.log('deleted success');
+        response.send(res);
+      } else {
+        console.log('can not deleted...');
+        response.send('error');
+      }
+    });
+});
+
 //-------------------------------------------query--------------------------------------//
 app.post('/post_data', (request, response) => {
   let object = {

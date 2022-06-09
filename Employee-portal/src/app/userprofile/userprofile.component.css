@@ -16,8 +16,8 @@ h1 {
 
 .cards {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 8%;
+  grid-template-columns: repeat(2, 0fr);
+  gap: 20%;
 }
 
 .card {
@@ -103,5 +103,6 @@ h1 {
 }
 #btn {
   margin-left: 46%;
-  margin-top: 20px;
+  margin-top: 20%;
+  margin-bottom: 20px;
 }

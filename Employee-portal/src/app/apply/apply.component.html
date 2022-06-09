@@ -131,7 +131,7 @@
     </div>
 
     <div class="mb-3">
-      <label for="mobileno" class="head">Contact-no</label>
+      <label for="mobileno" class="head">Contact-number</label>
       <div class="inputbox">
         <input
           type="text"
@@ -150,20 +150,12 @@
         >* Mobile no required!!</span
       >
     </div>
-    <select for="type1" class="form-select" aria-label="Default select example">
-      <option selected>Leave type</option>
-      <option value="1">Annual leave</option>
-      <option value="2">Lose of pay</option>
-      <option value="3">Sike leave</option>
-      <div>
-        <input
-          type="text"
-          class="form-control"
-          formControlName="type1"
-          id="type1"
-          aria-describedby="emailHelp"
-        />
-      </div>
+    <label for="leavetype" class="form-label"> Leave type </label>
+    <select formControlName="leavetype">
+      <option disabled selected>Leave type</option>
+      <option value="Annual leave">Annual leave</option>
+      <option value="LOP">LOP</option>
+      <option value="Sick leave">Sick leave</option>
     </select>
     <div class="mb-3">
       <label for="reason" class="head">Reason For leave </label>
@@ -189,9 +181,10 @@
       <div class="col">
         <input
           type="submit"
-          value="Hit me"
+          value="Apply"
           (click)="addUser(this.addform.value)"
           [disabled]="!addform.valid"
+          routerLink="/userprofile"
         />
       </div>
     </div>

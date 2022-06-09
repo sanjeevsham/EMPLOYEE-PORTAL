@@ -22,6 +22,8 @@ import { UserprofileComponent } from './userprofile/userprofile.component';
 import { SalaryComponent } from './salary/salary.component';
 import { EmployeeSalaryComponent } from './employee-salary/employee-salary.component';
 import { ToastrModule } from 'ngx-toastr';
+import { ApprovedComponent } from './approved/approved.component';
+import { UserleaveComponent } from './userleave/userleave.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,6 +44,8 @@ import { ToastrModule } from 'ngx-toastr';
     UserprofileComponent,
     SalaryComponent,
     EmployeeSalaryComponent,
+    ApprovedComponent,
+    UserleaveComponent,
     
   ],
   imports: [

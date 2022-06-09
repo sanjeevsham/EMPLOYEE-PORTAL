@@ -9,9 +9,9 @@
   background-color: rgba(15, 14, 14, 0.74);
   color: white;
 }
-h1 {
-  margin-left: 40%;
+.back {
+  margin-left: 10px;
 }
-#delete {
-  margin-top: 5px;
+h1 {
+  text-align: center;
 }
