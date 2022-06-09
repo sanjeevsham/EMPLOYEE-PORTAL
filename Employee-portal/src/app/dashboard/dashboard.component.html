@@ -53,15 +53,6 @@
         class="btn btn-outline-success"
         id="button1"
         data-bs-toggle="modal"
-        routerLink="/approved"
-        routerLinkActive="active-link"
-      >
-        approved
-      </button>
-      <button
-        class="btn btn-outline-success"
-        id="button1"
-        data-bs-toggle="modal"
         routerLink="/splasher"
         routerLinkActive="active-link"
       >
@@ -153,7 +144,7 @@
             <div class="mb-3">
               <label for="id" class="form-label">ID </label>
               <input
-                type="number"
+                type="text"
                 class="form-control"
                 formControlName="id"
                 id="id"
@@ -225,7 +216,7 @@
               >
             </div>
             <div class="mb-3">
-              <label for="mobileno" class="form-label">Mobile No </label>
+              <label for="mobileno" class="form-label">Mobile number </label>
               <input
                 type="number"
                 class="form-control"
@@ -236,11 +227,12 @@
               <span
                 class="text-danger"
                 *ngIf="
-                  addform.controls['mobileno'].touched &&
-                  addform.hasError('required', 'mobileno')
+                  addform.controls.mobileno.errors &&
+                  addform.controls.mobileno.touched
                 "
-                >* Mobile no required!!</span
               >
+                <br />Invalid Mobile Number
+              </span>
             </div>
             <div class="mb-3">
               <label for="bloodgroup" class="form-label">Blood Group </label>

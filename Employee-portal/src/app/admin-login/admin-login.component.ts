@@ -68,7 +68,7 @@ export class AdminLoginComponent implements OnInit {
 
     showmsg()
     {
-      this.toastrService.success("Logged In!!!");
+      this.toastrService.success("Logged In Successfully!!!");
     }
     showear()
     {

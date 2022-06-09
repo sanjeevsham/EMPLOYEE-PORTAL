@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormGroup,FormBuilder,NgForm ,Validators} from '@angular/forms';
 import { EmployeeServiceService } from '../employee-service.service';
+import { ToastarService } from '../toastar.service';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -11,7 +12,7 @@ export class DashboardComponent {
   alldata:any;
   exchange!:any;
   object:any=[]
-  constructor(private formbuilder:FormBuilder,private api:EmployeeServiceService) { }
+  constructor(private formbuilder:FormBuilder,private api:EmployeeServiceService, private tostar:ToastarService) { }
 
   ngOnInit(): void {
     this.addform=this.formbuilder.group({
@@ -40,7 +41,10 @@ export class DashboardComponent {
       this.api.addEmployee(formvalue).subscribe(res=>{
       console.log("hello"+res);
       console.log("Your data was posted successfully!");
-      location.reload()
+      this.tostar.showSuccess("data","Employee data was posted successfully!")
+      setTimeout(() => {
+        location.reload()
+      }, 1000);
 
     },rej=>{
       console.log("opps! Can not post data"+rej);
@@ -64,8 +68,10 @@ export class DashboardComponent {
   delete(data:any){
     this.api.deleteEmployee(data._id,data._rev).subscribe(_res=>{
       console.log("your data has deleted, please refresh the page");
-      location.reload()
-
+      this.tostar.showSuccess("data","data deleted successfullu..!")
+       setTimeout(() => {
+        location.reload()
+       }, 700);
     },rej=>{
       console.log("oops can not delete"+rej);
     })
@@ -93,8 +99,10 @@ export class DashboardComponent {
     console.log(formvalue);
     this.api.updateEmployee(formvalue).subscribe(_res=>{
       console.log("Your data was updated successfully!");
-      alert('your data was Updated successfully')
-      location.reload()
+      this.tostar.showSuccess("data","Employee data updated successfully..!")
+      setTimeout(() => {
+        location.reload()
+      }, 500);
     },rej=>{
       console.log("can not update....."+rej);
     })

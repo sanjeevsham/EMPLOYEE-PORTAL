@@ -1,10 +1,12 @@
 <div class="container">
   <h1>Leave details</h1>
+  <button class="btn btn-primary" id="approve" routerLink="/approved">
+    approved
+  </button>
   <table class="table table-hover">
     <caption></caption>
     <thead id="head1">
       <tr>
-        <th scope="col">S.NO</th>
         <th scope="col">Employee-ID</th>
         <th scope="col">Name</th>
         <th scope="col">Email</th>
@@ -19,7 +21,6 @@
     </thead>
     <tbody>
       <tr *ngFor="let obj of object">
-        <th scope="col">{{ obj.sno }}</th>
         <th scope="col">{{ obj.empid }}</th>
         <th scope="col">{{ obj.firstname }}</th>
         <th scope="col">{{ obj.email }}</th>
@@ -30,15 +31,15 @@
         <th scope="col">{{ obj.leavetype }}</th>
         <th scope="col">{{ obj.reason }}</th>
         <td>
-          <button class="btn btn-success" (click)="approve(obj, obj)">
+          <button
+            [disabled]="disable"
+            class="btn btn-success"
+            (click)="approve(obj, obj)"
+          >
             Approve</button
           ><br />
-          <button
-            class="btn btn-primary"
-            id="delete"
-            (click)="delete(obj, obj)"
-          >
-            delete
+          <button class="btn btn-danger" id="delete" (click)="delete(obj, obj)">
+            Reject
           </button>
         </td>
       </tr>

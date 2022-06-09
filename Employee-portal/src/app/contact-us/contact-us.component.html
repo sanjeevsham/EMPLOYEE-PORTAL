@@ -11,9 +11,18 @@
               id="firstname"
               formControlName="firstname"
               class="form-control"
+              required
             />
             <span for="firstname" class="text">First Name </span>
             <span class="line"></span>
+            <span
+              class="text-danger"
+              *ngIf="
+                addform.controls['firstname'].touched &&
+                addform.hasError('required', 'firstname')
+              "
+              >* First name required!!</span
+            >
           </div>
         </div>
         <div class="col">
@@ -23,9 +32,18 @@
               id="lastname"
               formControlName="lastname"
               class="form-control"
+              required
             />
             <span for="lastname" class="text">Last Name </span>
             <span class="line"></span>
+            <span
+              class="text-danger"
+              *ngIf="
+                addform.controls['lastname'].touched &&
+                addform.hasError('required', 'lastname')
+              "
+              >* Last name required!!</span
+            >
           </div>
         </div>
         <div class="col">
@@ -35,9 +53,18 @@
               id="email"
               formControlName="email"
               class="form-control"
+              required
             />
             <span for="email" class="text">Email </span>
             <span class="line"></span>
+            <span
+              class="text-danger"
+              *ngIf="
+                addform.controls['email'].touched &&
+                addform.hasError('required', 'email')
+              "
+              >* Invalid email !!</span
+            >
           </div>
         </div>
         <div class="col">
@@ -48,9 +75,18 @@
               formControlName="mobileno"
               class="form-control"
               id="mobileno"
+              required
             />
             <span for="mobileno" class="num">Mobile</span>
             <span class="line"></span>
+            <span
+              class="text-danger"
+              *ngIf="
+                addform.controls['email'].touched &&
+                addform.hasError('required', 'email')
+              "
+              >* Invalid mobile number!!</span
+            >
           </div>
         </div>
       </div>
@@ -63,6 +99,7 @@
               formControlName="query"
               class="form-control"
               id="query"
+              required
             />
             <textarea
               class="form-control form-group"
@@ -71,6 +108,14 @@
             ></textarea>
             <span for="query" class="text">Type Your Message Here....</span>
             <span class="line"></span>
+            <span
+              class="text-danger"
+              *ngIf="
+                addform.controls['query'].touched &&
+                addform.hasError('required', 'query')
+              "
+              >* Query required!!</span
+            >
           </div>
         </div>
       </div>
