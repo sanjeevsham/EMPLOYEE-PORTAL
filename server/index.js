@@ -214,9 +214,9 @@ app.post('/post_approved', (request, response) => {
     approved: request.body.approved,
     type: 'approved',
   };
-  dbconnection.insert(object, 'employee-details').then((apply_res) => {
-    if (apply_res) {
-      response.send(apply_res);
+  dbconnection.insert(object, 'employee-details').then((approveapply_res) => {
+    if (approveapply_res) {
+      response.send(approveapply_res);
     } else {
       response.send('error');
     }
