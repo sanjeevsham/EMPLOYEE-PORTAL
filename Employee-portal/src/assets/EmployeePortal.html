@@ -1,88 +1,819 @@
 <!DOCTYPE html>
 <!-- saved from url=(0031)http://localhost:4200/dashboard -->
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    
-    <title>EmployeePortal</title>
-    <!--<base href="/">--><base href=".">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" type="image/x-icon" href="http://localhost:4200/favicon.ico">
-    <link href="./EmployeePortal_files/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-  <link rel="stylesheet" href="./EmployeePortal_files/styles.css"><link rel="stylesheet" href="./EmployeePortal_files/all.css" integrity="sha384-/frq1SRXYH/bSyou/HUp/hib7RVN1TawQYja658FEOodR/FQBKVqT9Ol+Oz3Olq5" crossorigin="anonymous"><style>head[_ngcontent-gcs-c67] {
-  color: black;
-}
-/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFwcC5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsWUFBWTtBQUNkIiwiZmlsZSI6ImFwcC5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiaGVhZCB7XHJcbiAgY29sb3I6IGJsYWNrO1xyXG59XHJcbiJdfQ== */</style><style>.container[_ngcontent-gcs-c52] {
-  background-image: url('background 5.webp');
-  background-size: cover;
-  margin-top: 50px;
-  padding: 20px;
-  border-radius: 20px;
-}
-#head1[_ngcontent-gcs-c52] {
-  background-color: rgba(15, 14, 14, 0.74);
-  color: white;
-}
-#head[_ngcontent-gcs-c52] {
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-#button1[_ngcontent-gcs-c52] {
-  margin-left: 30px;
-  background: transparent;
-  border-radius: 20px;
-  border: 2px solid lightblue;
-  color: white;
-}
-.navbar-brand[_ngcontent-gcs-c52] {
-  color: azure;
-}
-.logout[_ngcontent-gcs-c52] {
-  margin-left: 20%;
-  width: 50%;
-  height: 20%;
-}
-.input1[_ngcontent-gcs-c52] {
-  margin-left: 40%;
-  background: transparent;
-  border-radius: 20px;
-  border: 2px solid lightblue;
-  color: white;
-  width: 77px;
-  height: 37px;
-}
-h1[_ngcontent-gcs-c52] {
-  margin-left: 40%;
-}
-/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImRhc2hib2FyZC5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsMENBQXVEO0VBQ3ZELHNCQUFzQjtFQUN0QixnQkFBZ0I7RUFDaEIsYUFBYTtFQUNiLG1CQUFtQjtBQUNyQjtBQUNBO0VBQ0Usd0NBQXdDO0VBQ3hDLFlBQVk7QUFDZDtBQUNBO0VBQ0UsZ0JBQWdCO0VBQ2hCLG1CQUFtQjtBQUNyQjtBQUNBO0VBQ0UsaUJBQWlCO0VBQ2pCLHVCQUF1QjtFQUN2QixtQkFBbUI7RUFDbkIsMkJBQTJCO0VBQzNCLFlBQVk7QUFDZDtBQUNBO0VBQ0UsWUFBWTtBQUNkO0FBQ0E7RUFDRSxnQkFBZ0I7RUFDaEIsVUFBVTtFQUNWLFdBQVc7QUFDYjtBQUNBO0VBQ0UsZ0JBQWdCO0VBQ2hCLHVCQUF1QjtFQUN2QixtQkFBbUI7RUFDbkIsMkJBQTJCO0VBQzNCLFlBQVk7RUFDWixXQUFXO0VBQ1gsWUFBWTtBQUNkO0FBQ0E7RUFDRSxnQkFBZ0I7QUFDbEIiLCJmaWxlIjoiZGFzaGJvYXJkLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuY29udGFpbmVyIHtcclxuICBiYWNrZ3JvdW5kLWltYWdlOiB1cmwoXCIuLi8uLi9hc3NldHMvYmFja2dyb3VuZCA1LndlYnBcIik7XHJcbiAgYmFja2dyb3VuZC1zaXplOiBjb3ZlcjtcclxuICBtYXJnaW4tdG9wOiA1MHB4O1xyXG4gIHBhZGRpbmc6IDIwcHg7XHJcbiAgYm9yZGVyLXJhZGl1czogMjBweDtcclxufVxyXG4jaGVhZDEge1xyXG4gIGJhY2tncm91bmQtY29sb3I6IHJnYmEoMTUsIDE0LCAxNCwgMC43NCk7XHJcbiAgY29sb3I6IHdoaXRlO1xyXG59XHJcbiNoZWFkIHtcclxuICBtYXJnaW4tdG9wOiAxMHB4O1xyXG4gIG1hcmdpbi1ib3R0b206IDEwcHg7XHJcbn1cclxuI2J1dHRvbjEge1xyXG4gIG1hcmdpbi1sZWZ0OiAzMHB4O1xyXG4gIGJhY2tncm91bmQ6IHRyYW5zcGFyZW50O1xyXG4gIGJvcmRlci1yYWRpdXM6IDIwcHg7XHJcbiAgYm9yZGVyOiAycHggc29saWQgbGlnaHRibHVlO1xyXG4gIGNvbG9yOiB3aGl0ZTtcclxufVxyXG4ubmF2YmFyLWJyYW5kIHtcclxuICBjb2xvcjogYXp1cmU7XHJcbn1cclxuLmxvZ291dCB7XHJcbiAgbWFyZ2luLWxlZnQ6IDIwJTtcclxuICB3aWR0aDogNTAlO1xyXG4gIGhlaWdodDogMjAlO1xyXG59XHJcbi5pbnB1dDEge1xyXG4gIG1hcmdpbi1sZWZ0OiA0MCU7XHJcbiAgYmFja2dyb3VuZDogdHJhbnNwYXJlbnQ7XHJcbiAgYm9yZGVyLXJhZGl1czogMjBweDtcclxuICBib3JkZXI6IDJweCBzb2xpZCBsaWdodGJsdWU7XHJcbiAgY29sb3I6IHdoaXRlO1xyXG4gIHdpZHRoOiA3N3B4O1xyXG4gIGhlaWdodDogMzdweDtcclxufVxyXG5oMSB7XHJcbiAgbWFyZ2luLWxlZnQ6IDQwJTtcclxufVxyXG4iXX0= */</style></head>
-  
-  <body class="modal-open" style="overflow: hidden; padding-right: 0px;">
-    <app-root _nghost-gcs-c67="" ng-version="11.0.9"><router-outlet _ngcontent-gcs-c67=""></router-outlet><app-dashboard _nghost-gcs-c52=""><nav _ngcontent-gcs-c52="" id="head" class="navbar navbar-expand-lg bg-dark"><div _ngcontent-gcs-c52="" class="container-fluid"><a _ngcontent-gcs-c52="" href="http://localhost:4200/" class="navbar-brand">Employee Portal</a><button _ngcontent-gcs-c52="" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" obj="" aria-label="Toggle navigation" class="navbar-toggler"><span _ngcontent-gcs-c52="" class="navbar-toggler-icon"></span></button><div _ngcontent-gcs-c52="" id="navbarSupportedContent" class="collapse navbar-collapse"><button _ngcontent-gcs-c52="" data-bs-toggle="modal" id="button1" data-bs-target="#addform" type="submit" class="btn btn-outline-success"> Add employee </button><button _ngcontent-gcs-c52="" id="button1" data-bs-toggle="modal" routerlink="/query" routerlinkactive="active-link" class="btn btn-outline-success" tabindex="0" ng-reflect-router-link="/query" ng-reflect-router-link-active="active-link"> Query </button><button _ngcontent-gcs-c52="" id="button1" data-bs-toggle="modal" class="btn btn-outline-success"> employee-list </button><button _ngcontent-gcs-c52="" id="button1" data-bs-toggle="modal" routerlink="/applied" routerlinkactive="active-link" class="btn btn-outline-success" tabindex="0" ng-reflect-router-link="/applied" ng-reflect-router-link-active="active-link"> Leave-applied </button><button _ngcontent-gcs-c52="" id="button1" data-bs-toggle="modal" routerlink="/splasher" routerlinkactive="active-link" class="btn btn-outline-success" tabindex="0" ng-reflect-router-link="/splasher" ng-reflect-router-link-active="active-link"> logout </button></div></div></nav><div _ngcontent-gcs-c52="" class="container"><h1 _ngcontent-gcs-c52="">Employee List</h1><table _ngcontent-gcs-c52="" class="table table-hover"><caption _ngcontent-gcs-c52=""></caption><thead _ngcontent-gcs-c52="" id="head1"><tr _ngcontent-gcs-c52=""><th _ngcontent-gcs-c52="" scope="col">ID</th><th _ngcontent-gcs-c52="" scope="col">Name</th><th _ngcontent-gcs-c52="" scope="col">Email ID</th><th _ngcontent-gcs-c52="" scope="col">Date of Birth</th><th _ngcontent-gcs-c52="" scope="col">Mobile No</th><th _ngcontent-gcs-c52="" scope="col">Blood Group</th><th _ngcontent-gcs-c52="" scope="col">Date of joining</th><th _ngcontent-gcs-c52="" scope="col">Salary-month</th><th _ngcontent-gcs-c52="" scope="col">Leave-days</th><th _ngcontent-gcs-c52="" scope="col">salary</th><th _ngcontent-gcs-c52="" scope="col">login Id</th><th _ngcontent-gcs-c52="" scope="col">Password</th><th _ngcontent-gcs-c52="" scope="col">Action</th></tr></thead><tbody _ngcontent-gcs-c52=""><tr _ngcontent-gcs-c52=""><th _ngcontent-gcs-c52="" scope="col">Emp03</th><th _ngcontent-gcs-c52="" scope="col">Maneesha</th><th _ngcontent-gcs-c52="" scope="col">maneesha@gmail.com</th><th _ngcontent-gcs-c52="" scope="col">0010-10-01</th><th _ngcontent-gcs-c52="" scope="col">8120981029</th><th _ngcontent-gcs-c52="" scope="col">B+</th><th _ngcontent-gcs-c52="" scope="col">101001-02-01</th><th _ngcontent-gcs-c52="" scope="col">12</th><th _ngcontent-gcs-c52="" scope="col">09</th><th _ngcontent-gcs-c52="" scope="col">1234567</th><th _ngcontent-gcs-c52="" scope="col">mani</th><th _ngcontent-gcs-c52="" scope="col">mani@123</th><td _ngcontent-gcs-c52=""><button _ngcontent-gcs-c52="" type="button" data-bs-toggle="modal" data-bs-target="#onEdit" class="btn btn-outline-primary me-2"> Edit </button><button _ngcontent-gcs-c52="" type="button" data-bs-target="#delete" class="btn btn-outline-danger"> Delete </button></td></tr><tr _ngcontent-gcs-c52=""><th _ngcontent-gcs-c52="" scope="col">Emp01</th><th _ngcontent-gcs-c52="" scope="col">sanjeev</th><th _ngcontent-gcs-c52="" scope="col">sanjeev@gmail.com</th><th _ngcontent-gcs-c52="" scope="col">2022-06-17</th><th _ngcontent-gcs-c52="" scope="col">8765432112</th><th _ngcontent-gcs-c52="" scope="col">o+</th><th _ngcontent-gcs-c52="" scope="col">2022-06-22</th><th _ngcontent-gcs-c52="" scope="col">jun</th><th _ngcontent-gcs-c52="" scope="col">1</th><th _ngcontent-gcs-c52="" scope="col">10000</th><th _ngcontent-gcs-c52="" scope="col">sanjeev</th><th _ngcontent-gcs-c52="" scope="col">sanjeev@10</th><td _ngcontent-gcs-c52=""><button _ngcontent-gcs-c52="" type="button" data-bs-toggle="modal" data-bs-target="#onEdit" class="btn btn-outline-primary me-2"> Edit </button><button _ngcontent-gcs-c52="" type="button" data-bs-target="#delete" class="btn btn-outline-danger"> Delete </button></td></tr><tr _ngcontent-gcs-c52=""><th _ngcontent-gcs-c52="" scope="col">Emp02</th><th _ngcontent-gcs-c52="" scope="col">pandiyan</th><th _ngcontent-gcs-c52="" scope="col">pandian@gmail.com</th><th _ngcontent-gcs-c52="" scope="col">2022-02-16</th><th _ngcontent-gcs-c52="" scope="col">1234567898</th><th _ngcontent-gcs-c52="" scope="col">B+</th><th _ngcontent-gcs-c52="" scope="col">2022-07-01</th><th _ngcontent-gcs-c52="" scope="col">july</th><th _ngcontent-gcs-c52="" scope="col">1</th><th _ngcontent-gcs-c52="" scope="col">10000</th><th _ngcontent-gcs-c52="" scope="col">pandian</th><th _ngcontent-gcs-c52="" scope="col">pandian@02</th><td _ngcontent-gcs-c52=""><button _ngcontent-gcs-c52="" type="button" data-bs-toggle="modal" data-bs-target="#onEdit" class="btn btn-outline-primary me-2"> Edit </button><button _ngcontent-gcs-c52="" type="button" data-bs-target="#delete" class="btn btn-outline-danger"> Delete </button></td></tr><!--bindings={
-  "ng-reflect-ng-for-of": ""
-}--></tbody></table><div _ngcontent-gcs-c52=""></div><div _ngcontent-gcs-c52="" id="addform" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" class="modal fade"><div _ngcontent-gcs-c52="" class="modal-dialog"><div _ngcontent-gcs-c52="" class="modal-content"><div _ngcontent-gcs-c52="" class="modal-header"><h5 _ngcontent-gcs-c52="" id="exampleModalLabel" class="modal-title">Add new employee</h5><button _ngcontent-gcs-c52="" type="button" data-bs-dismiss="modal" aria-label="Close" class="btn-close"></button></div><div _ngcontent-gcs-c52="" class="modal-body"><form _ngcontent-gcs-c52="" novalidate="" ng-reflect-form="[object Object]" class="ng-valid ng-dirty ng-touched"><div _ngcontent-gcs-c52="" class="mb-3"><label _ngcontent-gcs-c52="" for="id" class="form-label">ID </label><input _ngcontent-gcs-c52="" type="text" formcontrolname="id" id="id" aria-describedby="emailHelp" required="" class="form-control ng-untouched ng-pristine ng-valid" ng-reflect-name="id" ng-reflect-required=""><!--bindings={
-  "ng-reflect-ng-if": "false"
-}--></div><div _ngcontent-gcs-c52="" class="mb-3"><label _ngcontent-gcs-c52="" for="username" class="form-label">Name </label><input _ngcontent-gcs-c52="" type="text" formcontrolname="username" id="username" aria-describedby="emailHelp" class="form-control ng-untouched ng-pristine ng-valid" ng-reflect-name="username"><!--bindings={
-  "ng-reflect-ng-if": "false"
-}--></div><div _ngcontent-gcs-c52="" class="mb-3"><label _ngcontent-gcs-c52="" for="email" class="form-label">Email </label><input _ngcontent-gcs-c52="" type="text" formcontrolname="email" id="email" aria-describedby="emailHelp" class="form-control ng-valid ng-dirty ng-touched" ng-reflect-name="email"><!--bindings={
-  "ng-reflect-ng-if": null
-}--></div><div _ngcontent-gcs-c52="" class="mb-3"><label _ngcontent-gcs-c52="" for="dob" class="form-label">Date of Birth</label><input _ngcontent-gcs-c52="" type="date" formcontrolname="dob" id="dob" aria-describedby="emailHelp" class="form-control ng-untouched ng-pristine ng-valid" ng-reflect-name="dob"><!--bindings={
-  "ng-reflect-ng-if": "false"
-}--></div><div _ngcontent-gcs-c52="" class="mb-3"><label _ngcontent-gcs-c52="" for="mobileno" class="form-label">Mobile number </label><input _ngcontent-gcs-c52="" type="number" formcontrolname="mobileno" id="mobileno" aria-describedby="emailHelp" class="form-control ng-untouched ng-pristine ng-valid" ng-reflect-name="mobileno"><!--bindings={
-  "ng-reflect-ng-if": null
-}--></div><div _ngcontent-gcs-c52="" class="mb-3"><label _ngcontent-gcs-c52="" for="bloodgroup" class="form-label">Blood Group </label><input _ngcontent-gcs-c52="" type="text" formcontrolname="bloodgroup" id="bloodgroup" aria-describedby="emailHelp" class="form-control ng-untouched ng-pristine ng-valid" ng-reflect-name="bloodgroup"><!--bindings={
-  "ng-reflect-ng-if": "false"
-}--></div><div _ngcontent-gcs-c52="" class="mb-3"><label _ngcontent-gcs-c52="" for="doj" class="form-label">Date-of-joining </label><input _ngcontent-gcs-c52="" type="date" formcontrolname="doj" id="doj" aria-describedby="emailHelp" class="form-control ng-untouched ng-pristine ng-valid" ng-reflect-name="doj" min="2022-06-10"><!--bindings={
-  "ng-reflect-ng-if": "false"
-}--></div><div _ngcontent-gcs-c52="" class="mb-3"><label _ngcontent-gcs-c52="" for="month" class="form-label">Salary month </label><input _ngcontent-gcs-c52="" type="number" formcontrolname="month" id="month" aria-describedby="emailHelp" class="form-control ng-untouched ng-pristine ng-valid" ng-reflect-name="month"><!--bindings={
-  "ng-reflect-ng-if": "false"
-}--></div><div _ngcontent-gcs-c52="" class="mb-3"><label _ngcontent-gcs-c52="" for="leave" class="form-label">leave days </label><input _ngcontent-gcs-c52="" type="number" formcontrolname="leave" id="leave" aria-describedby="emailHelp" class="form-control ng-untouched ng-pristine ng-valid" ng-reflect-name="leave"><!--bindings={
-  "ng-reflect-ng-if": "false"
-}--></div><div _ngcontent-gcs-c52="" class="mb-3"><label _ngcontent-gcs-c52="" for="salary" class="form-label">Salary </label><input _ngcontent-gcs-c52="" type="text" formcontrolname="salary" id="salary" aria-describedby="emailHelp" class="form-control ng-untouched ng-pristine ng-valid" ng-reflect-name="salary"><!--bindings={
-  "ng-reflect-ng-if": "false"
-}--></div><div _ngcontent-gcs-c52="" class="mb-3"><label _ngcontent-gcs-c52="" for="userlogin" class="form-label">User-login Id </label><input _ngcontent-gcs-c52="" type="text" formcontrolname="userlogin" id="userlogin" aria-describedby="emailHelp" class="form-control ng-untouched ng-pristine ng-valid" ng-reflect-name="userlogin"><!--bindings={
-  "ng-reflect-ng-if": "false"
-}--></div><div _ngcontent-gcs-c52="" class="mb-3"><label _ngcontent-gcs-c52="" for="userpassword" class="form-label">userPassword </label><input _ngcontent-gcs-c52="" type="text" formcontrolname="userpassword" id="userpassword" aria-describedby="emailHelp" class="form-control ng-untouched ng-pristine ng-valid" ng-reflect-name="userpassword"><!--bindings={
-  "ng-reflect-ng-if": "false"
-}--></div><div _ngcontent-gcs-c52="" class="modal-footer"><button _ngcontent-gcs-c52="" type="button" data-bs-dismiss="modal" class="btn btn-secondary"> Close </button><button _ngcontent-gcs-c52="" type="button" class="btn btn-primary"> Add Employee </button></div></form></div></div></div></div><div _ngcontent-gcs-c52="" id="onEdit" tabindex="-1" aria-labelledby="exampleModalLabel" class="modal fade show" aria-modal="true" role="dialog" style="display: block; padding-left: 0px;"><div _ngcontent-gcs-c52="" class="modal-dialog"><div _ngcontent-gcs-c52="" class="modal-content"><div _ngcontent-gcs-c52="" class="modal-header"><h5 _ngcontent-gcs-c52="" id="exampleModalLabel" class="modal-title"> Edit employee details </h5><button _ngcontent-gcs-c52="" type="button" data-bs-dismiss="modal" aria-label="Close" class="btn-close"></button></div><div _ngcontent-gcs-c52="" class="modal-body"><form _ngcontent-gcs-c52="" novalidate="" ng-reflect-form="[object Object]" class="ng-valid ng-dirty ng-touched"><div _ngcontent-gcs-c52="" class="mb-3"><label _ngcontent-gcs-c52="" for="id" class="form-label">ID </label><input _ngcontent-gcs-c52="" type="text" formcontrolname="id" id="id" aria-describedby="emailHelp" readonly="" class="form-control ng-untouched ng-pristine ng-valid" ng-reflect-name="id"></div><div _ngcontent-gcs-c52="" class="mb-3"><label _ngcontent-gcs-c52="" for="username" class="form-label">Name </label><input _ngcontent-gcs-c52="" type="text" formcontrolname="username" id="username" aria-describedby="emailHelp" class="form-control ng-untouched ng-pristine ng-valid" ng-reflect-name="username"></div><div _ngcontent-gcs-c52="" class="mb-3"><label _ngcontent-gcs-c52="" for="email" class="form-label">Email </label><input _ngcontent-gcs-c52="" type="text" formcontrolname="email" id="email" aria-describedby="emailHelp" class="form-control ng-valid ng-dirty ng-touched" ng-reflect-name="email"></div><div _ngcontent-gcs-c52="" class="mb-3"><label _ngcontent-gcs-c52="" for="dob" class="form-label">Date of Birth</label><input _ngcontent-gcs-c52="" type="date" formcontrolname="dob" id="dob" aria-describedby="emailHelp" class="form-control ng-untouched ng-pristine ng-valid" ng-reflect-name="dob"></div><div _ngcontent-gcs-c52="" class="mb-3"><label _ngcontent-gcs-c52="" for="mobileno" class="form-label">Mobile No </label><input _ngcontent-gcs-c52="" type="number" formcontrolname="mobileno" id="mobileno" aria-describedby="emailHelp" class="form-control ng-untouched ng-pristine ng-valid" ng-reflect-name="mobileno"></div><div _ngcontent-gcs-c52="" class="mb-3"><label _ngcontent-gcs-c52="" for="bloodgroup" class="form-label">Blood Group </label><input _ngcontent-gcs-c52="" type="text" formcontrolname="bloodgroup" id="bloodgroup" aria-describedby="emailHelp" class="form-control ng-untouched ng-pristine ng-valid" ng-reflect-name="bloodgroup"></div><div _ngcontent-gcs-c52="" class="mb-3"><label _ngcontent-gcs-c52="" for="doj" class="form-label">Date-of-joining </label><input _ngcontent-gcs-c52="" type="date" formcontrolname="doj" id="doj" aria-describedby="emailHelp" class="form-control ng-untouched ng-pristine ng-valid" ng-reflect-name="doj"></div><div _ngcontent-gcs-c52="" class="mb-3"><label _ngcontent-gcs-c52="" for="month" class="form-label">Salary month </label><input _ngcontent-gcs-c52="" type="text" formcontrolname="month" id="month" aria-describedby="emailHelp" class="form-control ng-untouched ng-pristine ng-valid" ng-reflect-name="month"></div><div _ngcontent-gcs-c52="" class="mb-3"><label _ngcontent-gcs-c52="" for="leave" class="form-label">Leave-days</label><input _ngcontent-gcs-c52="" type="text" formcontrolname="leave" id="leave" aria-describedby="emailHelp" class="form-control ng-untouched ng-pristine ng-valid" ng-reflect-name="leave"></div><div _ngcontent-gcs-c52="" class="mb-3"><label _ngcontent-gcs-c52="" for="salary" class="form-label">Salary</label><input _ngcontent-gcs-c52="" type="text" formcontrolname="salary" id="salary" aria-describedby="emailHelp" class="form-control ng-untouched ng-pristine ng-valid" ng-reflect-name="salary"></div><div _ngcontent-gcs-c52="" class="mb-3"><label _ngcontent-gcs-c52="" for="userlogin" class="form-label">User-login Id </label><input _ngcontent-gcs-c52="" type="text" formcontrolname="userlogin" id="userlogin" aria-describedby="emailHelp" class="form-control ng-untouched ng-pristine ng-valid" ng-reflect-name="userlogin"></div><div _ngcontent-gcs-c52="" class="mb-3"><label _ngcontent-gcs-c52="" for="userpassword" class="form-label">userPassword </label><input _ngcontent-gcs-c52="" type="text" formcontrolname="userpassword" id="userpassword" aria-describedby="emailHelp" class="form-control ng-untouched ng-pristine ng-valid" ng-reflect-name="userpassword"></div><div _ngcontent-gcs-c52="" class="modal-footer"><button _ngcontent-gcs-c52="" type="button" data-bs-dismiss="modal" class="btn btn-secondary"> Close </button><button _ngcontent-gcs-c52="" type="button" data-bs-toggle="modal" data-bs-target="#update" class="btn btn-primary"> Update </button></div></form></div></div></div></div></div></app-dashboard><!--container--></app-root>
-    <script src="./EmployeePortal_files/bootstrap.bundle.min.js.download" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
-  <script src="./EmployeePortal_files/runtime.js.download" defer=""></script><script src="./EmployeePortal_files/polyfills.js.download" defer=""></script><script src="./EmployeePortal_files/styles.js.download" defer=""></script><script src="./EmployeePortal_files/vendor.js.download" defer=""></script><script src="./EmployeePortal_files/main.js.download" defer=""></script>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
-<div class="modal-backdrop fade show"></div></body></html>
+    <title>EmployeePortal</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="http://localhost:4200/favicon.ico"
+    />
+    <link
+      href="./EmployeePortal_files/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./EmployeePortal_files/styles.css" />
+    <link
+      rel="stylesheet"
+      href="./EmployeePortal_files/all.css"
+      integrity="sha384-/frq1SRXYH/bSyou/HUp/hib7RVN1TawQYja658FEOodR/FQBKVqT9Ol+Oz3Olq5"
+      crossorigin="anonymous"
+    />
+    <style>
+      head[_ngcontent-gcs-c67] {
+        color: black;
+      }
+      /*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFwcC5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsWUFBWTtBQUNkIiwiZmlsZSI6ImFwcC5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiaGVhZCB7XHJcbiAgY29sb3I6IGJsYWNrO1xyXG59XHJcbiJdfQ== */
+    </style>
+    <style>
+      .container[_ngcontent-gcs-c52] {
+        background-image: url("background 5.webp");
+        background-size: cover;
+        margin-top: 50px;
+        padding: 20px;
+        border-radius: 20px;
+      }
+      #head1[_ngcontent-gcs-c52] {
+        background-color: rgba(15, 14, 14, 0.74);
+        color: white;
+      }
+      #head[_ngcontent-gcs-c52] {
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+      #button1[_ngcontent-gcs-c52] {
+        margin-left: 30px;
+        background: transparent;
+        border-radius: 20px;
+        border: 2px solid lightblue;
+        color: white;
+      }
+      .navbar-brand[_ngcontent-gcs-c52] {
+        color: azure;
+      }
+      .logout[_ngcontent-gcs-c52] {
+        margin-left: 20%;
+        width: 50%;
+        height: 20%;
+      }
+      .input1[_ngcontent-gcs-c52] {
+        margin-left: 40%;
+        background: transparent;
+        border-radius: 20px;
+        border: 2px solid lightblue;
+        color: white;
+        width: 77px;
+        height: 37px;
+      }
+      h1[_ngcontent-gcs-c52] {
+        margin-left: 40%;
+      }
+      /*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImRhc2hib2FyZC5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsMENBQXVEO0VBQ3ZELHNCQUFzQjtFQUN0QixnQkFBZ0I7RUFDaEIsYUFBYTtFQUNiLG1CQUFtQjtBQUNyQjtBQUNBO0VBQ0Usd0NBQXdDO0VBQ3hDLFlBQVk7QUFDZDtBQUNBO0VBQ0UsZ0JBQWdCO0VBQ2hCLG1CQUFtQjtBQUNyQjtBQUNBO0VBQ0UsaUJBQWlCO0VBQ2pCLHVCQUF1QjtFQUN2QixtQkFBbUI7RUFDbkIsMkJBQTJCO0VBQzNCLFlBQVk7QUFDZDtBQUNBO0VBQ0UsWUFBWTtBQUNkO0FBQ0E7RUFDRSxnQkFBZ0I7RUFDaEIsVUFBVTtFQUNWLFdBQVc7QUFDYjtBQUNBO0VBQ0UsZ0JBQWdCO0VBQ2hCLHVCQUF1QjtFQUN2QixtQkFBbUI7RUFDbkIsMkJBQTJCO0VBQzNCLFlBQVk7RUFDWixXQUFXO0VBQ1gsWUFBWTtBQUNkO0FBQ0E7RUFDRSxnQkFBZ0I7QUFDbEIiLCJmaWxlIjoiZGFzaGJvYXJkLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuY29udGFpbmVyIHtcclxuICBiYWNrZ3JvdW5kLWltYWdlOiB1cmwoXCIuLi8uLi9hc3NldHMvYmFja2dyb3VuZCA1LndlYnBcIik7XHJcbiAgYmFja2dyb3VuZC1zaXplOiBjb3ZlcjtcclxuICBtYXJnaW4tdG9wOiA1MHB4O1xyXG4gIHBhZGRpbmc6IDIwcHg7XHJcbiAgYm9yZGVyLXJhZGl1czogMjBweDtcclxufVxyXG4jaGVhZDEge1xyXG4gIGJhY2tncm91bmQtY29sb3I6IHJnYmEoMTUsIDE0LCAxNCwgMC43NCk7XHJcbiAgY29sb3I6IHdoaXRlO1xyXG59XHJcbiNoZWFkIHtcclxuICBtYXJnaW4tdG9wOiAxMHB4O1xyXG4gIG1hcmdpbi1ib3R0b206IDEwcHg7XHJcbn1cclxuI2J1dHRvbjEge1xyXG4gIG1hcmdpbi1sZWZ0OiAzMHB4O1xyXG4gIGJhY2tncm91bmQ6IHRyYW5zcGFyZW50O1xyXG4gIGJvcmRlci1yYWRpdXM6IDIwcHg7XHJcbiAgYm9yZGVyOiAycHggc29saWQgbGlnaHRibHVlO1xyXG4gIGNvbG9yOiB3aGl0ZTtcclxufVxyXG4ubmF2YmFyLWJyYW5kIHtcclxuICBjb2xvcjogYXp1cmU7XHJcbn1cclxuLmxvZ291dCB7XHJcbiAgbWFyZ2luLWxlZnQ6IDIwJTtcclxuICB3aWR0aDogNTAlO1xyXG4gIGhlaWdodDogMjAlO1xyXG59XHJcbi5pbnB1dDEge1xyXG4gIG1hcmdpbi1sZWZ0OiA0MCU7XHJcbiAgYmFja2dyb3VuZDogdHJhbnNwYXJlbnQ7XHJcbiAgYm9yZGVyLXJhZGl1czogMjBweDtcclxuICBib3JkZXI6IDJweCBzb2xpZCBsaWdodGJsdWU7XHJcbiAgY29sb3I6IHdoaXRlO1xyXG4gIHdpZHRoOiA3N3B4O1xyXG4gIGhlaWdodDogMzdweDtcclxufVxyXG5oMSB7XHJcbiAgbWFyZ2luLWxlZnQ6IDQwJTtcclxufVxyXG4iXX0= */
+    </style>
+  </head>
+
+  <body class="modal-open" style="overflow: hidden; padding-right: 0px">
+    <app-root _nghost-gcs-c67="" ng-version="11.0.9"
+      ><router-outlet _ngcontent-gcs-c67=""></router-outlet
+      ><app-dashboard _nghost-gcs-c52=""
+        ><nav
+          _ngcontent-gcs-c52=""
+          id="head"
+          class="navbar navbar-expand-lg bg-dark"
+        >
+          <div _ngcontent-gcs-c52="" class="container-fluid">
+            <a
+              _ngcontent-gcs-c52=""
+              href="http://localhost:4200/"
+              class="navbar-brand"
+              >Employee Portal</a
+            ><button
+              _ngcontent-gcs-c52=""
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              obj=""
+              aria-label="Toggle navigation"
+              class="navbar-toggler"
+            >
+              <span _ngcontent-gcs-c52="" class="navbar-toggler-icon"></span>
+            </button>
+            <div
+              _ngcontent-gcs-c52=""
+              id="navbarSupportedContent"
+              class="collapse navbar-collapse"
+            >
+              <button
+                _ngcontent-gcs-c52=""
+                data-bs-toggle="modal"
+                id="button1"
+                data-bs-target="#addform"
+                type="submit"
+                class="btn btn-outline-success"
+              >
+                Add employee</button
+              ><button
+                _ngcontent-gcs-c52=""
+                id="button1"
+                data-bs-toggle="modal"
+                routerlink="/query"
+                routerlinkactive="active-link"
+                class="btn btn-outline-success"
+                tabindex="0"
+                ng-reflect-router-link="/query"
+                ng-reflect-router-link-active="active-link"
+              >
+                Query</button
+              ><button
+                _ngcontent-gcs-c52=""
+                id="button1"
+                data-bs-toggle="modal"
+                class="btn btn-outline-success"
+              >
+                employee-list</button
+              ><button
+                _ngcontent-gcs-c52=""
+                id="button1"
+                data-bs-toggle="modal"
+                routerlink="/applied"
+                routerlinkactive="active-link"
+                class="btn btn-outline-success"
+                tabindex="0"
+                ng-reflect-router-link="/applied"
+                ng-reflect-router-link-active="active-link"
+              >
+                Leave-applied</button
+              ><button
+                _ngcontent-gcs-c52=""
+                id="button1"
+                data-bs-toggle="modal"
+                routerlink="/splasher"
+                routerlinkactive="active-link"
+                class="btn btn-outline-success"
+                tabindex="0"
+                ng-reflect-router-link="/splasher"
+                ng-reflect-router-link-active="active-link"
+              >
+                logout
+              </button>
+            </div>
+          </div>
+        </nav>
+        <div _ngcontent-gcs-c52="" class="container">
+          <h1 _ngcontent-gcs-c52="">Employee List</h1>
+          <table _ngcontent-gcs-c52="" class="table table-hover">
+            <caption _ngcontent-gcs-c52=""></caption>
+            <thead _ngcontent-gcs-c52="" id="head1">
+              <tr _ngcontent-gcs-c52="">
+                <th _ngcontent-gcs-c52="" scope="col">ID</th>
+                <th _ngcontent-gcs-c52="" scope="col">Name</th>
+                <th _ngcontent-gcs-c52="" scope="col">Email ID</th>
+                <th _ngcontent-gcs-c52="" scope="col">Date of Birth</th>
+                <th _ngcontent-gcs-c52="" scope="col">Mobile No</th>
+                <th _ngcontent-gcs-c52="" scope="col">Blood Group</th>
+                <th _ngcontent-gcs-c52="" scope="col">Date of joining</th>
+                <th _ngcontent-gcs-c52="" scope="col">Salary-month</th>
+                <th _ngcontent-gcs-c52="" scope="col">Leave-days</th>
+                <th _ngcontent-gcs-c52="" scope="col">salary</th>
+                <th _ngcontent-gcs-c52="" scope="col">login Id</th>
+                <th _ngcontent-gcs-c52="" scope="col">Password</th>
+                <th _ngcontent-gcs-c52="" scope="col">Action</th>
+              </tr>
+            </thead>
+            <tbody _ngcontent-gcs-c52="">
+              <tr _ngcontent-gcs-c52="">
+                <th _ngcontent-gcs-c52="" scope="col">Emp03</th>
+                <th _ngcontent-gcs-c52="" scope="col">Maneesha</th>
+                <th _ngcontent-gcs-c52="" scope="col">maneesha@gmail.com</th>
+                <th _ngcontent-gcs-c52="" scope="col">0010-10-01</th>
+                <th _ngcontent-gcs-c52="" scope="col">8120981029</th>
+                <th _ngcontent-gcs-c52="" scope="col">B+</th>
+                <th _ngcontent-gcs-c52="" scope="col">101001-02-01</th>
+                <th _ngcontent-gcs-c52="" scope="col">12</th>
+                <th _ngcontent-gcs-c52="" scope="col">09</th>
+                <th _ngcontent-gcs-c52="" scope="col">1234567</th>
+                <th _ngcontent-gcs-c52="" scope="col">mani</th>
+                <th _ngcontent-gcs-c52="" scope="col">mani@123</th>
+                <td _ngcontent-gcs-c52="">
+                  <button
+                    _ngcontent-gcs-c52=""
+                    type="button"
+                    data-bs-toggle="modal"
+                    data-bs-target="#onEdit"
+                    class="btn btn-outline-primary me-2"
+                  >
+                    Edit</button
+                  ><button
+                    _ngcontent-gcs-c52=""
+                    type="button"
+                    data-bs-target="#delete"
+                    class="btn btn-outline-danger"
+                  >
+                    Delete
+                  </button>
+                </td>
+              </tr>
+              <tr _ngcontent-gcs-c52="">
+                <th _ngcontent-gcs-c52="" scope="col">Emp01</th>
+                <th _ngcontent-gcs-c52="" scope="col">sanjeev</th>
+                <th _ngcontent-gcs-c52="" scope="col">sanjeev@gmail.com</th>
+                <th _ngcontent-gcs-c52="" scope="col">2022-06-17</th>
+                <th _ngcontent-gcs-c52="" scope="col">8765432112</th>
+                <th _ngcontent-gcs-c52="" scope="col">o+</th>
+                <th _ngcontent-gcs-c52="" scope="col">2022-06-22</th>
+                <th _ngcontent-gcs-c52="" scope="col">jun</th>
+                <th _ngcontent-gcs-c52="" scope="col">1</th>
+                <th _ngcontent-gcs-c52="" scope="col">10000</th>
+                <th _ngcontent-gcs-c52="" scope="col">sanjeev</th>
+                <th _ngcontent-gcs-c52="" scope="col">sanjeev@10</th>
+                <td _ngcontent-gcs-c52="">
+                  <button
+                    _ngcontent-gcs-c52=""
+                    type="button"
+                    data-bs-toggle="modal"
+                    data-bs-target="#onEdit"
+                    class="btn btn-outline-primary me-2"
+                  >
+                    Edit</button
+                  ><button
+                    _ngcontent-gcs-c52=""
+                    type="button"
+                    data-bs-target="#delete"
+                    class="btn btn-outline-danger"
+                  >
+                    Delete
+                  </button>
+                </td>
+              </tr>
+              <tr _ngcontent-gcs-c52="">
+                <th _ngcontent-gcs-c52="" scope="col">Emp02</th>
+                <th _ngcontent-gcs-c52="" scope="col">pandiyan</th>
+                <th _ngcontent-gcs-c52="" scope="col">pandian@gmail.com</th>
+                <th _ngcontent-gcs-c52="" scope="col">2022-02-16</th>
+                <th _ngcontent-gcs-c52="" scope="col">1234567898</th>
+                <th _ngcontent-gcs-c52="" scope="col">B+</th>
+                <th _ngcontent-gcs-c52="" scope="col">2022-07-01</th>
+                <th _ngcontent-gcs-c52="" scope="col">july</th>
+                <th _ngcontent-gcs-c52="" scope="col">1</th>
+                <th _ngcontent-gcs-c52="" scope="col">10000</th>
+                <th _ngcontent-gcs-c52="" scope="col">pandian</th>
+                <th _ngcontent-gcs-c52="" scope="col">pandian@02</th>
+                <td _ngcontent-gcs-c52="">
+                  <button
+                    _ngcontent-gcs-c52=""
+                    type="button"
+                    data-bs-toggle="modal"
+                    data-bs-target="#onEdit"
+                    class="btn btn-outline-primary me-2"
+                  >
+                    Edit</button
+                  ><button
+                    _ngcontent-gcs-c52=""
+                    type="button"
+                    data-bs-target="#delete"
+                    class="btn btn-outline-danger"
+                  >
+                    Delete
+                  </button>
+                </td>
+              </tr>
+              <!--bindings={
+  "ng-reflect-ng-for-of": ""
+}-->
+            </tbody>
+          </table>
+          <div _ngcontent-gcs-c52=""></div>
+          <div
+            _ngcontent-gcs-c52=""
+            id="addform"
+            tabindex="-1"
+            aria-labelledby="exampleModalLabel"
+            aria-hidden="true"
+            class="modal fade"
+          >
+            <div _ngcontent-gcs-c52="" class="modal-dialog">
+              <div _ngcontent-gcs-c52="" class="modal-content">
+                <div _ngcontent-gcs-c52="" class="modal-header">
+                  <h5
+                    _ngcontent-gcs-c52=""
+                    id="exampleModalLabel"
+                    class="modal-title"
+                  >
+                    Add new employee
+                  </h5>
+                  <button
+                    _ngcontent-gcs-c52=""
+                    type="button"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                    class="btn-close"
+                  ></button>
+                </div>
+                <div _ngcontent-gcs-c52="" class="modal-body">
+                  <form
+                    _ngcontent-gcs-c52=""
+                    novalidate=""
+                    ng-reflect-form="[object Object]"
+                    class="ng-valid ng-dirty ng-touched"
+                  >
+                    <div _ngcontent-gcs-c52="" class="mb-3">
+                      <label _ngcontent-gcs-c52="" for="id" class="form-label"
+                        >ID </label
+                      ><input
+                        _ngcontent-gcs-c52=""
+                        type="text"
+                        formcontrolname="id"
+                        id="id"
+                        aria-describedby="emailHelp"
+                        required=""
+                        class="form-control ng-untouched ng-pristine ng-valid"
+                        ng-reflect-name="id"
+                        ng-reflect-required=""
+                      /><!--bindings={
+  "ng-reflect-ng-if": "false"
+}-->
+                    </div>
+                    <div _ngcontent-gcs-c52="" class="mb-3">
+                      <label
+                        _ngcontent-gcs-c52=""
+                        for="username"
+                        class="form-label"
+                        >Name </label
+                      ><input
+                        _ngcontent-gcs-c52=""
+                        type="text"
+                        formcontrolname="username"
+                        id="username"
+                        aria-describedby="emailHelp"
+                        class="form-control ng-untouched ng-pristine ng-valid"
+                        ng-reflect-name="username"
+                      /><!--bindings={
+  "ng-reflect-ng-if": "false"
+}-->
+                    </div>
+                    <div _ngcontent-gcs-c52="" class="mb-3">
+                      <label
+                        _ngcontent-gcs-c52=""
+                        for="email"
+                        class="form-label"
+                        >Email </label
+                      ><input
+                        _ngcontent-gcs-c52=""
+                        type="text"
+                        formcontrolname="email"
+                        id="email"
+                        aria-describedby="emailHelp"
+                        class="form-control ng-valid ng-dirty ng-touched"
+                        ng-reflect-name="email"
+                      /><!--bindings={
+  "ng-reflect-ng-if": null
+}-->
+                    </div>
+                    <div _ngcontent-gcs-c52="" class="mb-3">
+                      <label _ngcontent-gcs-c52="" for="dob" class="form-label"
+                        >Date of Birth</label
+                      ><input
+                        _ngcontent-gcs-c52=""
+                        type="date"
+                        formcontrolname="dob"
+                        id="dob"
+                        aria-describedby="emailHelp"
+                        class="form-control ng-untouched ng-pristine ng-valid"
+                        ng-reflect-name="dob"
+                      /><!--bindings={
+  "ng-reflect-ng-if": "false"
+}-->
+                    </div>
+                    <div _ngcontent-gcs-c52="" class="mb-3">
+                      <label
+                        _ngcontent-gcs-c52=""
+                        for="mobileno"
+                        class="form-label"
+                        >Mobile number </label
+                      ><input
+                        _ngcontent-gcs-c52=""
+                        type="number"
+                        formcontrolname="mobileno"
+                        id="mobileno"
+                        aria-describedby="emailHelp"
+                        class="form-control ng-untouched ng-pristine ng-valid"
+                        ng-reflect-name="mobileno"
+                      /><!--bindings={
+  "ng-reflect-ng-if": null
+}-->
+                    </div>
+                    <div _ngcontent-gcs-c52="" class="mb-3">
+                      <label
+                        _ngcontent-gcs-c52=""
+                        for="bloodgroup"
+                        class="form-label"
+                        >Blood Group </label
+                      ><input
+                        _ngcontent-gcs-c52=""
+                        type="text"
+                        formcontrolname="bloodgroup"
+                        id="bloodgroup"
+                        aria-describedby="emailHelp"
+                        class="form-control ng-untouched ng-pristine ng-valid"
+                        ng-reflect-name="bloodgroup"
+                      /><!--bindings={
+  "ng-reflect-ng-if": "false"
+}-->
+                    </div>
+                    <div _ngcontent-gcs-c52="" class="mb-3">
+                      <label _ngcontent-gcs-c52="" for="doj" class="form-label"
+                        >Date-of-joining </label
+                      ><input
+                        _ngcontent-gcs-c52=""
+                        type="date"
+                        formcontrolname="doj"
+                        id="doj"
+                        aria-describedby="emailHelp"
+                        class="form-control ng-untouched ng-pristine ng-valid"
+                        ng-reflect-name="doj"
+                        min="2022-06-10"
+                      /><!--bindings={
+  "ng-reflect-ng-if": "false"
+}-->
+                    </div>
+                    <div _ngcontent-gcs-c52="" class="mb-3">
+                      <label
+                        _ngcontent-gcs-c52=""
+                        for="month"
+                        class="form-label"
+                        >Salary month </label
+                      ><input
+                        _ngcontent-gcs-c52=""
+                        type="number"
+                        formcontrolname="month"
+                        id="month"
+                        aria-describedby="emailHelp"
+                        class="form-control ng-untouched ng-pristine ng-valid"
+                        ng-reflect-name="month"
+                      /><!--bindings={
+  "ng-reflect-ng-if": "false"
+}-->
+                    </div>
+                    <div _ngcontent-gcs-c52="" class="mb-3">
+                      <label
+                        _ngcontent-gcs-c52=""
+                        for="leave"
+                        class="form-label"
+                        >leave days </label
+                      ><input
+                        _ngcontent-gcs-c52=""
+                        type="number"
+                        formcontrolname="leave"
+                        id="leave"
+                        aria-describedby="emailHelp"
+                        class="form-control ng-untouched ng-pristine ng-valid"
+                        ng-reflect-name="leave"
+                      /><!--bindings={
+  "ng-reflect-ng-if": "false"
+}-->
+                    </div>
+                    <div _ngcontent-gcs-c52="" class="mb-3">
+                      <label
+                        _ngcontent-gcs-c52=""
+                        for="salary"
+                        class="form-label"
+                        >Salary </label
+                      ><input
+                        _ngcontent-gcs-c52=""
+                        type="text"
+                        formcontrolname="salary"
+                        id="salary"
+                        aria-describedby="emailHelp"
+                        class="form-control ng-untouched ng-pristine ng-valid"
+                        ng-reflect-name="salary"
+                      /><!--bindings={
+  "ng-reflect-ng-if": "false"
+}-->
+                    </div>
+                    <div _ngcontent-gcs-c52="" class="mb-3">
+                      <label
+                        _ngcontent-gcs-c52=""
+                        for="userlogin"
+                        class="form-label"
+                        >User-login Id </label
+                      ><input
+                        _ngcontent-gcs-c52=""
+                        type="text"
+                        formcontrolname="userlogin"
+                        id="userlogin"
+                        aria-describedby="emailHelp"
+                        class="form-control ng-untouched ng-pristine ng-valid"
+                        ng-reflect-name="userlogin"
+                      /><!--bindings={
+  "ng-reflect-ng-if": "false"
+}-->
+                    </div>
+                    <div _ngcontent-gcs-c52="" class="mb-3">
+                      <label
+                        _ngcontent-gcs-c52=""
+                        for="userpassword"
+                        class="form-label"
+                        >userPassword </label
+                      ><input
+                        _ngcontent-gcs-c52=""
+                        type="text"
+                        formcontrolname="userpassword"
+                        id="userpassword"
+                        aria-describedby="emailHelp"
+                        class="form-control ng-untouched ng-pristine ng-valid"
+                        ng-reflect-name="userpassword"
+                      /><!--bindings={
+  "ng-reflect-ng-if": "false"
+}-->
+                    </div>
+                    <div _ngcontent-gcs-c52="" class="modal-footer">
+                      <button
+                        _ngcontent-gcs-c52=""
+                        type="button"
+                        data-bs-dismiss="modal"
+                        class="btn btn-secondary"
+                      >
+                        Close</button
+                      ><button
+                        _ngcontent-gcs-c52=""
+                        type="button"
+                        class="btn btn-primary"
+                      >
+                        Add Employee
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            _ngcontent-gcs-c52=""
+            id="onEdit"
+            tabindex="-1"
+            aria-labelledby="exampleModalLabel"
+            class="modal fade show"
+            aria-modal="true"
+            role="dialog"
+            style="display: block; padding-left: 0px"
+          >
+            <div _ngcontent-gcs-c52="" class="modal-dialog">
+              <div _ngcontent-gcs-c52="" class="modal-content">
+                <div _ngcontent-gcs-c52="" class="modal-header">
+                  <h5
+                    _ngcontent-gcs-c52=""
+                    id="exampleModalLabel"
+                    class="modal-title"
+                  >
+                    Edit employee details
+                  </h5>
+                  <button
+                    _ngcontent-gcs-c52=""
+                    type="button"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                    class="btn-close"
+                  ></button>
+                </div>
+                <div _ngcontent-gcs-c52="" class="modal-body">
+                  <form
+                    _ngcontent-gcs-c52=""
+                    novalidate=""
+                    ng-reflect-form="[object Object]"
+                    class="ng-valid ng-dirty ng-touched"
+                  >
+                    <div _ngcontent-gcs-c52="" class="mb-3">
+                      <label _ngcontent-gcs-c52="" for="id" class="form-label"
+                        >ID </label
+                      ><input
+                        _ngcontent-gcs-c52=""
+                        type="text"
+                        formcontrolname="id"
+                        id="id"
+                        aria-describedby="emailHelp"
+                        readonly=""
+                        class="form-control ng-untouched ng-pristine ng-valid"
+                        ng-reflect-name="id"
+                      />
+                    </div>
+                    <div _ngcontent-gcs-c52="" class="mb-3">
+                      <label
+                        _ngcontent-gcs-c52=""
+                        for="username"
+                        class="form-label"
+                        >Name </label
+                      ><input
+                        _ngcontent-gcs-c52=""
+                        type="text"
+                        formcontrolname="username"
+                        id="username"
+                        aria-describedby="emailHelp"
+                        class="form-control ng-untouched ng-pristine ng-valid"
+                        ng-reflect-name="username"
+                      />
+                    </div>
+                    <div _ngcontent-gcs-c52="" class="mb-3">
+                      <label
+                        _ngcontent-gcs-c52=""
+                        for="email"
+                        class="form-label"
+                        >Email </label
+                      ><input
+                        _ngcontent-gcs-c52=""
+                        type="text"
+                        formcontrolname="email"
+                        id="email"
+                        aria-describedby="emailHelp"
+                        class="form-control ng-valid ng-dirty ng-touched"
+                        ng-reflect-name="email"
+                      />
+                    </div>
+                    <div _ngcontent-gcs-c52="" class="mb-3">
+                      <label _ngcontent-gcs-c52="" for="dob" class="form-label"
+                        >Date of Birth</label
+                      ><input
+                        _ngcontent-gcs-c52=""
+                        type="date"
+                        formcontrolname="dob"
+                        id="dob"
+                        aria-describedby="emailHelp"
+                        class="form-control ng-untouched ng-pristine ng-valid"
+                        ng-reflect-name="dob"
+                      />
+                    </div>
+                    <div _ngcontent-gcs-c52="" class="mb-3">
+                      <label
+                        _ngcontent-gcs-c52=""
+                        for="mobileno"
+                        class="form-label"
+                        >Mobile No </label
+                      ><input
+                        _ngcontent-gcs-c52=""
+                        type="number"
+                        formcontrolname="mobileno"
+                        id="mobileno"
+                        aria-describedby="emailHelp"
+                        class="form-control ng-untouched ng-pristine ng-valid"
+                        ng-reflect-name="mobileno"
+                      />
+                    </div>
+                    <div _ngcontent-gcs-c52="" class="mb-3">
+                      <label
+                        _ngcontent-gcs-c52=""
+                        for="bloodgroup"
+                        class="form-label"
+                        >Blood Group </label
+                      ><input
+                        _ngcontent-gcs-c52=""
+                        type="text"
+                        formcontrolname="bloodgroup"
+                        id="bloodgroup"
+                        aria-describedby="emailHelp"
+                        class="form-control ng-untouched ng-pristine ng-valid"
+                        ng-reflect-name="bloodgroup"
+                      />
+                    </div>
+                    <div _ngcontent-gcs-c52="" class="mb-3">
+                      <label _ngcontent-gcs-c52="" for="doj" class="form-label"
+                        >Date-of-joining </label
+                      ><input
+                        _ngcontent-gcs-c52=""
+                        type="date"
+                        formcontrolname="doj"
+                        id="doj"
+                        aria-describedby="emailHelp"
+                        class="form-control ng-untouched ng-pristine ng-valid"
+                        ng-reflect-name="doj"
+                      />
+                    </div>
+                    <div _ngcontent-gcs-c52="" class="mb-3">
+                      <label
+                        _ngcontent-gcs-c52=""
+                        for="month"
+                        class="form-label"
+                        >Salary month </label
+                      ><input
+                        _ngcontent-gcs-c52=""
+                        type="text"
+                        formcontrolname="month"
+                        id="month"
+                        aria-describedby="emailHelp"
+                        class="form-control ng-untouched ng-pristine ng-valid"
+                        ng-reflect-name="month"
+                      />
+                    </div>
+                    <div _ngcontent-gcs-c52="" class="mb-3">
+                      <label
+                        _ngcontent-gcs-c52=""
+                        for="leave"
+                        class="form-label"
+                        >Leave-days</label
+                      ><input
+                        _ngcontent-gcs-c52=""
+                        type="text"
+                        formcontrolname="leave"
+                        id="leave"
+                        aria-describedby="emailHelp"
+                        class="form-control ng-untouched ng-pristine ng-valid"
+                        ng-reflect-name="leave"
+                      />
+                    </div>
+                    <div _ngcontent-gcs-c52="" class="mb-3">
+                      <label
+                        _ngcontent-gcs-c52=""
+                        for="salary"
+                        class="form-label"
+                        >Salary</label
+                      ><input
+                        _ngcontent-gcs-c52=""
+                        type="text"
+                        formcontrolname="salary"
+                        id="salary"
+                        aria-describedby="emailHelp"
+                        class="form-control ng-untouched ng-pristine ng-valid"
+                        ng-reflect-name="salary"
+                      />
+                    </div>
+                    <div _ngcontent-gcs-c52="" class="mb-3">
+                      <label
+                        _ngcontent-gcs-c52=""
+                        for="userlogin"
+                        class="form-label"
+                        >User-login Id </label
+                      ><input
+                        _ngcontent-gcs-c52=""
+                        type="text"
+                        formcontrolname="userlogin"
+                        id="userlogin"
+                        aria-describedby="emailHelp"
+                        class="form-control ng-untouched ng-pristine ng-valid"
+                        ng-reflect-name="userlogin"
+                      />
+                    </div>
+                    <div _ngcontent-gcs-c52="" class="mb-3">
+                      <label
+                        _ngcontent-gcs-c52=""
+                        for="userpassword"
+                        class="form-label"
+                        >userPassword </label
+                      ><input
+                        _ngcontent-gcs-c52=""
+                        type="text"
+                        formcontrolname="userpassword"
+                        id="userpassword"
+                        aria-describedby="emailHelp"
+                        class="form-control ng-untouched ng-pristine ng-valid"
+                        ng-reflect-name="userpassword"
+                      />
+                    </div>
+                    <div _ngcontent-gcs-c52="" class="modal-footer">
+                      <button
+                        _ngcontent-gcs-c52=""
+                        type="button"
+                        data-bs-dismiss="modal"
+                        class="btn btn-secondary"
+                      >
+                        Close</button
+                      ><button
+                        _ngcontent-gcs-c52=""
+                        type="button"
+                        data-bs-toggle="modal"
+                        data-bs-target="#update"
+                        class="btn btn-primary"
+                      >
+                        Update
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div></app-dashboard
+      ><!--container--></app-root
+    >
+    <script
+      src="./EmployeePortal_files/bootstrap.bundle.min.js.download"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./EmployeePortal_files/runtime.js.download" defer=""></script>
+    <script
+      src="./EmployeePortal_files/polyfills.js.download"
+      defer=""
+    ></script>
+    <script src="./EmployeePortal_files/styles.js.download" defer=""></script>
+    <script src="./EmployeePortal_files/vendor.js.download" defer=""></script>
+    <script src="./EmployeePortal_files/main.js.download" defer=""></script>
+
+    <div class="modal-backdrop fade show"></div>
+  </body>
+</html>
