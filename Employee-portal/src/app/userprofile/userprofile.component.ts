@@ -13,12 +13,12 @@ export class UserprofileComponent implements OnInit {
   employeeDetails:any;
   userId:any;
   constructor(private route:Router,private shared:SharedService,private api:EmployeeServiceService) {
-console.log("code")
+console.log()
 
    }
 
   ngOnInit(): void {
-console.log("code")
+console.log()
 
 
   }

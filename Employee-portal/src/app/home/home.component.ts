@@ -8,12 +8,12 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
 
   constructor() {
-    console.log("")
+    console.log()
 
    }
 
   ngOnInit(): void {
-    console.log("")
+    console.log()
 
   }
 
