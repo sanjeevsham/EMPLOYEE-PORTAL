@@ -1,7 +1,7 @@
 ## Title:-
 # Employee Portal
 
-**Discription:-**
+**Description:-**
 
        Employee management is the effort to help employees do their best work each day in order to achieve the larger goals of the organization. There are many tasks and duties that fall under employee management, but almost all of them can fit into one of some basic categories listed below :
 
