@@ -113,4 +113,8 @@ export class DashboardComponent {
     })
 
   }
+
+  splasher(){
+    
+  }
 }
