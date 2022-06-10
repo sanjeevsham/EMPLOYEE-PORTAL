@@ -86,16 +86,6 @@ export class EmployeeServiceService {
   deleteapproved(id:any,id1:any){
     return this.http.delete(`http://localhost:8000/delete_approved/${id}/${id1}`);
   }
-  // delete(id:string,rev:string){
-  //   const urld = this.url+'employee-details/'+id+'/?rev='+rev;
-  //   return this.http.delete(urld,this.httpOptions);
-
-  // }
-  // deleteUser(id:string,rev:string){
-  //   const urld = this.url+'employee-details/'+id+'/?rev='+rev;
-  //   return this.http.delete(urld,this.httpOptions);
-
-  // }
   deleteQuery(id:any,id1:any){
     return this.http.delete(`http://localhost:8000/delete_query/${id}/${id1}`);
   }

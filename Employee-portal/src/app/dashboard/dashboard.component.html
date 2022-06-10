@@ -276,9 +276,11 @@
             <div class="mb-3">
               <label for="month" class="form-label">Salary month </label>
               <input
-                type="number"
+                type="date"
                 class="form-control"
                 formControlName="month"
+                (change)="checkAppointmentdate($event)"
+                min="{{ currentDate | date: 'yyyy-MM-dd' }}"
                 id="month"
                 aria-describedby="emailHelp"
               />
@@ -288,7 +290,7 @@
                   addform.controls['month'].touched &&
                   addform.hasError('required', 'month')
                 "
-                >* Salary month required!!</span
+                >* Date of joining required!!</span
               >
             </div>
             <div class="mb-3">
@@ -386,6 +388,7 @@
       </div>
     </div>
   </div>
+  <!--  Edit Employee -->
 
   <div
     class="modal fade"
@@ -428,6 +431,7 @@
                 formControlName="username"
                 id="username"
                 aria-describedby="emailHelp"
+                readonly
               />
             </div>
             <div class="mb-3">
@@ -438,6 +442,7 @@
                 formControlName="email"
                 id="email"
                 aria-describedby="emailHelp"
+                readonly
               />
             </div>
             <div class="mb-3">
@@ -448,6 +453,7 @@
                 formControlName="dob"
                 id="dob"
                 aria-describedby="emailHelp"
+                readonly
               />
             </div>
             <div class="mb-3">
@@ -478,6 +484,7 @@
                 formControlName="doj"
                 id="doj"
                 aria-describedby="emailHelp"
+                readonly
               />
             </div>
             <div class="mb-3">
@@ -518,6 +525,7 @@
                 formControlName="userlogin"
                 id="userlogin"
                 aria-describedby="emailHelp"
+                readonly
               />
             </div>
             <div class="mb-3">
@@ -528,6 +536,7 @@
                 formControlName="userpassword"
                 id="userpassword"
                 aria-describedby="emailHelp"
+                readonly
               />
             </div>
             <div class="modal-footer">

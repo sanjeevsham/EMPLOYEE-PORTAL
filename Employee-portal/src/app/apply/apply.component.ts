@@ -43,9 +43,6 @@ detailsCheck:any=0;
      {
        this.checkdate = event.target.value;
      }
-    //  getToday(): string {
-    //   return new Date().toISOString().split('T')[0]
-    // }
      
      addUser(formvalue:any){
        console.log('hi');
@@ -88,10 +85,6 @@ detailsCheck:any=0;
        setTimeout(() => {
          if(this.detailsCheck==1){
            this.toatr.showSuccess("data","Leave applied successfully..!")
-          //  setTimeout(() => {
-          //    location.reload();
-             
-          //  }, 1000);
          }
          else{
           this.toatr.showWarning("data","Invalid user data ..?")

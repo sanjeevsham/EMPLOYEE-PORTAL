@@ -25,19 +25,6 @@ export class SignUpComponent implements OnInit {
     )
    
    }
-//    mustmatch(controlName:string,confirmpassword:string){
-//      return (formGroup:FormGroup)=>{
-//        const control=formGroup.controls[controlName];
-//        const matchingcontrol=formGroup.controls[confirmpassword];
-//        if(matchingcontrol.errors && ! matchingcontrol.errors.mustmatch ){
-//          return
-//        }
-//        if(control.value != matchingcontrol.value){
-//         matchingcontrol.setErrors(this.mustmatch:true)
-//        }
-//      }
-
-//    }
    signupdata(FormValue:NgForm){
      this.api.registerdata(FormValue).subscribe((_data)=>{
        alert("Data posted Successfully");
