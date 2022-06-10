@@ -15,10 +15,10 @@ export class ApplyComponent implements OnInit {
   currentDate:any = new Date();
   date1:any; 
   date2:any;  
-obj:any;
-storeId:any;
-createObj:any;
-detailsCheck:any=0;
+  obj:any;
+  storeId:any;
+  createObj:any;
+  detailsCheck:any=0;
 
 
   constructor(private formbuilder:FormBuilder,private api:EmployeeServiceService,private shared:SharedService, private toatr:ToastarService) { }
