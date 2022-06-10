@@ -150,6 +150,7 @@
                 id="id"
                 aria-describedby="emailHelp"
                 required
+                (change)="idDuplicateCheck($event)"
               />
               <span
                 class="text-danger"
@@ -269,13 +270,13 @@
                   addform.controls['doj'].touched &&
                   addform.hasError('required', 'doj')
                 "
-                >* Blood group required!!</span
+                >* Date of joining required!!</span
               >
             </div>
             <div class="mb-3">
               <label for="month" class="form-label">Salary month </label>
               <input
-                type="text"
+                type="number"
                 class="form-control"
                 formControlName="month"
                 id="month"
@@ -287,13 +288,13 @@
                   addform.controls['month'].touched &&
                   addform.hasError('required', 'month')
                 "
-                >* Blood group required!!</span
+                >* Salary month required!!</span
               >
             </div>
             <div class="mb-3">
               <label for="leave" class="form-label">leave days </label>
               <input
-                type="text"
+                type="number"
                 class="form-control"
                 formControlName="leave"
                 id="leave"
@@ -305,7 +306,7 @@
                   addform.controls['leave'].touched &&
                   addform.hasError('required', 'leave')
                 "
-                >* Blood group required!!</span
+                >* Leave required!!</span
               >
             </div>
             <div class="mb-3">
@@ -323,7 +324,7 @@
                   addform.controls['salary'].touched &&
                   addform.hasError('required', 'salary')
                 "
-                >* Blood group required!!</span
+                >* Salary required!!</span
               >
             </div>
             <div class="mb-3">
@@ -341,7 +342,7 @@
                   addform.controls['userlogin'].touched &&
                   addform.hasError('required', 'userlogin')
                 "
-                >* required!!</span
+                >* User id required!!</span
               >
             </div>
 
@@ -360,7 +361,7 @@
                   addform.controls['userpassword'].touched &&
                   addform.hasError('required', 'userpassword')
                 "
-                >* required!!</span
+                >*Password required!!</span
               >
             </div>
             <div class="modal-footer">
@@ -411,11 +412,12 @@
             <div class="mb-3">
               <label for="id" class="form-label">ID </label>
               <input
-                type="number"
+                type="text"
                 class="form-control"
                 formControlName="id"
                 id="id"
                 aria-describedby="emailHelp"
+                readonly
               />
             </div>
             <div class="mb-3">

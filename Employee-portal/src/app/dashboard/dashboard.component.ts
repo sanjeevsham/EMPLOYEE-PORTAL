@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormGroup,FormBuilder,NgForm ,Validators} from '@angular/forms';
 import { EmployeeServiceService } from '../employee-service.service';
 import { ToastarService } from '../toastar.service';
+import { ElementRef } from '@angular/core';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -11,10 +12,11 @@ export class DashboardComponent {
   addform!:FormGroup;
   alldata:any;
   exchange!:any;
-  object:any=[]
+  object:any=[];
+  flag=0;
   checkdate:any
   currentDate:any = new Date();
-  constructor(private formbuilder:FormBuilder,private api:EmployeeServiceService, private tostar:ToastarService) { }
+  constructor(private formbuilder:FormBuilder,private api:EmployeeServiceService, private tostar:ToastarService,private el:ElementRef) { }
 
   ngOnInit(): void {
     this.addform=this.formbuilder.group({
@@ -32,7 +34,8 @@ export class DashboardComponent {
       userpassword:['',Validators.required],
       _id:[''],  
       _rev:[''],
-    })
+    });
+    this.getuser();
   }
   checkAppointmentdate(event:any)
   {
@@ -113,5 +116,20 @@ export class DashboardComponent {
     })
 
   }
+  idDuplicateCheck(event:any)
+  {
+    let id = event.target.value;
+    for (const i of this.object) {
+        if(i.id == id ){
+              this.flag=1;          
+        }
+    }
+    if(this.flag==1){
+      this.tostar.showWarning("EMPID","ID Already taken")
+      this.addform.controls['id'].setValue('');
+      this.el.nativeElement.querySelector('#id').focus();
+      this.flag=0;
 
+    }
+  }
 }

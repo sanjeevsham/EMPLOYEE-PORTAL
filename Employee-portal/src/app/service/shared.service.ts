@@ -7,6 +7,6 @@ export class SharedService {
   loginUserId:any;
   setEmployeeDetails:any;
   constructor() {
-    console.log("sanjeev")
+    console.log("")
    }
 }
