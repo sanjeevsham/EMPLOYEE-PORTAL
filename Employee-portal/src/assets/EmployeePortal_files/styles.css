@@ -2208,11 +2208,6 @@ progress {
   margin: -0.25rem -0.5rem;
   margin-inline-end: 0.5rem;
 }
-.form-control-sm::-webkit-file-upload-button {
-  padding: 0.25rem 0.5rem;
-  margin: -0.25rem -0.5rem;
-  margin-inline-end: 0.5rem;
-}
 .form-control-lg {
   min-height: calc(1.5em + 1rem + 2px);
   padding: 0.5rem 1rem;
@@ -2225,11 +2220,6 @@ progress {
   margin-inline-end: 1rem;
 }
 .form-control-lg::file-selector-button {
-  padding: 0.5rem 1rem;
-  margin: -0.5rem -1rem;
-  margin-inline-end: 1rem;
-}
-.form-control-lg::-webkit-file-upload-button {
   padding: 0.5rem 1rem;
   margin: -0.5rem -1rem;
   margin-inline-end: 1rem;
@@ -3688,9 +3678,7 @@ fieldset:disabled .btn {
 .dropend .dropdown-toggle:empty::after {
   margin-left: 0;
 }
-.dropend .dropdown-toggle::after {
-  vertical-align: 0;
-}
+
 .dropstart .dropdown-menu[data-bs-popper] {
   top: 0;
   right: 100%;
@@ -3712,8 +3700,6 @@ fieldset:disabled .btn {
   margin-right: 0.255em;
   vertical-align: 0.255em;
   content: "";
-  vertical-align: 0;
-
   border-top: 0.3em solid transparent;
   border-right: 0.3em solid;
   border-bottom: 0.3em solid transparent;
