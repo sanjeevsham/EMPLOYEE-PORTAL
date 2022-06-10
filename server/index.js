@@ -176,9 +176,9 @@ app.get('/get_user', (_request, response) => {
       type: 'apply',
     },
   };
-  dbconnection.get(data, 'employee-details').then((leaveger_res) => {
-    if (leaveger_res) {
-      response.send(leaveger_res);
+  dbconnection.get(data, 'employee-details').then((leaveget_res) => {
+    if (leaveget_res) {
+      response.send(leaveget_res);
     } else {
       response.send('error');
     }
