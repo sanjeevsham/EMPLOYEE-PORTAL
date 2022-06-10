@@ -1,8 +1,8 @@
-import { Component } from '@angular/core';
+import { Component,ElementRef } from '@angular/core';
 import { FormGroup,FormBuilder,NgForm ,Validators} from '@angular/forms';
 import { EmployeeServiceService } from '../employee-service.service';
 import { ToastarService } from '../toastar.service';
-import { ElementRef } from '@angular/core';
+
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
