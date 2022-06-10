@@ -160,9 +160,9 @@ app.post('/post_user', (request, response) => {
     employee_id: request.body.employee_id,
     type: 'apply',
   };
-  dbconnection.insert(object, 'employee-details').then((leave_res) => {
-    if (leave_res) {
-      response.send(leave_res);
+  dbconnection.insert(object, 'employee-details').then((apply_res) => {
+    if (apply_res) {
+      response.send(apply_res);
     } else {
       response.send('error');
     }
@@ -188,10 +188,10 @@ app.get('/get_user', (_request, response) => {
 app.delete('/delete_leave/:id/:id1', (_request, response) => {
   dbconnection
     .deleted_id(_request.params.id, _request.params.id1, 'employee-details')
-    .then((delete_res) => {
-      if (delete_res) {
+    .then((leavedelete_res) => {
+      if (leavedelete_res) {
         console.log('deleted success');
-        response.send(delete_res);
+        response.send(leavedelete_res);
       } else {
         console.log('can not deleted...');
         response.send('error');
@@ -214,9 +214,9 @@ app.post('/post_approved', (request, response) => {
     approved: request.body.approved,
     type: 'approved',
   };
-  dbconnection.insert(object, 'employee-details').then((leave_res) => {
-    if (leave_res) {
-      response.send(leave_res);
+  dbconnection.insert(object, 'employee-details').then((apply_res) => {
+    if (apply_res) {
+      response.send(apply_res);
     } else {
       response.send('error');
     }
@@ -242,10 +242,10 @@ app.get('/get_approved', (_request, response) => {
 app.delete('/delete_approved/:id/:id1', (request, response) => {
   dbconnection
     .deleted(request.params.id, request.params.id1, 'employee-details')
-    .then((res) => {
-      if (res) {
+    .then((approve_res) => {
+      if (approve_res) {
         console.log('deleted success');
-        response.send(res);
+        response.send(approve_res);
       } else {
         console.log('can not deleted...');
         response.send('error');
