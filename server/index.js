@@ -83,25 +83,6 @@ app.get('/get_query', (_request, response) => {
   });
 });
 
-app.get('/get_leaveapproved/:id', (request, response) => {
-  console.log('start', request.params.id);
-  let data = {
-    selector: {
-      employee_id: request.params.id,
-      approved: 'Leaveapproved',
-      type: 'approved',
-    },
-  };
-  console.log(data);
-  dbconnection.get(data, 'employee-details').then((dashget_res) => {
-    if (dashget_res) {
-      console.log('leave', dashget_res);
-      response.send(dashget_res);
-    } else {
-      response.send('error');
-    }
-  });
-});
 app.delete('/delete_query/:id/:id1', (request, response) => {
   dbconnection
     .deleted(request.params.id, request.params.id1, 'employee-details')
@@ -233,6 +214,25 @@ app.get('/get_approved', (_request, response) => {
   dbconnection.get(data, 'employee-details').then((leaveger_res) => {
     if (leaveger_res) {
       response.send(leaveger_res);
+    } else {
+      response.send('error');
+    }
+  });
+});
+app.get('/get_leaveapproved/:id', (request, response) => {
+  console.log('start', request.params.id);
+  let data = {
+    selector: {
+      employee_id: request.params.id,
+      approved: 'Leaveapproved',
+      type: 'approved',
+    },
+  };
+  console.log(data);
+  dbconnection.get(data, 'employee-details').then((dashget_res) => {
+    if (dashget_res) {
+      console.log('leave', dashget_res);
+      response.send(dashget_res);
     } else {
       response.send('error');
     }

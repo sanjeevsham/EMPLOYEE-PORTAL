@@ -14,7 +14,6 @@ export class AppliedUsersComponent implements OnInit {
   exchange!:any;
   object:any=[];
   sno:number=1;
-  disable:boolean=false;
   constructor(private formbuilder:FormBuilder,private api:EmployeeServiceService,private route:Router, private tostr:ToastarService) { }
 
   ngOnInit(): void {
