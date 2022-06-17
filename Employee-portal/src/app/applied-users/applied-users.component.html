@@ -31,11 +31,7 @@
         <th scope="col">{{ obj.leavetype }}</th>
         <th scope="col">{{ obj.reason }}</th>
         <td>
-          <button
-            [disabled]="disable"
-            class="btn btn-success"
-            (click)="approve(obj, obj)"
-          >
+          <button class="btn btn-success" (click)="approve(obj, obj)">
             Approve</button
           ><br />
           <button class="btn btn-danger" id="delete" (click)="delete(obj, obj)">
