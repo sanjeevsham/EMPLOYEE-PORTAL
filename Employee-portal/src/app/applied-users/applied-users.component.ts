@@ -41,7 +41,8 @@ export class AppliedUsersComponent implements OnInit {
     console.log("hello"+res);
     console.log("Your data was posted successfully!"); 
     location.reload()
-
+    this.delete(obj,obj1)
+    console.log("hello")
   },rej=>{
     console.log("opps! Can not post data"+rej);
 

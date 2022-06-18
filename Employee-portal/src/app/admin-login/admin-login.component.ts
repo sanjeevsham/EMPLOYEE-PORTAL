@@ -61,7 +61,7 @@ export class AdminLoginComponent implements OnInit {
       } else {
         setTimeout(() => {
           location.reload();
-        },3000);
+        },1000);
         this.showear();
       }
     }
